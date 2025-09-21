@@ -7,3 +7,5 @@ gunicorn==23.0.0
 mailtrap==2.0.1
 PyJWT==2.9.0
 requests==2.32.3
+psycopg[binary]==3.2.3
+itsdangerous==2.2.0
