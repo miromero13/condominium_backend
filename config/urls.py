@@ -18,7 +18,7 @@ from django.contrib import admin
 from django.urls import path, include
 from django.shortcuts import redirect
 from drf_spectacular.views import SpectacularAPIView, SpectacularSwaggerView
-from user.views import UserViewSet, LoginAdminView, LoginCustomerView, RegisterCustomerView, VerifyEmailView, CheckTokenView, ResidentViewSet
+from user.views import UserViewSet, LoginAdminView, LoginCustomerView, LoginVisitorView, RegisterVisitorView, VerifyEmailView, CheckTokenView, ResidentViewSet
 from rest_framework.routers import DefaultRouter
 
 def redirect_to_docs(request):
@@ -35,7 +35,8 @@ urlpatterns = [
     path('api/docs/', SpectacularSwaggerView.as_view(url_name='schema'), name='swagger-ui'), 
     path('api/auth/login-admin/', LoginAdminView.as_view(), name='login_admin'),
     path('api/auth/login-resident/', LoginCustomerView.as_view(), name='login_resident'),
-    path('api/auth/register-resident/', RegisterCustomerView.as_view(), name='register_resident'),
+    path('api/auth/login-visitor/', LoginVisitorView.as_view(), name='login_visitor'),
+    path('api/auth/register-visitor/', RegisterVisitorView.as_view(), name='register_visitor'),
     path('api/auth/verify-email/', VerifyEmailView.as_view(), name='verify_email'),
     path('api/auth/check-token/', CheckTokenView.as_view(), name='check_token'),           
     path('api/', include(router.urls)),    

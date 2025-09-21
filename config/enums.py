@@ -28,7 +28,7 @@ class UserRole(Enum):
             self.ADMINISTRATOR: 'Administrador',
             self.OWNER: 'Propietario',
             self.RESIDENT: 'Viviente',
-            self.GUARD: 'Guardia/Recepcionista',
+            self.GUARD: 'Guardia',
             self.VISITOR: 'Visitante',
         }
         return labels.get(self, self.value)

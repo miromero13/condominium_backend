@@ -70,13 +70,49 @@ class LoginCustomerView(APIView):
             return response(403, "Debes verificar tu correo")        
         if not user.is_active:
             return response(403, "Cuenta inactiva")        
-        if user.role not in [UserRole.OWNER.value, UserRole.RESIDENT.value, UserRole.VISITOR.value]:
-            return response(403, "Solo propietarios, vivientes y visitantes pueden iniciar sesión aquí")
+        if user.role not in [UserRole.OWNER.value, UserRole.RESIDENT.value]:
+            return response(403, "Solo propietarios y residentes pueden iniciar sesión aquí")
 
         token = RefreshToken.for_user(user)
         return response(
             200,
-            "Login residente exitoso",
+            "Login exitoso",
+            data={
+                "access": str(token.access_token),
+                "refresh": str(token),
+                "user": UserSerializer(user).data
+            }
+        )
+
+
+@extend_schema(
+    tags=['Autenticación'],
+    request=LoginSerializer,
+    responses={
+        200: StandardResponseSerializerSuccess,
+        401: StandardResponseSerializerError,
+        403: StandardResponseSerializerError
+    }
+)
+class LoginVisitorView(APIView):
+    def post(self, request):
+        email = request.data.get("email")
+        password = request.data.get("password")
+        user = authenticate(email=email, password=password)
+
+        if not user:
+            return response(401, "Credenciales inválidas")        
+        if not user.email_verified:
+            return response(403, "Debes verificar tu correo")        
+        if not user.is_active:
+            return response(403, "Cuenta inactiva")        
+        if user.role != UserRole.VISITOR.value:
+            return response(403, "Solo visitantes pueden iniciar sesión aquí")
+
+        token = RefreshToken.for_user(user)
+        return response(
+            200,
+            "Login visitante exitoso",
             data={
                 "access": str(token.access_token),
                 "refresh": str(token),
@@ -93,10 +129,12 @@ class LoginCustomerView(APIView):
         400: StandardResponseSerializerError
     }
 )
-class RegisterCustomerView(APIView):
+class RegisterVisitorView(APIView):
     def post(self, request):
         data = request.data.copy()
-        data['role'] = UserRole.RESIDENT.value
+        data['role'] = UserRole.VISITOR.value
+        data['is_active'] = False  # Los visitantes deben verificar su email
+        data['email_verified'] = False
 
         serializer = UserSerializer(data=data)
         if serializer.is_valid():
@@ -104,7 +142,7 @@ class RegisterCustomerView(APIView):
             send_verification_email(user)
             return response(
                 201,
-                "Cliente registrado correctamente. Revisa tu correo para activarlo.",
+                "Visitante registrado correctamente. Revisa tu correo para activarlo.",
                 data=UserSerializer(user).data
             )
 
@@ -152,7 +190,7 @@ class VerifyEmailView(APIView):
 )
 class CheckTokenView(APIView):
     authentication_classes = [JWTAuthentication]
-    permission_classes = [require_roles([UserRole.ADMINISTRATOR, UserRole.OWNER, UserRole.RESIDENT])]
+    permission_classes = [require_roles([UserRole.ADMINISTRATOR, UserRole.OWNER, UserRole.RESIDENT, UserRole.VISITOR])]
 
     def get(self, request):
         user = request.user
@@ -345,7 +383,7 @@ class UserViewSet(viewsets.ModelViewSet):
 class ResidentViewSet(viewsets.ModelViewSet):
     serializer_class = UserSerializer
     authentication_classes = [JWTAuthentication]
-    permission_classes = [require_roles([UserRole.ADMINISTRATOR, UserRole.OWNER, UserRole.RESIDENT])]
+    permission_classes = [require_roles([UserRole.ADMINISTRATOR, UserRole.OWNER, UserRole.RESIDENT, UserRole.GUARD])]
 
     def get_queryset(self):
         return User.objects.filter(is_active=True, role__in=[UserRole.OWNER.value, UserRole.RESIDENT.value])
@@ -363,7 +401,7 @@ class ResidentViewSet(viewsets.ModelViewSet):
             send_verification_email(user)
             return response(
                 201,
-                "Cliente creado correctamente. Se envió un correo de verificación.",
+                "Residente o propietario creado correctamente. Se envió un correo de verificación.",
                 data=UserSerializer(user).data
             )
         return response(400, "Errores de validación", error=serializer.errors)
@@ -420,42 +458,42 @@ class ResidentViewSet(viewsets.ModelViewSet):
                     return response(400, "Los valores de limit y offset deben ser enteros")
 
             serializer = self.get_serializer(queryset, many=True)
-            return response(200, "Clientes encontrados", data=serializer.data, count_data=len(queryset))
+            return response(200, "Residentes y propietarios encontrados", data=serializer.data, count_data=len(queryset))
 
         except Exception as e:
-            return response(500, f"Error al obtener clientes: {str(e)}")
+            return response(500, f"Error al obtener residentes y propietarios: {str(e)}")
 
     def retrieve(self, request, pk=None):
         try:
-            cliente = self.get_queryset().filter(pk=pk).first()
-            if not cliente:
-                return response(404, "Cliente no encontrado")
-            return response(200, "Cliente encontrado", data=self.get_serializer(cliente).data)
+            residente = self.get_queryset().filter(pk=pk).first()
+            if not residente:
+                return response(404, "Residente o propietario no encontrado")
+            return response(200, "Residente o propietario encontrado", data=self.get_serializer(residente).data)
         except Exception:
-            return response(500, "Error al obtener cliente")
+            return response(500, "Error al obtener residente o propietario")
 
     def update(self, request, pk=None, partial=False):
         try:
-            cliente = self.get_queryset().filter(pk=pk).first()
-            if not cliente:
-                return response(404, "Cliente no encontrado")
+            residente = self.get_queryset().filter(pk=pk).first()
+            if not residente:
+                return response(404, "Residente o propietario no encontrado")
 
-            serializer = self.get_serializer(cliente, data=request.data, partial=True)
+            serializer = self.get_serializer(residente, data=request.data, partial=True)
             if serializer.is_valid():
                 serializer.save()
-                return response(200, "Cliente actualizado", data=serializer.data)
+                return response(200, "Residente o propietario actualizado", data=serializer.data)
             return response(400, "Errores de validación", error=serializer.errors)
         except Exception:
-            return response(500, "Error al actualizar cliente")
+            return response(500, "Error al actualizar residente o propietario")
 
     def destroy(self, request, pk=None):
         try:
-            cliente = self.get_queryset().filter(pk=pk).first()
-            if not cliente:
-                return response(404, "Cliente no encontrado")
+            residente = self.get_queryset().filter(pk=pk).first()
+            if not residente:
+                return response(404, "Residente o propietario no encontrado")
 
-            cliente.is_active = False
-            cliente.save()
-            return response(200, "Cliente deshabilitado correctamente")
+            residente.is_active = False
+            residente.save()
+            return response(200, "Residente o propietario deshabilitado correctamente")
         except Exception:
             return response(500, "Error al deshabilitar cliente")
