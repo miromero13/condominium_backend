@@ -39,5 +39,6 @@ urlpatterns = [
     path('api/auth/register-visitor/', RegisterVisitorView.as_view(), name='register_visitor'),
     path('api/auth/verify-email/', VerifyEmailView.as_view(), name='verify_email'),
     path('api/auth/check-token/', CheckTokenView.as_view(), name='check_token'),           
-    path('api/', include(router.urls)),    
+    path('api/', include(router.urls)),
+    path('api/seeder/', include('seeders.urls')),    
 ]

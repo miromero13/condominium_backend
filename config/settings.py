@@ -44,6 +44,7 @@ INSTALLED_APPS = [
     'corsheaders',
     'drf_spectacular',
     'user',
+    'seeders',
 ]
 
 REST_FRAMEWORK = {
