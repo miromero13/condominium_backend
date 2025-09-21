@@ -1,0 +1,9 @@
+Django==5.2
+djangorestframework==3.16.0
+djangorestframework_simplejwt==5.5.0
+django-cors-headers==4.7.0
+drf-spectacular==0.28.0
+gunicorn==23.0.0
+mailtrap==2.0.1
+PyJWT==2.9.0
+requests==2.32.3
