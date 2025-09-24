@@ -211,6 +211,57 @@ class CheckTokenView(APIView):
     
 
 @extend_schema(
+    tags=['Autenticación'],
+    request=LoginSerializer,
+    responses={
+        200: StandardResponseSerializerSuccess,
+        401: StandardResponseSerializerError,
+        403: StandardResponseSerializerError
+    }
+)
+class LoginUnifiedView(APIView):
+    """
+    Login unificado que detecta el rol del usuario y aplica las validaciones correspondientes.
+    Simplifica el frontend para usar un solo endpoint.
+    """
+    def post(self, request):
+        email = request.data.get("email")
+        password = request.data.get("password")
+        
+        if not email or not password:
+            return response(400, "Email y contraseña son requeridos")
+            
+        user = authenticate(email=email, password=password)
+
+        if not user:
+            return response(401, "Credenciales inválidas")
+        
+        if not user.is_active:
+            return response(403, "Cuenta inactiva")
+
+        # Validaciones específicas por rol
+        if user.role in [UserRole.ADMINISTRATOR.value, UserRole.GUARD.value]:
+            # Admin y guardias no necesitan email verificado
+            pass
+        elif user.role in [UserRole.OWNER.value, UserRole.RESIDENT.value, UserRole.VISITOR.value]:
+            # Otros roles necesitan email verificado
+            if not user.email_verified:
+                return response(403, "Debes verificar tu correo electrónico")
+
+        # Generar token JWT
+        token = RefreshToken.for_user(user)
+        return response(
+            200,
+            "Login exitoso",
+            data={
+                "accessToken": str(token.access_token),
+                "refresh": str(token),
+                "user": UserSerializer(user).data
+            }
+        )
+
+
+@extend_schema(
     tags=['Usuarios'],
     responses={
         200: UserSerializer,        
@@ -497,3 +548,287 @@ class ResidentViewSet(viewsets.ModelViewSet):
             return response(200, "Residente o propietario deshabilitado correctamente")
         except Exception:
             return response(500, "Error al deshabilitar cliente")
+
+
+@extend_schema(tags=['Usuarios Generales'])
+class AllUsersViewSet(viewsets.ModelViewSet):
+    """
+    ViewSet para gestionar TODOS los tipos de usuarios (admin, guardia, propietario, residente, visitante).
+    Solo accesible por administradores.
+    """
+    serializer_class = UserSerializer
+    authentication_classes = [JWTAuthentication]
+    permission_classes = [require_roles([UserRole.ADMINISTRATOR])]
+
+    def get_queryset(self):
+        return User.objects.filter(is_active=True).order_by('-created_at')
+
+    def create(self, request):
+        try:
+            serializer = UserSerializer(data=request.data)
+            if serializer.is_valid():
+                user = serializer.save()
+                return response(
+                    201,
+                    "Usuario creado correctamente", 
+                    data=UserSerializer(user).data
+                )
+            return response(
+                400,
+                "Errores de validación",
+                error=serializer.errors
+            )
+        except Exception as e:
+            return response(500, f"Error al crear usuario: {str(e)}")
+
+    @extend_schema(
+        parameters=[
+            OpenApiParameter(name='limit', description='Cantidad de resultados', required=False, type=int),
+            OpenApiParameter(name='offset', description='Inicio del listado', required=False, type=int),
+            OpenApiParameter(name='order', description='Campo de ordenamiento (ej: +name, -email)', required=False, type=str),
+            OpenApiParameter(name='attr', description='Campo para filtrar (ej: name, role)', required=False, type=str),
+            OpenApiParameter(name='value', description='Valor del campo a filtrar', required=False, type=str),
+        ], 
+        responses={
+            200: StandardResponseSerializerSuccessList,
+            400: StandardResponseSerializerError,
+            500: StandardResponseSerializerError
+        }
+    )
+    def list(self, request):
+        try:
+            # Obtener TODOS los usuarios activos (todos los roles)
+            queryset = User.objects.filter(is_active=True)
+
+            # Filtros de búsqueda
+            attr = request.query_params.get('attr')
+            value = request.query_params.get('value')
+            if attr and value and hasattr(User, attr):
+                starts_with_filter = {f"{attr}__istartswith": value}
+                contains_filter = {f"{attr}__icontains": value}
+                queryset = queryset.filter(Q(**contains_filter))                
+                queryset = queryset.annotate(
+                    relevance=Case(
+                        When(**starts_with_filter, then=V(0)),
+                        default=V(1),
+                        output_field=IntegerField()
+                    )
+                ).order_by('relevance')                
+            elif attr and not hasattr(User, attr):
+                return response(
+                    400,
+                    f"El campo '{attr}' no es válido para filtrado"
+                )
+
+            # Ordenamiento
+            order = request.query_params.get('order')
+            if order:
+                try:
+                    queryset = queryset.order_by(order)
+                except Exception:
+                    return response(
+                        400,
+                        f"No se pudo ordenar por '{order}'"
+                    )
+
+            # Paginación
+            limit = request.query_params.get('limit')
+            offset = request.query_params.get('offset', 0)
+            if limit is not None:
+                try:
+                    limit = int(limit)
+                    offset = int(offset)
+                    queryset = queryset[offset:offset+limit]
+                except ValueError:
+                    return response(400, "Los valores de limit y offset deben ser enteros")
+
+            serializer = self.get_serializer(queryset, many=True)
+            return response(200, "Usuarios encontrados", data=serializer.data, count_data=len(queryset))
+
+        except Exception as e:
+            return response(500, f"Error al obtener usuarios: {str(e)}")
+
+    def retrieve(self, request, pk=None):
+        try:
+            user = self.get_queryset().filter(pk=pk).first()
+            if not user:
+                return response(404, "Usuario no encontrado")
+            return response(200, "Usuario encontrado", data=self.get_serializer(user).data)
+        except Exception:
+            return response(500, "Error al obtener usuario")
+
+    def update(self, request, pk=None, partial=False):
+        try:
+            user = self.get_queryset().filter(pk=pk).first()
+            if not user:
+                return response(404, "Usuario no encontrado")
+
+            serializer = self.get_serializer(user, data=request.data, partial=True)
+            if serializer.is_valid():
+                serializer.save()
+                return response(200, "Usuario actualizado", data=serializer.data)
+            return response(400, "Errores de validación", error=serializer.errors)
+        except Exception:
+            return response(500, "Error al actualizar usuario")
+
+    def destroy(self, request, pk=None):
+        try:
+            user = self.get_queryset().filter(pk=pk).first()
+            if not user:
+                return response(404, "Usuario no encontrado")
+
+            user.is_active = False
+            user.save()
+            return response(200, "Usuario deshabilitado correctamente")
+        except Exception:
+            return response(500, "Error al deshabilitar usuario")
+
+
+@extend_schema(tags=['Usuarios - Todos los Roles'])
+class AllUsersViewSet(viewsets.ModelViewSet):
+    """
+    ViewSet para manejar CRUD de TODOS los usuarios (admin, guardia, propietario, residente, visitante).
+    Solo accesible por administradores.
+    """
+    authentication_classes = [JWTAuthentication]
+    permission_classes = [require_roles([UserRole.ADMINISTRATOR])]
+    serializer_class = UserSerializer
+
+    def get_queryset(self):
+        """Obtiene TODOS los usuarios activos de cualquier rol"""
+        return User.objects.filter(is_active=True).order_by('-created_at')
+
+    def create(self, request):
+        """Crear usuario de cualquier rol"""
+        try:
+            serializer = self.get_serializer(data=request.data)
+            if serializer.is_valid():
+                user = serializer.save()
+                return response(
+                    201,
+                    f"Usuario {user.role} creado correctamente",
+                    data=UserSerializer(user).data
+                )
+            return response(
+                400,
+                "Errores de validación",
+                error=serializer.errors
+            )
+        except Exception as e:
+            return response(500, f"Error al crear usuario: {str(e)}")
+
+    @extend_schema(
+        parameters=[
+            OpenApiParameter(name='limit', description='Cantidad de resultados', required=False, type=int),
+            OpenApiParameter(name='offset', description='Inicio del listado', required=False, type=int),
+            OpenApiParameter(name='order', description='Campo de ordenamiento', required=False, type=str),
+            OpenApiParameter(name='attr', description='Campo para filtrar', required=False, type=str),
+            OpenApiParameter(name='value', description='Valor del campo a filtrar', required=False, type=str),
+            OpenApiParameter(name='role', description='Filtrar por rol específico', required=False, type=str),
+        ], 
+        responses={
+            200: StandardResponseSerializerSuccessList,
+            400: StandardResponseSerializerError,
+            500: StandardResponseSerializerError
+        }
+    )
+    def list(self, request):
+        """Listar TODOS los usuarios con filtros opcionales"""
+        try:
+            queryset = self.get_queryset()
+
+            # Filtro por rol específico
+            role_filter = request.query_params.get('role')
+            if role_filter:
+                if role_filter in UserRole.values():
+                    queryset = queryset.filter(role=role_filter)
+                else:
+                    return response(400, f"Rol '{role_filter}' no válido")
+
+            # Filtros generales (name, email, etc.)
+            attr = request.query_params.get('attr')
+            value = request.query_params.get('value')
+            if attr and value and hasattr(User, attr):
+                contains_filter = {f"{attr}__icontains": value}
+                queryset = queryset.filter(Q(**contains_filter))
+            elif attr and not hasattr(User, attr):
+                return response(400, f"El campo '{attr}' no es válido para filtrado")
+
+            # Ordenamiento
+            order = request.query_params.get('order')
+            if order:
+                try:
+                    queryset = queryset.order_by(order)
+                except Exception:
+                    return response(400, f"No se pudo ordenar por '{order}'")
+
+            # Paginación
+            limit = request.query_params.get('limit')
+            offset = request.query_params.get('offset', 0)
+            if limit is not None:
+                try:
+                    limit = int(limit)
+                    offset = int(offset)
+                    total_count = queryset.count()
+                    queryset = queryset[offset:offset+limit]
+                except ValueError:
+                    return response(400, "Los valores de limit y offset deben ser enteros")
+            else:
+                total_count = queryset.count()
+
+            serializer = self.get_serializer(queryset, many=True)
+            return response(
+                200, 
+                "Usuarios encontrados", 
+                data=serializer.data, 
+                count_data=total_count
+            )
+
+        except Exception as e:
+            return response(500, f"Error al obtener usuarios: {str(e)}")
+
+    def retrieve(self, request, pk=None):
+        """Obtener usuario específico por ID"""
+        try:
+            user = self.get_queryset().filter(pk=pk).first()
+            if not user:
+                return response(404, "Usuario no encontrado")
+            return response(
+                200, 
+                "Usuario encontrado", 
+                data=self.get_serializer(user).data
+            )
+        except Exception as e:
+            return response(500, f"Error al obtener usuario: {str(e)}")
+
+    def update(self, request, pk=None, partial=False):
+        """Actualizar usuario"""
+        try:
+            user = self.get_queryset().filter(pk=pk).first()
+            if not user:
+                return response(404, "Usuario no encontrado")
+
+            serializer = self.get_serializer(user, data=request.data, partial=True)
+            if serializer.is_valid():
+                updated_user = serializer.save()
+                return response(
+                    200, 
+                    f"Usuario {updated_user.role} actualizado", 
+                    data=UserSerializer(updated_user).data
+                )
+            return response(400, "Errores de validación", error=serializer.errors)
+        except Exception as e:
+            return response(500, f"Error al actualizar usuario: {str(e)}")
+
+    def destroy(self, request, pk=None):
+        """Desactivar usuario (soft delete)"""
+        try:
+            user = self.get_queryset().filter(pk=pk).first()
+            if not user:
+                return response(404, "Usuario no encontrado")
+
+            user.is_active = False
+            user.save()
+            return response(200, f"Usuario {user.role} deshabilitado correctamente")
+        except Exception as e:
+            return response(500, f"Error al deshabilitar usuario: {str(e)}")

@@ -21,7 +21,7 @@ def send_verification_email(user):
     payload = {
         "from": {
             "email": "ilseromero35@gmail.com",
-            "name": "SmartCondo"
+            "name": "SmartCondominio"
         },
         "to": [
             {

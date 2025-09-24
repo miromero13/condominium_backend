@@ -42,9 +42,8 @@ class UserSerializer(serializers.ModelSerializer):
         
         return value
 
-
     def validate_role(self, value):
-        if value not in ['administrator', 'customer', 'cashier']:
+        if value not in ['administrator', 'guard', 'resident', 'owner', 'visitor']:
             raise serializers.ValidationError("Rol no válido.")
         return value
 
