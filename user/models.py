@@ -42,3 +42,11 @@ class User(BaseModel, AbstractBaseUser, PermissionsMixin):
 
     def __str__(self):
         return f"{self.name} ({self.role})"
+
+    def get_role_display(self):
+        """Devuelve la etiqueta en español del rol"""
+        from config.enums import UserRole
+        for role in UserRole:
+            if role.value == self.role:
+                return role.get_label()
+        return self.role

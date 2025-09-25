@@ -13,22 +13,12 @@ Los seeders crean usuarios de prueba con los siguientes roles:
 
 ## 🚀 Endpoints disponibles
 
-### `POST /api/seeder/seed/`
-Ejecuta los seeders para poblar la base de datos.
-
-**Body Parameters (opcionales):**
-```json
-{
-  "user_number": 5,    // Número de usuarios por rol (1-50, default: 5)
-  "reset": false       // Eliminar todos los usuarios antes (default: false)
-}
-```
+### `GET /api/seeder/seed/`
+Ejecuta los seeders completos para poblar la base de datos con datos realistas.
 
 **Ejemplo de request:**
 ```bash
-curl -X POST http://localhost:8000/api/seeder/seed/ \
-  -H "Content-Type: application/json" \
-  -d '{"user_number": 10, "reset": false}'
+curl -X GET http://localhost:8000/api/seeder/seed/
 ```
 
 **Respuesta exitosa:**
@@ -37,7 +27,27 @@ curl -X POST http://localhost:8000/api/seeder/seed/ \
   "status": "success",
   "message": "Seeders ejecutados correctamente",
   "data": {
-    "message": "🎉 Seeders ejecutados exitosamente",
+    "message": "🎉 Seeders completos ejecutados exitosamente",
+    "summary": {
+      "total_records_created": 45,
+      "tables_affected": 8
+    },
+    "created_counts": {
+      "users": 10,
+      "houses": 4,
+      "house_users": 10,
+      "pets": 8,
+      "vehicles": 9,
+      "payment_methods": 3,
+      "payment_gateways": 1,
+      "quotes": 0
+    }
+  }
+}
+```
+
+### `GET /api/seeder/seed-users/`
+Ejecuta únicamente los seeders de usuarios (modo legacy).
     "users_created": 32,
     "total_users": 32,
     "user_number_per_role": 10,
@@ -76,6 +86,46 @@ Obtiene el estado actual de usuarios en la base de datos.
       "guard_exists": true
     },
     "default_password": "12345678"
+  }
+}
+```
+
+### `DELETE /api/seeder/clear/`
+⚠️  **ATENCIÓN**: Elimina TODOS los datos de las tablas principales del sistema.
+
+**Descripción**: Este endpoint elimina completamente todos los registros de usuarios (excepto superusuarios), viviendas, house-users, mascotas, vehículos, cuotas, métodos de pago y transacciones. Úsalo con extrema precaución.
+
+**Ejemplo de request:**
+```bash
+curl -X DELETE http://localhost:8000/api/seeder/clear/
+```
+
+**Respuesta exitosa:**
+```json
+{
+  "status": "success",
+  "message": "Base de datos limpiada correctamente",
+  "data": {
+    "message": "🧹 Base de datos limpiada exitosamente",
+    "summary": {
+      "total_records_deleted": 45,
+      "tables_affected": 8,
+      "superusers_preserved": 1
+    },
+    "deleted_by_table": {
+      "users": 10,
+      "houses": 4,
+      "house_users": 10,
+      "pets": 8,
+      "vehicles": 9,
+      "quotes": 0,
+      "payment_methods": 3,
+      "payment_gateways": 1,
+      "payment_transactions": 0
+    },
+    "initial_counts": {...},
+    "final_counts": {...},
+    "warning": "Todos los datos han sido eliminados. Puedes usar /api/seeder/seed/ para repoblar."
   }
 }
 ```
@@ -124,25 +174,43 @@ seeders/
 - Django >= 5.0
 - Django REST Framework
 
-## 🔄 Uso completo
+## 🔄 Flujo de trabajo recomendado
 
-1. **Verificar estado actual:**
+### 1. **Verificar estado actual:**
 ```bash
-curl http://localhost:8000/api/seeder/seed/status/
+curl http://localhost:8000/api/seeder/status/
 ```
 
-2. **Ejecutar seeders por primera vez:**
+### 2. **Limpiar base de datos (si es necesario):**
 ```bash
-curl -X POST http://localhost:8000/api/seeder/seed/ \
-  -H "Content-Type: application/json" \
-  -d '{"user_number": 5}'
+# ⚠️  CUIDADO: Esto elimina TODOS los datos
+curl -X DELETE http://localhost:8000/api/seeder/clear/
 ```
 
-3. **Reset completo y crear nuevos usuarios:**
+### 3. **Poblar con datos completos:**
 ```bash
-curl -X POST http://localhost:8000/api/seeder/seed/ \
-  -H "Content-Type: application/json" \
-  -d '{"user_number": 10, "reset": true}'
+curl http://localhost:8000/api/seeder/seed/
+```
+
+### 4. **Solo usuarios (modo legacy):**
+```bash
+curl http://localhost:8000/api/seeder/seed-users/
+```
+
+## 🔁 Ciclo de desarrollo típico
+
+```bash
+# 1. Limpiar todo
+curl -X DELETE http://localhost:8000/api/seeder/clear/
+
+# 2. Verificar que esté vacío
+curl http://localhost:8000/api/seeder/status/
+
+# 3. Poblar con datos frescos
+curl http://localhost:8000/api/seeder/seed/
+
+# 4. Verificar resultado
+curl http://localhost:8000/api/seeder/status/
 ```
 
 ## 🛡️ Seguridad
