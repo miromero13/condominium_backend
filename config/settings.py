@@ -45,6 +45,8 @@ INSTALLED_APPS = [
     'drf_spectacular',
     'user',
     'seeders',
+    'property',
+    'condominium',
 ]
 
 REST_FRAMEWORK = {
@@ -107,10 +109,13 @@ DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
         'NAME': 'condominium_db',
-        'USER': 'milser',
-        'PASSWORD': 'milser123',
-        'HOST': 'localhost',
+        'USER': 'neondb_owner',
+        'PASSWORD': 'npg_R9d0NxtDbzAY',
+        'HOST': 'ep-curly-rain-aeeead3u-pooler.c-2.us-east-2.aws.neon.tech',
         'PORT': '5432',
+        'OPTIONS': {
+            'sslmode': 'require',
+        },
     }
 }
 
