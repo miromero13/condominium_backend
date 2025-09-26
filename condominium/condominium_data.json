@@ -1,0 +1,34 @@
+{
+  "condominium_info": {
+    "name": "Condominio Las Palmas",
+    "address": "Av. 6 de Agosto #2145, Zona Sur",
+    "city": "La Paz",
+    "country": "Bolivia",
+    "phone": "+591 2 2345678",
+    "email": "administracion@condominiolaspalmas.com",
+    "website": "www.condominiolaspalmas.com",
+    "nit": "1234567890123",
+    "registration_date": "2020-01-15",
+    "description": "Moderno condominio residencial ubicado en la Zona Sur de La Paz"
+  },
+  "contact_info": {
+    "administrator": {
+      "name": "María González",
+      "phone": "+591 70123456",
+      "email": "maria.gonzalez@condominiolaspalmas.com",
+      "position": "Administradora General"
+    },
+    "security": {
+      "name": "Carlos Mamani",
+      "phone": "+591 71234567",
+      "email": "seguridad@condominiolaspalmas.com",
+      "position": "Jefe de Seguridad"
+    },
+    "maintenance": {
+      "name": "Luis Quispe",
+      "phone": "+591 72345678",
+      "email": "mantenimiento@condominiolaspalmas.com",
+      "position": "Jefe de Mantenimiento"
+    }
+  }
+}
