@@ -373,6 +373,7 @@ class UserViewSet(viewsets.ModelViewSet):
             return response(404, "Usuario no encontrado")
         
 @extend_schema(
+    tags=['Residentes y Propietarios'],
     responses={
         200: StandardResponseSerializerSuccess,
         400: StandardResponseSerializerError,
