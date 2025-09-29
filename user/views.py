@@ -288,6 +288,9 @@ class UserViewSet(viewsets.ModelViewSet):
             limit = request.query_params.get('limit')
             offset = request.query_params.get('offset', 0)
 
+            # Obtener el total ANTES de la paginación
+            total_count = queryset.count()
+
             if limit is not None:
                 try:
                     limit = int(limit)
@@ -304,7 +307,7 @@ class UserViewSet(viewsets.ModelViewSet):
                 200,
                 "Usuarios encontrados",
                 data=serializer.data,
-                count_data=len(queryset)
+                count_data=total_count
             )
 
         except Exception as e:
@@ -448,6 +451,9 @@ class ResidentViewSet(viewsets.ModelViewSet):
                 except:
                     return response(400, f"No se pudo ordenar por '{order}'")
 
+            # Obtener el total ANTES de la paginación
+            total_count = queryset.count()
+
             limit = request.query_params.get('limit')
             offset = request.query_params.get('offset', 0)
             if limit is not None:
@@ -459,7 +465,7 @@ class ResidentViewSet(viewsets.ModelViewSet):
                     return response(400, "Los valores de limit y offset deben ser enteros")
 
             serializer = self.get_serializer(queryset, many=True)
-            return response(200, "Residentes y propietarios encontrados", data=serializer.data, count_data=len(queryset))
+            return response(200, "Residentes y propietarios encontrados", data=serializer.data, count_data=total_count)
 
         except Exception as e:
             return response(500, f"Error al obtener residentes y propietarios: {str(e)}")
