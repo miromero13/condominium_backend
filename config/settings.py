@@ -47,6 +47,7 @@ INSTALLED_APPS = [
     'seeders',
     'property',
     'condominium',
+    'service',
 ]
 
 REST_FRAMEWORK = {
@@ -167,3 +168,9 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 STATIC_ROOT = BASE_DIR / 'staticfiles'
 
 ALLOWED_HOSTS = ['*']
+
+# Stripe Configuration
+STRIPE_PUBLISHABLE_KEY = 'pk_test_51PwuiM08hp2qIPTJ9P4c108993LSovebHw9lQQeABXF3zkN71Upef4jMuPMgLPjJDWOpL5N2I94cMtze0nOxg9IP00Jo5RqrJ7'
+STRIPE_SECRET_KEY = 'sk_test_51PwuiM08hp2qIPTJDoIkgHkDvPWLqYPGk245gQ3edAyzeRGCfJ46HnGGvYRkkWyhO0lswVk2KPnVxoeRxOniHCet00YFL5UAzW'
+STRIPE_WEBHOOK_SECRET = ''  # Vacío para desarrollo local - se configura al crear webhook en producción
+STRIPE_TEST_MODE = True

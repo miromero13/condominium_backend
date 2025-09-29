@@ -19,7 +19,7 @@ from django.urls import path, include
 from django.shortcuts import redirect
 from drf_spectacular.views import SpectacularAPIView, SpectacularSwaggerView
 from user.views import UserViewSet, LoginAdminView, LoginCustomerView, LoginVisitorView, RegisterVisitorView, VerifyEmailView, CheckTokenView, ResidentViewSet
-from property.views import PropertyViewSet
+from property.views import PropertyViewSet, PetViewSet, VehicleViewSet, PropertyQuoteViewSet
 from condominium.views import (
     # ViewSets para modelos
     CommonAreaViewSet, GeneralRuleViewSet, 
@@ -27,6 +27,7 @@ from condominium.views import (
     # Views para información básica
     CondominiumInfoView, ContactInfoView
 )
+from service.views import PaymentViewSet, ServiceTypeViewSet, StripeWebhookView, StripeConfigView
 from rest_framework.routers import DefaultRouter
 
 def redirect_to_docs(request):
@@ -36,12 +37,19 @@ router = DefaultRouter()
 router.register(r'users', UserViewSet, basename='User')
 router.register(r'residents', ResidentViewSet, basename='Resident')
 router.register(r'properties', PropertyViewSet, basename='Property')
+router.register(r'pets', PetViewSet, basename='Pet')
+router.register(r'vehicles', VehicleViewSet, basename='Vehicle')
+router.register(r'property-quotes', PropertyQuoteViewSet, basename='PropertyQuote')
 
 # Condominium ViewSets
 router.register(r'common-areas', CommonAreaViewSet, basename='CommonArea')
 router.register(r'general-rules', GeneralRuleViewSet, basename='GeneralRule')
 router.register(r'common-area-rules', CommonAreaRuleViewSet, basename='CommonAreaRule')
 router.register(r'reservations', ReservationViewSet, basename='Reservation')
+
+# Service ViewSets
+router.register(r'payments', PaymentViewSet, basename='Payment')
+router.register(r'service-types', ServiceTypeViewSet, basename='ServiceType')
 
 urlpatterns = [
     path('admin/', admin.site.urls),
@@ -63,5 +71,9 @@ urlpatterns = [
     
     # Router URLs y Seeders
     path('api/', include(router.urls)),
-    path('api/seeder/', include('seeders.urls')),    
+    path('api/seeder/', include('seeders.urls')),
+    
+    # Service endpoints específicos
+    path('api/service/webhooks/stripe/', StripeWebhookView.as_view(), name='stripe_webhook'),
+    path('api/service/config/stripe/', StripeConfigView.as_view(), name='stripe_config'),    
 ]
