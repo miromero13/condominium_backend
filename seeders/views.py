@@ -3,12 +3,21 @@ from rest_framework.permissions import AllowAny
 from rest_framework.response import Response
 from rest_framework import status
 from user.models import User
-from property.models import Property
+from property.models import Property, Pet, Vehicle, PropertyQuote
 from condominium.models import CommonArea, GeneralRule, CommonAreaRule, Reservation
 from config.response import response
 from .user_seeder import UserSeeder
 from .property_seeder import PropertySeeder
 from .condominium_seeder import CondominiumSeeder
+from .pet_vehicle_seeder import PetSeeder, VehicleSeeder
+from user.models import User
+from property.models import Property, Pet, Vehicle
+from condominium.models import CommonArea, GeneralRule, CommonAreaRule, Reservation
+from config.response import response
+from .user_seeder import UserSeeder
+from .property_seeder import PropertySeeder
+from .condominium_seeder import CondominiumSeeder
+from .pet_vehicle_seeder import PetSeeder, VehicleSeeder
 
 
 @api_view(['GET'])
@@ -23,6 +32,8 @@ def seed_database(request):
         initial_user_count = User.objects.count()
         initial_property_count = Property.objects.count()
         initial_area_count = CommonArea.objects.count()
+        initial_pet_count = Pet.objects.count()
+        initial_vehicle_count = Vehicle.objects.count()
         
         # Ejecutar seeder de usuarios
         user_seeder = UserSeeder()
@@ -36,10 +47,20 @@ def seed_database(request):
         condominium_seeder = CondominiumSeeder()
         condominium_results = condominium_seeder.run()
         
+        # Ejecutar seeder de mascotas
+        pet_seeder = PetSeeder()
+        pet_results = pet_seeder.run()
+        
+        # Ejecutar seeder de vehículos
+        vehicle_seeder = VehicleSeeder()
+        vehicle_results = vehicle_seeder.run()
+        
         # Obtener conteos finales
         final_user_count = User.objects.count()
         final_property_count = Property.objects.count()
         final_area_count = CommonArea.objects.count()
+        final_pet_count = Pet.objects.count()
+        final_vehicle_count = Vehicle.objects.count()
         
         # Preparar response data
         response_data = {
@@ -47,13 +68,19 @@ def seed_database(request):
             'users_created': final_user_count - initial_user_count,
             'properties_created': final_property_count - initial_property_count,
             'areas_created': final_area_count - initial_area_count,
+            'pets_created': final_pet_count - initial_pet_count,
+            'vehicles_created': final_vehicle_count - initial_vehicle_count,
             'total_users': final_user_count,
             'total_properties': final_property_count,
             'total_areas': final_area_count,
+            'total_pets': final_pet_count,
+            'total_vehicles': final_vehicle_count,
             'seeder_details': {
                 'users': user_results,
                 'properties': property_results,
-                'condominium': condominium_results
+                'condominium': condominium_results,
+                'pets': pet_results,
+                'vehicles': vehicle_results
             }
         }
         
@@ -102,6 +129,19 @@ def seeder_status(request):
         properties_with_residents = Property.objects.filter(residents__isnull=False).distinct().count()
         properties_with_visitors = Property.objects.filter(visitors__isnull=False).distinct().count()
         
+        # Estadísticas de mascotas y vehículos
+        total_pets = Pet.objects.count()
+        pets_by_species = {}
+        for pet in Pet.objects.all():
+            species = pet.species
+            pets_by_species[species] = pets_by_species.get(species, 0) + 1
+        
+        total_vehicles = Vehicle.objects.count()
+        vehicles_by_type = {}
+        for vehicle in Vehicle.objects.all():
+            vehicle_type = vehicle.get_type_vehicle_display()
+            vehicles_by_type[vehicle_type] = vehicles_by_type.get(vehicle_type, 0) + 1
+        
         # Estadísticas del condominio
         total_common_areas = CommonArea.objects.count()
         active_common_areas = CommonArea.objects.filter(is_active=True).count()
@@ -114,6 +154,8 @@ def seeder_status(request):
         response_data = {
             'total_users': total_users,
             'total_properties': total_properties,
+            'total_pets': total_pets,
+            'total_vehicles': total_vehicles,
             'users_by_role': user_stats,
             'fixed_users': {
                 'admin_exists': admin_exists,
@@ -124,6 +166,14 @@ def seeder_status(request):
                 'with_owners': properties_with_owners,
                 'with_residents': properties_with_residents,
                 'with_visitors': properties_with_visitors
+            },
+            'pet_stats': {
+                'total': total_pets,
+                'by_species': pets_by_species
+            },
+            'vehicle_stats': {
+                'total': total_vehicles,
+                'by_type': vehicles_by_type
             },
             'condominium_stats': {
                 'common_areas': {
