@@ -48,11 +48,18 @@ pip install -r requirements.txt
 
 4. **Configura las variables de entorno**
 
-Asegúrate de tener configuradas las variables necesarias:
+Copia el archivo de ejemplo y configura tus variables:
 
 ```bash
-export PORT=8000
+cp .env.example .env
 ```
+
+Edita el archivo `.env` con tu configuración. Ver [ENV_SETUP.md](./ENV_SETUP.md) para más detalles.
+
+**Variables requeridas mínimas:**
+- `SECRET_KEY`: Clave secreta de Django
+- `DEBUG`: Modo debug (True para desarrollo)
+- Configuración de base de datos (`DB_*`)
 
 5. **Aplica migraciones**
 

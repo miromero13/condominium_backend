@@ -12,6 +12,7 @@ https://docs.djangoproject.com/en/5.2/ref/settings/
 
 from pathlib import Path
 from datetime import timedelta
+from decouple import config, Csv
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -21,10 +22,10 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/5.2/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'django-insecure-9@)z77kk4#_nfs)k8^z-wcs-b$16&&f@6ucyuiz!q9ydf-l(^j'
+SECRET_KEY = config('SECRET_KEY')
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = config('DEBUG', default=False, cast=bool)
 
 ALLOWED_HOSTS = []
 
@@ -108,15 +109,15 @@ WSGI_APPLICATION = 'config.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'condominium_db',
-        'USER': 'neondb_owner',
-        'PASSWORD': 'npg_R9d0NxtDbzAY',
-        'HOST': 'ep-curly-rain-aeeead3u-pooler.c-2.us-east-2.aws.neon.tech',
-        'PORT': '5432',
+        'ENGINE': config('DB_ENGINE', default='django.db.backends.sqlite3'),
+        'NAME': config('DB_NAME', default=BASE_DIR / 'db.sqlite3'),
+        'USER': config('DB_USER', default=''),
+        'PASSWORD': config('DB_PASSWORD', default=''),
+        'HOST': config('DB_HOST', default=''),
+        'PORT': config('DB_PORT', default=''),
         'OPTIONS': {
             'sslmode': 'require',
-        },
+        } if config('DB_ENGINE', default='') == 'django.db.backends.postgresql' else {},
     }
 }
 
@@ -170,20 +171,20 @@ STATIC_ROOT = BASE_DIR / 'staticfiles'
 ALLOWED_HOSTS = ['*']
 
 # Stripe Configuration
-STRIPE_PUBLISHABLE_KEY = 'pk_test_51PwuiM08hp2qIPTJ9P4c108993LSovebHw9lQQeABXF3zkN71Upef4jMuPMgLPjJDWOpL5N2I94cMtze0nOxg9IP00Jo5RqrJ7'
-STRIPE_SECRET_KEY = 'sk_test_51PwuiM08hp2qIPTJDoIkgHkDvPWLqYPGk245gQ3edAyzeRGCfJ46HnGGvYRkkWyhO0lswVk2KPnVxoeRxOniHCet00YFL5UAzW'
-STRIPE_WEBHOOK_SECRET = ''  # Vacío para desarrollo local - se configura al crear webhook en producción
-STRIPE_TEST_MODE = True
+STRIPE_PUBLISHABLE_KEY = config('STRIPE_PUBLISHABLE_KEY', default='')
+STRIPE_SECRET_KEY = config('STRIPE_SECRET_KEY', default='')
+STRIPE_WEBHOOK_SECRET = config('STRIPE_WEBHOOK_SECRET', default='')  # Vacío para desarrollo local - se configura al crear webhook en producción
+STRIPE_TEST_MODE = config('STRIPE_TEST_MODE', default=True, cast=bool)
 
 # Email Configuration with Mailtrap
 EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
-EMAIL_HOST = 'live.smtp.mailtrap.io'
-EMAIL_PORT = 587
-EMAIL_USE_TLS = True
-EMAIL_HOST_USER = 'api'  # Cambia esto por tu usuario de Mailtrap
-EMAIL_HOST_PASSWORD = ''  # Cambia esto por tu contraseña de Mailtrap
-DEFAULT_FROM_EMAIL = 'condominium@tudominio.com'
-EMAIL_USE_SSL = False
+EMAIL_HOST = config('EMAIL_HOST', default='localhost')
+EMAIL_PORT = config('EMAIL_PORT', default=587, cast=int)
+EMAIL_USE_TLS = config('EMAIL_USE_TLS', default=True, cast=bool)
+EMAIL_HOST_USER = config('EMAIL_HOST_USER', default='')
+EMAIL_HOST_PASSWORD = config('EMAIL_HOST_PASSWORD', default='')
+DEFAULT_FROM_EMAIL = config('DEFAULT_FROM_EMAIL', default='condominium@tudominio.com')
+EMAIL_USE_SSL = config('EMAIL_USE_SSL', default=False, cast=bool)
 
 # Para desarrollo local, puedes usar la configuración de testing de Mailtrap:
 # EMAIL_HOST = '2525'  # Sandbox SMTP port
