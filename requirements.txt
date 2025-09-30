@@ -34,3 +34,7 @@ typing_extensions==4.15.0
 tzdata==2025.2
 uritemplate==4.2.0
 urllib3==2.5.0
+kaggle==1.6.17
+Pillow==10.4.0
+boto3==1.35.36
+botocore==1.35.36

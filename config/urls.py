@@ -28,6 +28,9 @@ from condominium.views import (
     CondominiumInfoView, ContactInfoView
 )
 from service.views import PaymentViewSet, ServiceTypeViewSet, StripeWebhookView, StripeConfigView
+from ai_system.views import EventoAIViewSet
+from ai_system.frontend_views import detect_plate_frontend  
+
 from rest_framework.routers import DefaultRouter
 
 def redirect_to_docs(request):
@@ -46,8 +49,6 @@ router.register(r'common-areas', CommonAreaViewSet, basename='CommonArea')
 router.register(r'general-rules', GeneralRuleViewSet, basename='GeneralRule')
 router.register(r'common-area-rules', CommonAreaRuleViewSet, basename='CommonAreaRule')
 router.register(r'reservations', ReservationViewSet, basename='Reservation')
-router.register(r'accesos', AccesoViewSet)
-router.register(r'registros-camara',RegistroCamaraViewSet)
 router.register(r'eventos-ai', EventoAIViewSet)
 
 # Service ViewSets
@@ -80,4 +81,15 @@ urlpatterns = [
     # Service endpoints específicos
     path('api/service/webhooks/stripe/', StripeWebhookView.as_view(), name='stripe_webhook'),
     path('api/service/config/stripe/', StripeConfigView.as_view(), name='stripe_config'),    
+
+    # Endpoints específicos de detección de placas
+    # AI System APIs adicionales (comentados temporalmente)
+    # path('api/detectar-placa/', detectar_placa, name='detectar_placa'),
+    # path('api/comparar-placa/', comparar_placa, name='comparar_placa'),
+    # path('api/estadisticas/', estadisticas_ai, name='estadisticas_ai'),
+    # path('api/webhook/sns/', webhook_notificaciones, name='webhook_sns'),
+    
+    # Frontend endpoints
+    path('api/ai-system/detect-plate/', detect_plate_frontend, name='detect_plate_frontend'),
+
 ]

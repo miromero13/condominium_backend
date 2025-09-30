@@ -61,7 +61,6 @@ class PropertyViewSet(viewsets.ModelViewSet):
         try:
             queryset = Property.objects.all()
 
-            # Filtrado
             attr = request.query_params.get('attr')
             value = request.query_params.get('value')
             if attr and value and hasattr(Property, attr):
@@ -81,7 +80,6 @@ class PropertyViewSet(viewsets.ModelViewSet):
                     f"El campo '{attr}' no es válido para filtrado"
                 )
 
-            # Ordenamiento
             order = request.query_params.get('order')
             if order:
                 try:

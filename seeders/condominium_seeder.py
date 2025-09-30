@@ -228,7 +228,7 @@ class CondominiumSeeder:
                 'start_time': time(start_hour, 0),
                 'end_time': time(min(end_hour, 22), 0),
                 'purpose': f'Evento familiar - {area.name}',
-                'estimated_attendees': random.randint(5, area.capacity),
+                'estimated_attendees': random.randint(1, max(2, area.capacity)),
                 'status': random.choice(['pending', 'approved', 'approved', 'approved'])  # Más aprobadas
             }
             

@@ -49,6 +49,7 @@ INSTALLED_APPS = [
     'property',
     'condominium',
     'service',
+    'ai_system',
 ]
 
 REST_FRAMEWORK = {
@@ -192,3 +193,30 @@ EMAIL_USE_SSL = config('EMAIL_USE_SSL', default=False, cast=bool)
 # EMAIL_USE_TLS = True
 # EMAIL_HOST_USER = 'tu_username_sandbox'  # Tu username del sandbox
 # EMAIL_HOST_PASSWORD = 'tu_password_sandbox'  # Tu password del sandbox
+
+# =================== AWS CONFIGURATION ===================
+# Configuración para S3, Lambda, Rekognition y SNS
+
+AWS_ACCESS_KEY_ID = config('AWS_ACCESS_KEY_ID', default='')
+AWS_SECRET_ACCESS_KEY = config('AWS_SECRET_ACCESS_KEY', default='')
+AWS_STORAGE_BUCKET_NAME = config('AWS_STORAGE_BUCKET_NAME', default='smartcondominio-ai-nataly-2025')
+AWS_S3_REGION_NAME = config('AWS_S3_REGION_NAME', default='us-east-1')
+AWS_S3_FILE_OVERWRITE = False
+AWS_DEFAULT_ACL = None
+AWS_S3_VERIFY = True
+
+# Configuración de URLs y paths S3
+AWS_S3_CUSTOM_DOMAIN = f'{AWS_STORAGE_BUCKET_NAME}.s3.amazonaws.com'
+AWS_S3_OBJECT_PARAMETERS = {
+    'StorageClass': 'STANDARD_IA',  # Clase económica
+    'CacheControl': 'max-age=86400',
+}
+
+# SNS Configuration
+AWS_SNS_TOPIC_ARN = config('AWS_SNS_TOPIC_ARN', default='arn:aws:sns:us-east-1:570082719491:SmartCondominio-AI-Alerts')
+
+# Lambda Configuration  
+AWS_LAMBDA_FUNCTION_NAME = config('AWS_LAMBDA_FUNCTION_NAME', default='smartcondominio-ai-processor')
+
+# Rekognition Configuration
+AWS_REKOGNITION_REGION = AWS_S3_REGION_NAME
