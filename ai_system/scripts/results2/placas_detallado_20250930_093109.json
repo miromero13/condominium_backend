@@ -1,0 +1,3533 @@
+{
+  "estadisticas": {
+    "imagenes_procesadas": 660,
+    "placas_detectadas": 526,
+    "placas_validas": 362,
+    "errores": 0,
+    "inicio": "2025-09-30 09:22:49.243280",
+    "fin": "2025-09-30 09:31:09.450611",
+    "duracion": 500.207331
+  },
+  "resultados_detallados": [
+    {
+      "placa": "PGMN112",
+      "confianza": 99.92,
+      "texto_original": "PG MN112",
+      "imagen": "dataset-seeding/Cars1.png"
+    },
+    {
+      "placa": "TN37CS",
+      "confianza": 96.34,
+      "texto_original": "TN 37 CS",
+      "imagen": "dataset-seeding/Cars10.png"
+    },
+    {
+      "placa": "HR26BC5514",
+      "confianza": 96.92,
+      "texto_original": "HR 26 BC 5514",
+      "imagen": "dataset-seeding/Cars101.png"
+    },
+    {
+      "placa": "THANKYOU",
+      "confianza": 98.82,
+      "texto_original": "Thank you",
+      "imagen": "dataset-seeding/Cars103.png"
+    },
+    {
+      "placa": "NL60LXB",
+      "confianza": 94.99,
+      "texto_original": "NL60 LXB",
+      "imagen": "dataset-seeding/Cars104.png"
+    },
+    {
+      "placa": "STOMP",
+      "confianza": 98.36,
+      "texto_original": "stomp",
+      "imagen": "dataset-seeding/Cars105.png"
+    },
+    {
+      "placa": "MH20BQ20",
+      "confianza": 96.83,
+      "texto_original": "MH 20 BQ 20",
+      "imagen": "dataset-seeding/Cars107.png"
+    },
+    {
+      "placa": "CZI7KOD",
+      "confianza": 99.31,
+      "texto_original": "CZI7 KOD",
+      "imagen": "dataset-seeding/Cars109.png"
+    },
+    {
+      "placa": "WOR516K",
+      "confianza": 99.22,
+      "texto_original": "WOR 516K",
+      "imagen": "dataset-seeding/Cars11.png"
+    },
+    {
+      "placa": "MH207598",
+      "confianza": 97.22,
+      "texto_original": "MH 20 ЕЕ 7598",
+      "imagen": "dataset-seeding/Cars111.png"
+    },
+    {
+      "placa": "SHAKNBK",
+      "confianza": 99.89,
+      "texto_original": "SHAKNBK",
+      "imagen": "dataset-seeding/Cars112.png"
+    },
+    {
+      "placa": "NISSAN",
+      "confianza": 98.41,
+      "texto_original": "NISSAN",
+      "imagen": "dataset-seeding/Cars113.png"
+    },
+    {
+      "placa": "AP29BP",
+      "confianza": 98.79,
+      "texto_original": "AP 29 BP",
+      "imagen": "dataset-seeding/Cars114.png"
+    },
+    {
+      "placa": "M666YOB",
+      "confianza": 99.51,
+      "texto_original": "M666 YOB",
+      "imagen": "dataset-seeding/Cars115.png"
+    },
+    {
+      "placa": "MK3532",
+      "confianza": 90.05,
+      "texto_original": "MK-35-32",
+      "imagen": "dataset-seeding/Cars116.png"
+    },
+    {
+      "placa": "JA62UAR",
+      "confianza": 99.99,
+      "texto_original": "JA62 UAR",
+      "imagen": "dataset-seeding/Cars118.png"
+    },
+    {
+      "placa": "CARANOBIKE",
+      "confianza": 80.17,
+      "texto_original": "caranobike",
+      "imagen": "dataset-seeding/Cars119.png"
+    },
+    {
+      "placa": "MH12BG7237",
+      "confianza": 97.3,
+      "texto_original": "MH12BG7237",
+      "imagen": "dataset-seeding/Cars12.png"
+    },
+    {
+      "placa": "2228HM",
+      "confianza": 80.83,
+      "texto_original": "В 2228 HM",
+      "imagen": "dataset-seeding/Cars120.png"
+    },
+    {
+      "placa": "MANISA",
+      "confianza": 99.5,
+      "texto_original": "MANISA",
+      "imagen": "dataset-seeding/Cars122.png"
+    },
+    {
+      "placa": "HR26BC5514",
+      "confianza": 98.3,
+      "texto_original": "HR 26 BC 5514",
+      "imagen": "dataset-seeding/Cars123.png"
+    },
+    {
+      "placa": "GIFTS",
+      "confianza": 97.03,
+      "texto_original": "GIFTS",
+      "imagen": "dataset-seeding/Cars124.png"
+    },
+    {
+      "placa": "66887",
+      "confianza": 99.44,
+      "texto_original": "66887",
+      "imagen": "dataset-seeding/Cars125.png"
+    },
+    {
+      "placa": "KA05MG1909",
+      "confianza": 89.67,
+      "texto_original": "KA 05MG1909",
+      "imagen": "dataset-seeding/Cars126.png"
+    },
+    {
+      "placa": "OX65AWD",
+      "confianza": 87.81,
+      "texto_original": "OX65 AWD",
+      "imagen": "dataset-seeding/Cars128.png"
+    },
+    {
+      "placa": "VIRGINIA",
+      "confianza": 98.27,
+      "texto_original": "VIRGINIA",
+      "imagen": "dataset-seeding/Cars129.png"
+    },
+    {
+      "placa": "BJR216",
+      "confianza": 99.43,
+      "texto_original": "BJR216",
+      "imagen": "dataset-seeding/Cars13.png"
+    },
+    {
+      "placa": "COOPER",
+      "confianza": 79.26,
+      "texto_original": "COOPER",
+      "imagen": "dataset-seeding/Cars130.png"
+    },
+    {
+      "placa": "AP29BP",
+      "confianza": 98.79,
+      "texto_original": "AP 29 BP",
+      "imagen": "dataset-seeding/Cars131.png"
+    },
+    {
+      "placa": "ALLROAD",
+      "confianza": 93.93,
+      "texto_original": "allroad",
+      "imagen": "dataset-seeding/Cars133.png"
+    },
+    {
+      "placa": "L19TLC",
+      "confianza": 83.62,
+      "texto_original": "L19 TLC",
+      "imagen": "dataset-seeding/Cars134.png"
+    },
+    {
+      "placa": "TOYOTA",
+      "confianza": 97.89,
+      "texto_original": "TOYOTA",
+      "imagen": "dataset-seeding/Cars135.png"
+    },
+    {
+      "placa": "DUBAI15474",
+      "confianza": 80.59,
+      "texto_original": "DUBAI دبي 15474",
+      "imagen": "dataset-seeding/Cars136.png"
+    },
+    {
+      "placa": "TN02BL",
+      "confianza": 98.81,
+      "texto_original": "TN 02 BL",
+      "imagen": "dataset-seeding/Cars138.png"
+    },
+    {
+      "placa": "HEATHROW",
+      "confianza": 98.13,
+      "texto_original": "Heathrow",
+      "imagen": "dataset-seeding/Cars139.png"
+    },
+    {
+      "placa": "ALR486",
+      "confianza": 100.0,
+      "texto_original": "ALR 486",
+      "imagen": "dataset-seeding/Cars14.png"
+    },
+    {
+      "placa": "CH01AN0001",
+      "confianza": 98.33,
+      "texto_original": "CH01AN0001",
+      "imagen": "dataset-seeding/Cars140.png"
+    },
+    {
+      "placa": "IRFU3348",
+      "confianza": 83.25,
+      "texto_original": "IRF U3348",
+      "imagen": "dataset-seeding/Cars143.png"
+    },
+    {
+      "placa": "PEN15",
+      "confianza": 99.72,
+      "texto_original": "PEN 15",
+      "imagen": "dataset-seeding/Cars144.png"
+    },
+    {
+      "placa": "CH01AN0001",
+      "confianza": 98.33,
+      "texto_original": "CH01AN0001",
+      "imagen": "dataset-seeding/Cars145.png"
+    },
+    {
+      "placa": "KLG1CA2555",
+      "confianza": 91.19,
+      "texto_original": "KLG1CA2555",
+      "imagen": "dataset-seeding/Cars147.png"
+    },
+    {
+      "placa": "MH01BB550",
+      "confianza": 86.36,
+      "texto_original": "MH-01-BB-550",
+      "imagen": "dataset-seeding/Cars148.png"
+    },
+    {
+      "placa": "7VIG263",
+      "confianza": 98.97,
+      "texto_original": "7VIG263",
+      "imagen": "dataset-seeding/Cars149.png"
+    },
+    {
+      "placa": "TN21BY0166",
+      "confianza": 93.56,
+      "texto_original": "TN21BY0166",
+      "imagen": "dataset-seeding/Cars15.png"
+    },
+    {
+      "placa": "DL8CX4850",
+      "confianza": 96.77,
+      "texto_original": "DL8CX 48-50",
+      "imagen": "dataset-seeding/Cars150.png"
+    },
+    {
+      "placa": "DL3C8D5092",
+      "confianza": 92.02,
+      "texto_original": "DL 3 C8D 5092",
+      "imagen": "dataset-seeding/Cars151.png"
+    },
+    {
+      "placa": "DL49AK49",
+      "confianza": 98.47,
+      "texto_original": "DL49 AK49",
+      "imagen": "dataset-seeding/Cars152.png"
+    },
+    {
+      "placa": "MH20BQ20",
+      "confianza": 96.83,
+      "texto_original": "MH 20 BQ 20",
+      "imagen": "dataset-seeding/Cars153.png"
+    },
+    {
+      "placa": "MCB025",
+      "confianza": 92.29,
+      "texto_original": "MCB-025",
+      "imagen": "dataset-seeding/Cars155.png"
+    },
+    {
+      "placa": "PRIVATE",
+      "confianza": 99.57,
+      "texto_original": "PRIV ATE",
+      "imagen": "dataset-seeding/Cars156.png"
+    },
+    {
+      "placa": "PTB557K",
+      "confianza": 77.52,
+      "texto_original": "PTB557K",
+      "imagen": "dataset-seeding/Cars157.png"
+    },
+    {
+      "placa": "695299",
+      "confianza": 99.84,
+      "texto_original": "695299",
+      "imagen": "dataset-seeding/Cars158.png"
+    },
+    {
+      "placa": "DL7CN5617",
+      "confianza": 98.7,
+      "texto_original": "DL7C N 5617",
+      "imagen": "dataset-seeding/Cars159.png"
+    },
+    {
+      "placa": "M666YOB",
+      "confianza": 99.51,
+      "texto_original": "M666 YOB",
+      "imagen": "dataset-seeding/Cars161.png"
+    },
+    {
+      "placa": "LR33TEE",
+      "confianza": 99.79,
+      "texto_original": "LR33 TEE",
+      "imagen": "dataset-seeding/Cars163.png"
+    },
+    {
+      "placa": "OCEANSTATE",
+      "confianza": 92.32,
+      "texto_original": "Ocean State",
+      "imagen": "dataset-seeding/Cars164.png"
+    },
+    {
+      "placa": "TN21AU1153",
+      "confianza": 94.6,
+      "texto_original": "TN21 AU 1153",
+      "imagen": "dataset-seeding/Cars165.png"
+    },
+    {
+      "placa": "IMACAR",
+      "confianza": 97.52,
+      "texto_original": "IM A CAR",
+      "imagen": "dataset-seeding/Cars166.png"
+    },
+    {
+      "placa": "15LK10898",
+      "confianza": 99.23,
+      "texto_original": "15-LK-10898",
+      "imagen": "dataset-seeding/Cars167.png"
+    },
+    {
+      "placa": "PRIVATE",
+      "confianza": 99.57,
+      "texto_original": "PRIV ATE",
+      "imagen": "dataset-seeding/Cars169.png"
+    },
+    {
+      "placa": "INDIACAR",
+      "confianza": 96.94,
+      "texto_original": "INDIACAR",
+      "imagen": "dataset-seeding/Cars17.png"
+    },
+    {
+      "placa": "BJR216",
+      "confianza": 99.43,
+      "texto_original": "BJR216",
+      "imagen": "dataset-seeding/Cars171.png"
+    },
+    {
+      "placa": "RANGEROVER",
+      "confianza": 97.39,
+      "texto_original": "RANGE ROVER",
+      "imagen": "dataset-seeding/Cars172.png"
+    },
+    {
+      "placa": "ITSTHELAW",
+      "confianza": 100.0,
+      "texto_original": "ITS THE LAW",
+      "imagen": "dataset-seeding/Cars173.png"
+    },
+    {
+      "placa": "DL1N4268",
+      "confianza": 97.6,
+      "texto_original": "DL 1N 42-68",
+      "imagen": "dataset-seeding/Cars175.png"
+    },
+    {
+      "placa": "CALIFORNIA",
+      "confianza": 99.1,
+      "texto_original": "California",
+      "imagen": "dataset-seeding/Cars176.png"
+    },
+    {
+      "placa": "52292Z",
+      "confianza": 99.12,
+      "texto_original": "522 92Z",
+      "imagen": "dataset-seeding/Cars178.png"
+    },
+    {
+      "placa": "HAPPIER",
+      "confianza": 99.61,
+      "texto_original": "HAPPIER",
+      "imagen": "dataset-seeding/Cars179.png"
+    },
+    {
+      "placa": "M666YOB",
+      "confianza": 99.51,
+      "texto_original": "M666 YOB",
+      "imagen": "dataset-seeding/Cars18.png"
+    },
+    {
+      "placa": "NISSAN",
+      "confianza": 98.41,
+      "texto_original": "NISSAN",
+      "imagen": "dataset-seeding/Cars180.png"
+    },
+    {
+      "placa": "BRIT0001",
+      "confianza": 100.0,
+      "texto_original": "BRIT 0001",
+      "imagen": "dataset-seeding/Cars183.png"
+    },
+    {
+      "placa": "SWIFT",
+      "confianza": 98.43,
+      "texto_original": "SWIFT",
+      "imagen": "dataset-seeding/Cars184.png"
+    },
+    {
+      "placa": "MF9000",
+      "confianza": 99.3,
+      "texto_original": "MF-90-00",
+      "imagen": "dataset-seeding/Cars185.png"
+    },
+    {
+      "placa": "26SPF4",
+      "confianza": 91.09,
+      "texto_original": "26-SPF-4",
+      "imagen": "dataset-seeding/Cars186.png"
+    },
+    {
+      "placa": "ALR486",
+      "confianza": 100.0,
+      "texto_original": "ALR 486",
+      "imagen": "dataset-seeding/Cars187.png"
+    },
+    {
+      "placa": "CH01AN0001",
+      "confianza": 98.33,
+      "texto_original": "CH01AN0001",
+      "imagen": "dataset-seeding/Cars189.png"
+    },
+    {
+      "placa": "ELECTRIC",
+      "confianza": 99.23,
+      "texto_original": "ELECTRIC",
+      "imagen": "dataset-seeding/Cars19.png"
+    },
+    {
+      "placa": "KA03AB3380",
+      "confianza": 93.37,
+      "texto_original": "-KA 03 AB 3380",
+      "imagen": "dataset-seeding/Cars191.png"
+    },
+    {
+      "placa": "E4GLE",
+      "confianza": 98.72,
+      "texto_original": "E4 GLE",
+      "imagen": "dataset-seeding/Cars192.png"
+    },
+    {
+      "placa": "889VSM",
+      "confianza": 93.45,
+      "texto_original": "889-VSM",
+      "imagen": "dataset-seeding/Cars193.png"
+    },
+    {
+      "placa": "LR33TEE",
+      "confianza": 99.79,
+      "texto_original": "LR33 TEE",
+      "imagen": "dataset-seeding/Cars197.png"
+    },
+    {
+      "placa": "KA03AB3380",
+      "confianza": 93.37,
+      "texto_original": "-KA 03 AB 3380",
+      "imagen": "dataset-seeding/Cars200.png"
+    },
+    {
+      "placa": "LR33TEE",
+      "confianza": 99.79,
+      "texto_original": "LR33 TEE",
+      "imagen": "dataset-seeding/Cars201.png"
+    },
+    {
+      "placa": "CZI7KOD",
+      "confianza": 99.31,
+      "texto_original": "CZI7 KOD",
+      "imagen": "dataset-seeding/Cars203.png"
+    },
+    {
+      "placa": "LIVIN",
+      "confianza": 99.56,
+      "texto_original": "Livin",
+      "imagen": "dataset-seeding/Cars204.png"
+    },
+    {
+      "placa": "NOTACOP",
+      "confianza": 99.17,
+      "texto_original": "NOTACOP",
+      "imagen": "dataset-seeding/Cars205.png"
+    },
+    {
+      "placa": "HR26BU0380",
+      "confianza": 98.41,
+      "texto_original": "HR 26 BU 0380",
+      "imagen": "dataset-seeding/Cars206.png"
+    },
+    {
+      "placa": "MYOTHERCAR",
+      "confianza": 99.44,
+      "texto_original": "MY OTHER CAR",
+      "imagen": "dataset-seeding/Cars207.png"
+    },
+    {
+      "placa": "FUSION",
+      "confianza": 95.99,
+      "texto_original": "FUSION",
+      "imagen": "dataset-seeding/Cars208.png"
+    },
+    {
+      "placa": "DUBAI",
+      "confianza": 99.07,
+      "texto_original": "DUBAI دبي",
+      "imagen": "dataset-seeding/Cars211.png"
+    },
+    {
+      "placa": "KL65H4383",
+      "confianza": 98.88,
+      "texto_original": "KL 65 H 4383",
+      "imagen": "dataset-seeding/Cars212.png"
+    },
+    {
+      "placa": "CU5600",
+      "confianza": 99.43,
+      "texto_original": "cu 5600",
+      "imagen": "dataset-seeding/Cars215.png"
+    },
+    {
+      "placa": "VIRGINIA",
+      "confianza": 98.27,
+      "texto_original": "VIRGINIA",
+      "imagen": "dataset-seeding/Cars216.png"
+    },
+    {
+      "placa": "ELECTRIC",
+      "confianza": 99.23,
+      "texto_original": "ELECTRIC",
+      "imagen": "dataset-seeding/Cars217.png"
+    },
+    {
+      "placa": "MOREPOLICE",
+      "confianza": 78.28,
+      "texto_original": "MORE Police",
+      "imagen": "dataset-seeding/Cars218.png"
+    },
+    {
+      "placa": "YAMRAJ",
+      "confianza": 98.16,
+      "texto_original": "YAMRAJ",
+      "imagen": "dataset-seeding/Cars22.png"
+    },
+    {
+      "placa": "A055585",
+      "confianza": 75.06,
+      "texto_original": "A 055585",
+      "imagen": "dataset-seeding/Cars220.png"
+    },
+    {
+      "placa": "26SPF4",
+      "confianza": 91.09,
+      "texto_original": "26-SPF-4",
+      "imagen": "dataset-seeding/Cars222.png"
+    },
+    {
+      "placa": "VHA800",
+      "confianza": 98.35,
+      "texto_original": "VHA 800",
+      "imagen": "dataset-seeding/Cars223.png"
+    },
+    {
+      "placa": "LEFTTODIE",
+      "confianza": 99.47,
+      "texto_original": "LEFT TO DIE",
+      "imagen": "dataset-seeding/Cars224.png"
+    },
+    {
+      "placa": "JA62UAR",
+      "confianza": 99.99,
+      "texto_original": "JA62 UAR",
+      "imagen": "dataset-seeding/Cars225.png"
+    },
+    {
+      "placa": "TN19S4523",
+      "confianza": 98.12,
+      "texto_original": "TN 19 S 4523",
+      "imagen": "dataset-seeding/Cars226.png"
+    },
+    {
+      "placa": "DWSPL",
+      "confianza": 98.42,
+      "texto_original": "DWSPL",
+      "imagen": "dataset-seeding/Cars227.png"
+    },
+    {
+      "placa": "LR33TEE",
+      "confianza": 99.79,
+      "texto_original": "LR33 TEE",
+      "imagen": "dataset-seeding/Cars230.png"
+    },
+    {
+      "placa": "GBI8TCE",
+      "confianza": 98.27,
+      "texto_original": "GBI8 TCE",
+      "imagen": "dataset-seeding/Cars231.png"
+    },
+    {
+      "placa": "DUBAI",
+      "confianza": 75.69,
+      "texto_original": "DUBAI ديب",
+      "imagen": "dataset-seeding/Cars232.png"
+    },
+    {
+      "placa": "UP16TC1366",
+      "confianza": 87.4,
+      "texto_original": "UP 16TC1366",
+      "imagen": "dataset-seeding/Cars233.png"
+    },
+    {
+      "placa": "IM4U555",
+      "confianza": 99.82,
+      "texto_original": "IM4U 555",
+      "imagen": "dataset-seeding/Cars234.png"
+    },
+    {
+      "placa": "POOSILVR",
+      "confianza": 90.84,
+      "texto_original": "POOSILVR",
+      "imagen": "dataset-seeding/Cars237.png"
+    },
+    {
+      "placa": "15LK10898",
+      "confianza": 99.23,
+      "texto_original": "15-LK-10898",
+      "imagen": "dataset-seeding/Cars239.png"
+    },
+    {
+      "placa": "HR26BC5514",
+      "confianza": 96.92,
+      "texto_original": "HR 26 BC 5514",
+      "imagen": "dataset-seeding/Cars24.png"
+    },
+    {
+      "placa": "1CDAF",
+      "confianza": 98.51,
+      "texto_original": "1 CD AF",
+      "imagen": "dataset-seeding/Cars240.png"
+    },
+    {
+      "placa": "3SAM123",
+      "confianza": 99.84,
+      "texto_original": "3SAM123",
+      "imagen": "dataset-seeding/Cars241.png"
+    },
+    {
+      "placa": "COOPER",
+      "confianza": 79.26,
+      "texto_original": "COOPER",
+      "imagen": "dataset-seeding/Cars245.png"
+    },
+    {
+      "placa": "TS009TC268",
+      "confianza": 97.25,
+      "texto_original": "TS 009 TC 268",
+      "imagen": "dataset-seeding/Cars246.png"
+    },
+    {
+      "placa": "TN37CS",
+      "confianza": 96.34,
+      "texto_original": "TN 37 CS",
+      "imagen": "dataset-seeding/Cars247.png"
+    },
+    {
+      "placa": "TEAMBHPCOM",
+      "confianza": 94.39,
+      "texto_original": "Team- BHP.com",
+      "imagen": "dataset-seeding/Cars248.png"
+    },
+    {
+      "placa": "KA42N0852",
+      "confianza": 97.64,
+      "texto_original": "KA-42-N-0852",
+      "imagen": "dataset-seeding/Cars249.png"
+    },
+    {
+      "placa": "BYHM136",
+      "confianza": 94.46,
+      "texto_original": "BYHM-136",
+      "imagen": "dataset-seeding/Cars25.png"
+    },
+    {
+      "placa": "PGMN112",
+      "confianza": 99.92,
+      "texto_original": "PG MN112",
+      "imagen": "dataset-seeding/Cars250.png"
+    },
+    {
+      "placa": "H982FKL",
+      "confianza": 95.12,
+      "texto_original": "H982FKL",
+      "imagen": "dataset-seeding/Cars251.png"
+    },
+    {
+      "placa": "DAN54P",
+      "confianza": 99.64,
+      "texto_original": "DAN 54P",
+      "imagen": "dataset-seeding/Cars252.png"
+    },
+    {
+      "placa": "GOT2P00",
+      "confianza": 78.95,
+      "texto_original": "GOT2P00",
+      "imagen": "dataset-seeding/Cars254.png"
+    },
+    {
+      "placa": "THRUSTZONE",
+      "confianza": 98.64,
+      "texto_original": "Thrust Zone",
+      "imagen": "dataset-seeding/Cars255.png"
+    },
+    {
+      "placa": "KAOZAC5957",
+      "confianza": 95.39,
+      "texto_original": "KA OZ AC 5957",
+      "imagen": "dataset-seeding/Cars258.png"
+    },
+    {
+      "placa": "MH207598",
+      "confianza": 97.22,
+      "texto_original": "MH 20 ЕЕ 7598",
+      "imagen": "dataset-seeding/Cars259.png"
+    },
+    {
+      "placa": "TOYOTA",
+      "confianza": 97.89,
+      "texto_original": "TOYOTA",
+      "imagen": "dataset-seeding/Cars26.png"
+    },
+    {
+      "placa": "STOMP",
+      "confianza": 98.17,
+      "texto_original": "stomp",
+      "imagen": "dataset-seeding/Cars260.png"
+    },
+    {
+      "placa": "TS08ER1643",
+      "confianza": 87.51,
+      "texto_original": "TS08ER1643",
+      "imagen": "dataset-seeding/Cars261.png"
+    },
+    {
+      "placa": "1CTAH8N",
+      "confianza": 71.2,
+      "texto_original": "1CTA H8N",
+      "imagen": "dataset-seeding/Cars262.png"
+    },
+    {
+      "placa": "MH024545",
+      "confianza": 96.12,
+      "texto_original": "MH 02 св 4545",
+      "imagen": "dataset-seeding/Cars263.png"
+    },
+    {
+      "placa": "FAMU2010",
+      "confianza": 99.53,
+      "texto_original": "FAMU 2010",
+      "imagen": "dataset-seeding/Cars264.png"
+    },
+    {
+      "placa": "M771276",
+      "confianza": 88.27,
+      "texto_original": "M 771276",
+      "imagen": "dataset-seeding/Cars265.png"
+    },
+    {
+      "placa": "CU5600",
+      "confianza": 99.43,
+      "texto_original": "cu 5600",
+      "imagen": "dataset-seeding/Cars266.png"
+    },
+    {
+      "placa": "DA7222",
+      "confianza": 89.59,
+      "texto_original": "DA 7222",
+      "imagen": "dataset-seeding/Cars267.png"
+    },
+    {
+      "placa": "DZI7YXR",
+      "confianza": 99.45,
+      "texto_original": "DZI7 YXR",
+      "imagen": "dataset-seeding/Cars27.png"
+    },
+    {
+      "placa": "123RF",
+      "confianza": 96.43,
+      "texto_original": "123RF",
+      "imagen": "dataset-seeding/Cars270.png"
+    },
+    {
+      "placa": "YESBOSS",
+      "confianza": 99.22,
+      "texto_original": "YES BOSS",
+      "imagen": "dataset-seeding/Cars271.png"
+    },
+    {
+      "placa": "RX61GDU",
+      "confianza": 93.15,
+      "texto_original": "RX61 GDU",
+      "imagen": "dataset-seeding/Cars272.png"
+    },
+    {
+      "placa": "BRIT0001",
+      "confianza": 100.0,
+      "texto_original": "BRIT 0001",
+      "imagen": "dataset-seeding/Cars273.png"
+    },
+    {
+      "placa": "MANISA",
+      "confianza": 99.5,
+      "texto_original": "MANISA",
+      "imagen": "dataset-seeding/Cars274.png"
+    },
+    {
+      "placa": "BATMAN",
+      "confianza": 72.79,
+      "texto_original": "BATMAN",
+      "imagen": "dataset-seeding/Cars275.png"
+    },
+    {
+      "placa": "CZI7KOD",
+      "confianza": 99.31,
+      "texto_original": "CZI7 KOD",
+      "imagen": "dataset-seeding/Cars276.png"
+    },
+    {
+      "placa": "SINGER",
+      "confianza": 98.71,
+      "texto_original": "SINGER",
+      "imagen": "dataset-seeding/Cars277.png"
+    },
+    {
+      "placa": "TOYOTA",
+      "confianza": 98.02,
+      "texto_original": "TOYOTA",
+      "imagen": "dataset-seeding/Cars279.png"
+    },
+    {
+      "placa": "AP11AM091",
+      "confianza": 86.13,
+      "texto_original": "AP11 AM 0-91",
+      "imagen": "dataset-seeding/Cars28.png"
+    },
+    {
+      "placa": "MH01DB0001",
+      "confianza": 98.82,
+      "texto_original": "MH 01 DB 0001",
+      "imagen": "dataset-seeding/Cars281.png"
+    },
+    {
+      "placa": "VIVEK",
+      "confianza": 87.83,
+      "texto_original": "VIVEK",
+      "imagen": "dataset-seeding/Cars283.png"
+    },
+    {
+      "placa": "COOPER",
+      "confianza": 79.26,
+      "texto_original": "COOPER",
+      "imagen": "dataset-seeding/Cars285.png"
+    },
+    {
+      "placa": "MIDLYPH",
+      "confianza": 95.65,
+      "texto_original": "MIDLYPH",
+      "imagen": "dataset-seeding/Cars286.png"
+    },
+    {
+      "placa": "DL7CN5617",
+      "confianza": 98.7,
+      "texto_original": "DL7C N 5617",
+      "imagen": "dataset-seeding/Cars287.png"
+    },
+    {
+      "placa": "BATMAN",
+      "confianza": 72.79,
+      "texto_original": "BATMAN",
+      "imagen": "dataset-seeding/Cars288.png"
+    },
+    {
+      "placa": "SOV8199",
+      "confianza": 88.12,
+      "texto_original": "S OV 8199",
+      "imagen": "dataset-seeding/Cars290.png"
+    },
+    {
+      "placa": "KA02A6579",
+      "confianza": 90.28,
+      "texto_original": "KA-02 A-6579",
+      "imagen": "dataset-seeding/Cars291.png"
+    },
+    {
+      "placa": "AK0188",
+      "confianza": 92.21,
+      "texto_original": "AK 01 88",
+      "imagen": "dataset-seeding/Cars292.png"
+    },
+    {
+      "placa": "GBI8TCE",
+      "confianza": 98.27,
+      "texto_original": "GBI8 TCE",
+      "imagen": "dataset-seeding/Cars293.png"
+    },
+    {
+      "placa": "TEAMBHPCOM",
+      "confianza": 96.65,
+      "texto_original": "Team-BHP.com",
+      "imagen": "dataset-seeding/Cars294.png"
+    },
+    {
+      "placa": "Y8544",
+      "confianza": 78.77,
+      "texto_original": "Y 85-44",
+      "imagen": "dataset-seeding/Cars295.png"
+    },
+    {
+      "placa": "JETTA",
+      "confianza": 97.8,
+      "texto_original": "JETTA",
+      "imagen": "dataset-seeding/Cars296.png"
+    },
+    {
+      "placa": "IM4U555",
+      "confianza": 99.82,
+      "texto_original": "IM4U 555",
+      "imagen": "dataset-seeding/Cars297.png"
+    },
+    {
+      "placa": "LAMBO",
+      "confianza": 100.0,
+      "texto_original": "LAMBO",
+      "imagen": "dataset-seeding/Cars298.png"
+    },
+    {
+      "placa": "SDN7484U",
+      "confianza": 98.96,
+      "texto_original": "SDN7484U",
+      "imagen": "dataset-seeding/Cars299.png"
+    },
+    {
+      "placa": "DZI7YXR",
+      "confianza": 99.45,
+      "texto_original": "DZI7 YXR",
+      "imagen": "dataset-seeding/Cars3.png"
+    },
+    {
+      "placa": "STOMP",
+      "confianza": 98.36,
+      "texto_original": "stomp",
+      "imagen": "dataset-seeding/Cars30.png"
+    },
+    {
+      "placa": "TOYOTA",
+      "confianza": 97.89,
+      "texto_original": "TOYOTA",
+      "imagen": "dataset-seeding/Cars300.png"
+    },
+    {
+      "placa": "G526JHD",
+      "confianza": 99.92,
+      "texto_original": "G526 JHD",
+      "imagen": "dataset-seeding/Cars301.png"
+    },
+    {
+      "placa": "INNOVA",
+      "confianza": 98.27,
+      "texto_original": "INNOVA",
+      "imagen": "dataset-seeding/Cars302.png"
+    },
+    {
+      "placa": "HNYCHIL3",
+      "confianza": 99.29,
+      "texto_original": "HNYCHIL3",
+      "imagen": "dataset-seeding/Cars304.png"
+    },
+    {
+      "placa": "COMSG",
+      "confianza": 97.03,
+      "texto_original": ".com.sg",
+      "imagen": "dataset-seeding/Cars305.png"
+    },
+    {
+      "placa": "LAWYER",
+      "confianza": 99.61,
+      "texto_original": "LAWYER",
+      "imagen": "dataset-seeding/Cars306.png"
+    },
+    {
+      "placa": "M906090K",
+      "confianza": 93.6,
+      "texto_original": "M-90 60 90-K",
+      "imagen": "dataset-seeding/Cars307.png"
+    },
+    {
+      "placa": "HR26BC5514",
+      "confianza": 98.3,
+      "texto_original": "HR 26 BC 5514",
+      "imagen": "dataset-seeding/Cars308.png"
+    },
+    {
+      "placa": "ADIDAS",
+      "confianza": 84.79,
+      "texto_original": "adidas",
+      "imagen": "dataset-seeding/Cars309.png"
+    },
+    {
+      "placa": "4GETOIL",
+      "confianza": 99.05,
+      "texto_original": "4GET OIL",
+      "imagen": "dataset-seeding/Cars310.png"
+    },
+    {
+      "placa": "TN21AT8349",
+      "confianza": 92.96,
+      "texto_original": "TN21AT8349",
+      "imagen": "dataset-seeding/Cars311.png"
+    },
+    {
+      "placa": "PUI8BES",
+      "confianza": 93.94,
+      "texto_original": "PUI8 BES",
+      "imagen": "dataset-seeding/Cars312.png"
+    },
+    {
+      "placa": "NBEYOND",
+      "confianza": 98.86,
+      "texto_original": "NBEYOND",
+      "imagen": "dataset-seeding/Cars313.png"
+    },
+    {
+      "placa": "6PIV728",
+      "confianza": 99.74,
+      "texto_original": "6PIV728",
+      "imagen": "dataset-seeding/Cars314.png"
+    },
+    {
+      "placa": "JERSEY",
+      "confianza": 98.81,
+      "texto_original": "JERSEY",
+      "imagen": "dataset-seeding/Cars315.png"
+    },
+    {
+      "placa": "MH02BB2",
+      "confianza": 86.72,
+      "texto_original": "MH 02 BB 2",
+      "imagen": "dataset-seeding/Cars316.png"
+    },
+    {
+      "placa": "HR26BC5514",
+      "confianza": 96.92,
+      "texto_original": "HR 26 BC 5514",
+      "imagen": "dataset-seeding/Cars317.png"
+    },
+    {
+      "placa": "ALR486",
+      "confianza": 100.0,
+      "texto_original": "ALR 486",
+      "imagen": "dataset-seeding/Cars318.png"
+    },
+    {
+      "placa": "FALLYOU",
+      "confianza": 99.25,
+      "texto_original": "FALLYOU",
+      "imagen": "dataset-seeding/Cars319.png"
+    },
+    {
+      "placa": "MANISA",
+      "confianza": 99.5,
+      "texto_original": "MANISA",
+      "imagen": "dataset-seeding/Cars32.png"
+    },
+    {
+      "placa": "LOLOIL",
+      "confianza": 97.67,
+      "texto_original": "LOL OIL",
+      "imagen": "dataset-seeding/Cars321.png"
+    },
+    {
+      "placa": "TN99F2378",
+      "confianza": 99.16,
+      "texto_original": "TN 99 F 2378",
+      "imagen": "dataset-seeding/Cars323.png"
+    },
+    {
+      "placa": "DL8CX4850",
+      "confianza": 96.77,
+      "texto_original": "DL8CX 48-50",
+      "imagen": "dataset-seeding/Cars326.png"
+    },
+    {
+      "placa": "PGMN112",
+      "confianza": 99.92,
+      "texto_original": "PG MN112",
+      "imagen": "dataset-seeding/Cars327.png"
+    },
+    {
+      "placa": "IM4U555",
+      "confianza": 99.82,
+      "texto_original": "IM4U 555",
+      "imagen": "dataset-seeding/Cars328.png"
+    },
+    {
+      "placa": "OX65AWD",
+      "confianza": 87.81,
+      "texto_original": "OX65 AWD",
+      "imagen": "dataset-seeding/Cars33.png"
+    },
+    {
+      "placa": "DZI7YXR",
+      "confianza": 99.45,
+      "texto_original": "DZI7 YXR",
+      "imagen": "dataset-seeding/Cars332.png"
+    },
+    {
+      "placa": "THRUSTZONE",
+      "confianza": 98.64,
+      "texto_original": "Thrust Zone",
+      "imagen": "dataset-seeding/Cars333.png"
+    },
+    {
+      "placa": "EMCLUB7",
+      "confianza": 97.74,
+      "texto_original": "@emclub7",
+      "imagen": "dataset-seeding/Cars334.png"
+    },
+    {
+      "placa": "NOTACOP",
+      "confianza": 99.17,
+      "texto_original": "NOTACOP",
+      "imagen": "dataset-seeding/Cars335.png"
+    },
+    {
+      "placa": "DL8CX4850",
+      "confianza": 96.77,
+      "texto_original": "DL8CX 48-50",
+      "imagen": "dataset-seeding/Cars336.png"
+    },
+    {
+      "placa": "DL7CN5617",
+      "confianza": 98.7,
+      "texto_original": "DL7C N 5617",
+      "imagen": "dataset-seeding/Cars34.png"
+    },
+    {
+      "placa": "VX54FVL",
+      "confianza": 99.33,
+      "texto_original": "VX54 FVL",
+      "imagen": "dataset-seeding/Cars340.png"
+    },
+    {
+      "placa": "TS009TC268",
+      "confianza": 97.25,
+      "texto_original": "TS 009 TC 268",
+      "imagen": "dataset-seeding/Cars341.png"
+    },
+    {
+      "placa": "MANISA",
+      "confianza": 99.5,
+      "texto_original": "MANISA",
+      "imagen": "dataset-seeding/Cars342.png"
+    },
+    {
+      "placa": "SKIPGAS",
+      "confianza": 99.3,
+      "texto_original": "SKIP GAS",
+      "imagen": "dataset-seeding/Cars343.png"
+    },
+    {
+      "placa": "GOOGLE",
+      "confianza": 99.79,
+      "texto_original": "GOOGLE",
+      "imagen": "dataset-seeding/Cars344.png"
+    },
+    {
+      "placa": "INDIANA",
+      "confianza": 98.1,
+      "texto_original": "INDIANA",
+      "imagen": "dataset-seeding/Cars345.png"
+    },
+    {
+      "placa": "KA03AB3380",
+      "confianza": 93.37,
+      "texto_original": "-KA 03 AB 3380",
+      "imagen": "dataset-seeding/Cars346.png"
+    },
+    {
+      "placa": "ADIDAS",
+      "confianza": 84.79,
+      "texto_original": "adidas",
+      "imagen": "dataset-seeding/Cars348.png"
+    },
+    {
+      "placa": "PY56BXU",
+      "confianza": 98.83,
+      "texto_original": "PY56 BXU",
+      "imagen": "dataset-seeding/Cars349.png"
+    },
+    {
+      "placa": "AK0188",
+      "confianza": 92.21,
+      "texto_original": "AK 01 88",
+      "imagen": "dataset-seeding/Cars35.png"
+    },
+    {
+      "placa": "CB7R605",
+      "confianza": 99.77,
+      "texto_original": "CB7 R605",
+      "imagen": "dataset-seeding/Cars351.png"
+    },
+    {
+      "placa": "KA03AB3380",
+      "confianza": 93.37,
+      "texto_original": "-KA 03 AB 3380",
+      "imagen": "dataset-seeding/Cars353.png"
+    },
+    {
+      "placa": "ONTARIO",
+      "confianza": 96.31,
+      "texto_original": "ONTARIO",
+      "imagen": "dataset-seeding/Cars355.png"
+    },
+    {
+      "placa": "CALIFORNIA",
+      "confianza": 98.37,
+      "texto_original": "California",
+      "imagen": "dataset-seeding/Cars356.png"
+    },
+    {
+      "placa": "AK0188",
+      "confianza": 92.21,
+      "texto_original": "AK 01 88",
+      "imagen": "dataset-seeding/Cars357.png"
+    },
+    {
+      "placa": "PZ62FDX",
+      "confianza": 99.62,
+      "texto_original": "PZ62 FDX",
+      "imagen": "dataset-seeding/Cars358.png"
+    },
+    {
+      "placa": "R362GEL",
+      "confianza": 76.38,
+      "texto_original": "R362 GEL",
+      "imagen": "dataset-seeding/Cars359.png"
+    },
+    {
+      "placa": "MIDLYPH",
+      "confianza": 95.65,
+      "texto_original": "MIDLYPH",
+      "imagen": "dataset-seeding/Cars36.png"
+    },
+    {
+      "placa": "DX103",
+      "confianza": 88.88,
+      "texto_original": "DX103",
+      "imagen": "dataset-seeding/Cars360.png"
+    },
+    {
+      "placa": "NISSAN",
+      "confianza": 98.41,
+      "texto_original": "NISSAN",
+      "imagen": "dataset-seeding/Cars361.png"
+    },
+    {
+      "placa": "MATATAG",
+      "confianza": 97.3,
+      "texto_original": "MATATAG",
+      "imagen": "dataset-seeding/Cars363.png"
+    },
+    {
+      "placa": "DL3C8D5092",
+      "confianza": 92.02,
+      "texto_original": "DL 3 C8D 5092",
+      "imagen": "dataset-seeding/Cars364.png"
+    },
+    {
+      "placa": "TN21BZ0768",
+      "confianza": 98.65,
+      "texto_original": "TN 21 BZ 0768",
+      "imagen": "dataset-seeding/Cars365.png"
+    },
+    {
+      "placa": "MH20BQ20",
+      "confianza": 96.83,
+      "texto_original": "MH 20 BQ 20",
+      "imagen": "dataset-seeding/Cars366.png"
+    },
+    {
+      "placa": "GOOGLE",
+      "confianza": 99.79,
+      "texto_original": "GOOGLE",
+      "imagen": "dataset-seeding/Cars367.png"
+    },
+    {
+      "placa": "DUBAI",
+      "confianza": 75.69,
+      "texto_original": "DUBAI ديب",
+      "imagen": "dataset-seeding/Cars368.png"
+    },
+    {
+      "placa": "15LK10898",
+      "confianza": 99.23,
+      "texto_original": "15-LK-10898",
+      "imagen": "dataset-seeding/Cars369.png"
+    },
+    {
+      "placa": "VIRGINIA",
+      "confianza": 98.32,
+      "texto_original": "VIRGINIA",
+      "imagen": "dataset-seeding/Cars37.png"
+    },
+    {
+      "placa": "CH01AN0001",
+      "confianza": 98.33,
+      "texto_original": "CH01AN0001",
+      "imagen": "dataset-seeding/Cars370.png"
+    },
+    {
+      "placa": "HR26CE1485",
+      "confianza": 98.85,
+      "texto_original": "HR26CE1485",
+      "imagen": "dataset-seeding/Cars372.png"
+    },
+    {
+      "placa": "ROUFRAILS",
+      "confianza": 99.35,
+      "texto_original": "ROUF RAILS",
+      "imagen": "dataset-seeding/Cars373.png"
+    },
+    {
+      "placa": "S7JDW",
+      "confianza": 90.15,
+      "texto_original": "S7JDW",
+      "imagen": "dataset-seeding/Cars374.png"
+    },
+    {
+      "placa": "CARMELDAVE",
+      "confianza": 98.46,
+      "texto_original": "Carmel & Dave",
+      "imagen": "dataset-seeding/Cars375.png"
+    },
+    {
+      "placa": "2228HM",
+      "confianza": 80.83,
+      "texto_original": "В 2228 HM",
+      "imagen": "dataset-seeding/Cars376.png"
+    },
+    {
+      "placa": "BYHM136",
+      "confianza": 94.46,
+      "texto_original": "BYHM-136",
+      "imagen": "dataset-seeding/Cars377.png"
+    },
+    {
+      "placa": "TEAMBHPCOM",
+      "confianza": 91.76,
+      "texto_original": "Team-BHP com",
+      "imagen": "dataset-seeding/Cars378.png"
+    },
+    {
+      "placa": "OMGBCKY",
+      "confianza": 99.84,
+      "texto_original": "OMG BCKY",
+      "imagen": "dataset-seeding/Cars38.png"
+    },
+    {
+      "placa": "2089563",
+      "confianza": 99.64,
+      "texto_original": "20-89563",
+      "imagen": "dataset-seeding/Cars381.png"
+    },
+    {
+      "placa": "CRAIG",
+      "confianza": 99.68,
+      "texto_original": "CRAIG",
+      "imagen": "dataset-seeding/Cars382.png"
+    },
+    {
+      "placa": "YASSUZP",
+      "confianza": 73.79,
+      "texto_original": "YASSUZP",
+      "imagen": "dataset-seeding/Cars383.png"
+    },
+    {
+      "placa": "DX103",
+      "confianza": 98.93,
+      "texto_original": "DX 103",
+      "imagen": "dataset-seeding/Cars384.png"
+    },
+    {
+      "placa": "CALIFORNIA",
+      "confianza": 99.1,
+      "texto_original": "California",
+      "imagen": "dataset-seeding/Cars385.png"
+    },
+    {
+      "placa": "AB44887",
+      "confianza": 94.33,
+      "texto_original": "AB 44887",
+      "imagen": "dataset-seeding/Cars386.png"
+    },
+    {
+      "placa": "HR26AZ5927",
+      "confianza": 92.26,
+      "texto_original": "HR26 AZ 5927",
+      "imagen": "dataset-seeding/Cars387.png"
+    },
+    {
+      "placa": "HYUNDAI",
+      "confianza": 97.57,
+      "texto_original": "HYUNDAI",
+      "imagen": "dataset-seeding/Cars388.png"
+    },
+    {
+      "placa": "AB44887",
+      "confianza": 94.33,
+      "texto_original": "AB 44887",
+      "imagen": "dataset-seeding/Cars389.png"
+    },
+    {
+      "placa": "MH15BD8877",
+      "confianza": 96.85,
+      "texto_original": "MH15BD8877",
+      "imagen": "dataset-seeding/Cars39.png"
+    },
+    {
+      "placa": "SH759",
+      "confianza": 72.48,
+      "texto_original": "SH759",
+      "imagen": "dataset-seeding/Cars390.png"
+    },
+    {
+      "placa": "BKWL3324",
+      "confianza": 85.9,
+      "texto_original": "BKWL3 324",
+      "imagen": "dataset-seeding/Cars391.png"
+    },
+    {
+      "placa": "DZVG49",
+      "confianza": 98.94,
+      "texto_original": "DZV G49",
+      "imagen": "dataset-seeding/Cars392.png"
+    },
+    {
+      "placa": "M771276",
+      "confianza": 88.27,
+      "texto_original": "M 771276",
+      "imagen": "dataset-seeding/Cars393.png"
+    },
+    {
+      "placa": "MH12MR0613",
+      "confianza": 98.23,
+      "texto_original": "MH 12.MR 0613",
+      "imagen": "dataset-seeding/Cars394.png"
+    },
+    {
+      "placa": "1CTAH8N",
+      "confianza": 71.2,
+      "texto_original": "1CTA H8N",
+      "imagen": "dataset-seeding/Cars395.png"
+    },
+    {
+      "placa": "REAP3R",
+      "confianza": 99.6,
+      "texto_original": "REAP3R",
+      "imagen": "dataset-seeding/Cars396.png"
+    },
+    {
+      "placa": "TOYOTA",
+      "confianza": 98.02,
+      "texto_original": "TOYOTA",
+      "imagen": "dataset-seeding/Cars398.png"
+    },
+    {
+      "placa": "OX65AWD",
+      "confianza": 87.81,
+      "texto_original": "OX65 AWD",
+      "imagen": "dataset-seeding/Cars399.png"
+    },
+    {
+      "placa": "PUI8BES",
+      "confianza": 93.94,
+      "texto_original": "PUI8 BES",
+      "imagen": "dataset-seeding/Cars4.png"
+    },
+    {
+      "placa": "TOYOTA",
+      "confianza": 97.89,
+      "texto_original": "TOYOTA",
+      "imagen": "dataset-seeding/Cars40.png"
+    },
+    {
+      "placa": "889VSM",
+      "confianza": 93.45,
+      "texto_original": "889-VSM",
+      "imagen": "dataset-seeding/Cars400.png"
+    },
+    {
+      "placa": "HR26BC5514",
+      "confianza": 98.3,
+      "texto_original": "HR 26 BC 5514",
+      "imagen": "dataset-seeding/Cars401.png"
+    },
+    {
+      "placa": "COMSG",
+      "confianza": 97.03,
+      "texto_original": ".com.sg",
+      "imagen": "dataset-seeding/Cars402.png"
+    },
+    {
+      "placa": "067RAF",
+      "confianza": 96.39,
+      "texto_original": "067-RAF",
+      "imagen": "dataset-seeding/Cars403.png"
+    },
+    {
+      "placa": "ALLROAD",
+      "confianza": 93.93,
+      "texto_original": "allroad",
+      "imagen": "dataset-seeding/Cars406.png"
+    },
+    {
+      "placa": "TEAMBHFCOM",
+      "confianza": 73.83,
+      "texto_original": "Team-BHF.com",
+      "imagen": "dataset-seeding/Cars407.png"
+    },
+    {
+      "placa": "RK977AF",
+      "confianza": 99.66,
+      "texto_original": "RK 977AF",
+      "imagen": "dataset-seeding/Cars409.png"
+    },
+    {
+      "placa": "YNTZDBG",
+      "confianza": 99.21,
+      "texto_original": "YNTZDBG",
+      "imagen": "dataset-seeding/Cars41.png"
+    },
+    {
+      "placa": "VIRGINIA",
+      "confianza": 99.25,
+      "texto_original": "VIRGINIA",
+      "imagen": "dataset-seeding/Cars410.png"
+    },
+    {
+      "placa": "VIPER",
+      "confianza": 100.0,
+      "texto_original": "VIPER",
+      "imagen": "dataset-seeding/Cars411.png"
+    },
+    {
+      "placa": "LR33TEE",
+      "confianza": 99.79,
+      "texto_original": "LR33 TEE",
+      "imagen": "dataset-seeding/Cars412.png"
+    },
+    {
+      "placa": "T8544",
+      "confianza": 86.07,
+      "texto_original": "T 85-44",
+      "imagen": "dataset-seeding/Cars413.png"
+    },
+    {
+      "placa": "DRUNK",
+      "confianza": 98.43,
+      "texto_original": "DRUNK",
+      "imagen": "dataset-seeding/Cars414.png"
+    },
+    {
+      "placa": "MH12NE8922",
+      "confianza": 98.85,
+      "texto_original": "MH 12 NE 8922",
+      "imagen": "dataset-seeding/Cars415.png"
+    },
+    {
+      "placa": "172TMJ",
+      "confianza": 99.74,
+      "texto_original": "172 TMJ",
+      "imagen": "dataset-seeding/Cars416.png"
+    },
+    {
+      "placa": "ALAMY",
+      "confianza": 98.23,
+      "texto_original": "alamy",
+      "imagen": "dataset-seeding/Cars417.png"
+    },
+    {
+      "placa": "OX65AWD",
+      "confianza": 87.81,
+      "texto_original": "OX65 AWD",
+      "imagen": "dataset-seeding/Cars418.png"
+    },
+    {
+      "placa": "BYHM136",
+      "confianza": 94.46,
+      "texto_original": "BYHM-136",
+      "imagen": "dataset-seeding/Cars42.png"
+    },
+    {
+      "placa": "SKIPGAS",
+      "confianza": 99.3,
+      "texto_original": "SKIP GAS",
+      "imagen": "dataset-seeding/Cars420.png"
+    },
+    {
+      "placa": "OCTAVIA",
+      "confianza": 98.25,
+      "texto_original": "OCTAVIA",
+      "imagen": "dataset-seeding/Cars422.png"
+    },
+    {
+      "placa": "P3RVP",
+      "confianza": 96.2,
+      "texto_original": "P3RV P",
+      "imagen": "dataset-seeding/Cars423.png"
+    },
+    {
+      "placa": "G526JHD",
+      "confianza": 99.92,
+      "texto_original": "G526 JHD",
+      "imagen": "dataset-seeding/Cars425.png"
+    },
+    {
+      "placa": "CRAIG",
+      "confianza": 99.68,
+      "texto_original": "CRAIG",
+      "imagen": "dataset-seeding/Cars426.png"
+    },
+    {
+      "placa": "TEAMBHPCOM",
+      "confianza": 97.29,
+      "texto_original": "Team-BHP.com",
+      "imagen": "dataset-seeding/Cars427.png"
+    },
+    {
+      "placa": "DZI7YXR",
+      "confianza": 99.45,
+      "texto_original": "DZI7 YXR",
+      "imagen": "dataset-seeding/Cars428.png"
+    },
+    {
+      "placa": "KAISER",
+      "confianza": 99.15,
+      "texto_original": "KAISER",
+      "imagen": "dataset-seeding/Cars429.png"
+    },
+    {
+      "placa": "MH20BQ20",
+      "confianza": 96.83,
+      "texto_original": "MH 20 BQ 20",
+      "imagen": "dataset-seeding/Cars43.png"
+    },
+    {
+      "placa": "BCG986",
+      "confianza": 99.4,
+      "texto_original": "BCG 986",
+      "imagen": "dataset-seeding/Cars430.png"
+    },
+    {
+      "placa": "DL49AK49",
+      "confianza": 98.47,
+      "texto_original": "DL49 AK49",
+      "imagen": "dataset-seeding/Cars432.png"
+    },
+    {
+      "placa": "DL2CAG0786",
+      "confianza": 99.44,
+      "texto_original": "DL2C AG 0786",
+      "imagen": "dataset-seeding/Cars44.png"
+    },
+    {
+      "placa": "IMGROOT",
+      "confianza": 99.89,
+      "texto_original": "IMGROOT",
+      "imagen": "dataset-seeding/Cars45.png"
+    },
+    {
+      "placa": "SH759",
+      "confianza": 72.48,
+      "texto_original": "SH759",
+      "imagen": "dataset-seeding/Cars47.png"
+    },
+    {
+      "placa": "ALR486",
+      "confianza": 100.0,
+      "texto_original": "ALR 486",
+      "imagen": "dataset-seeding/Cars48.png"
+    },
+    {
+      "placa": "30461C",
+      "confianza": 81.93,
+      "texto_original": "304 61C",
+      "imagen": "dataset-seeding/Cars49.png"
+    },
+    {
+      "placa": "DMKT15",
+      "confianza": 92.12,
+      "texto_original": "DMKT15",
+      "imagen": "dataset-seeding/Cars5.png"
+    },
+    {
+      "placa": "PUI8BES",
+      "confianza": 93.94,
+      "texto_original": "PUI8 BES",
+      "imagen": "dataset-seeding/Cars50.png"
+    },
+    {
+      "placa": "YESBOSS",
+      "confianza": 99.22,
+      "texto_original": "YES BOSS",
+      "imagen": "dataset-seeding/Cars51.png"
+    },
+    {
+      "placa": "MH15BD8877",
+      "confianza": 96.85,
+      "texto_original": "MH15BD8877",
+      "imagen": "dataset-seeding/Cars52.png"
+    },
+    {
+      "placa": "CHIOOSE",
+      "confianza": 100.0,
+      "texto_original": "CHIO OSE",
+      "imagen": "dataset-seeding/Cars53.png"
+    },
+    {
+      "placa": "LTM378",
+      "confianza": 99.77,
+      "texto_original": "LTM 378",
+      "imagen": "dataset-seeding/Cars54.png"
+    },
+    {
+      "placa": "BKWL3324",
+      "confianza": 85.9,
+      "texto_original": "BKWL3 324",
+      "imagen": "dataset-seeding/Cars57.png"
+    },
+    {
+      "placa": "MH01DB0001",
+      "confianza": 98.82,
+      "texto_original": "MH 01 DB 0001",
+      "imagen": "dataset-seeding/Cars58.png"
+    },
+    {
+      "placa": "MH46P1661",
+      "confianza": 79.41,
+      "texto_original": "MH. 46. P. 1661",
+      "imagen": "dataset-seeding/Cars59.png"
+    },
+    {
+      "placa": "80211N",
+      "confianza": 99.5,
+      "texto_original": "802.11N",
+      "imagen": "dataset-seeding/Cars6.png"
+    },
+    {
+      "placa": "802HN",
+      "confianza": 99.42,
+      "texto_original": "802-HN",
+      "imagen": "dataset-seeding/Cars60.png"
+    },
+    {
+      "placa": "TOYOTA",
+      "confianza": 98.02,
+      "texto_original": "TOYOTA",
+      "imagen": "dataset-seeding/Cars61.png"
+    },
+    {
+      "placa": "WATTUP",
+      "confianza": 96.37,
+      "texto_original": "WATT UP",
+      "imagen": "dataset-seeding/Cars62.png"
+    },
+    {
+      "placa": "ORINNIE",
+      "confianza": 99.76,
+      "texto_original": "OR INNIE",
+      "imagen": "dataset-seeding/Cars65.png"
+    },
+    {
+      "placa": "MH14BN7077",
+      "confianza": 98.35,
+      "texto_original": "MH 14 BN 7077",
+      "imagen": "dataset-seeding/Cars67.png"
+    },
+    {
+      "placa": "BJR216",
+      "confianza": 99.43,
+      "texto_original": "BJR216",
+      "imagen": "dataset-seeding/Cars68.png"
+    },
+    {
+      "placa": "YSX213",
+      "confianza": 98.15,
+      "texto_original": "YSX-213",
+      "imagen": "dataset-seeding/Cars7.png"
+    },
+    {
+      "placa": "DL7CN5617",
+      "confianza": 98.7,
+      "texto_original": "DL7C N 5617",
+      "imagen": "dataset-seeding/Cars72.png"
+    },
+    {
+      "placa": "TN99F2378",
+      "confianza": 99.16,
+      "texto_original": "TN 99 F 2378",
+      "imagen": "dataset-seeding/Cars73.png"
+    },
+    {
+      "placa": "CZI7KOD",
+      "confianza": 99.31,
+      "texto_original": "CZI7 KOD",
+      "imagen": "dataset-seeding/Cars74.png"
+    },
+    {
+      "placa": "SUZUKI",
+      "confianza": 98.53,
+      "texto_original": "SUZUKI",
+      "imagen": "dataset-seeding/Cars76.png"
+    },
+    {
+      "placa": "HR26CU6799",
+      "confianza": 98.27,
+      "texto_original": "HR 26CU6799",
+      "imagen": "dataset-seeding/Cars77.png"
+    },
+    {
+      "placa": "4GETOIL",
+      "confianza": 99.05,
+      "texto_original": "4GET OIL",
+      "imagen": "dataset-seeding/Cars79.png"
+    },
+    {
+      "placa": "G526JHD",
+      "confianza": 99.92,
+      "texto_original": "G526 JHD",
+      "imagen": "dataset-seeding/Cars8.png"
+    },
+    {
+      "placa": "ALAMY",
+      "confianza": 98.23,
+      "texto_original": "alamy",
+      "imagen": "dataset-seeding/Cars80.png"
+    },
+    {
+      "placa": "UP16TC1366",
+      "confianza": 87.4,
+      "texto_original": "UP 16TC1366",
+      "imagen": "dataset-seeding/Cars82.png"
+    },
+    {
+      "placa": "GOOGLE",
+      "confianza": 90.03,
+      "texto_original": "Google",
+      "imagen": "dataset-seeding/Cars83.png"
+    },
+    {
+      "placa": "HR26BC5514",
+      "confianza": 96.92,
+      "texto_original": "HR 26 BC 5514",
+      "imagen": "dataset-seeding/Cars84.png"
+    },
+    {
+      "placa": "VU63GTY",
+      "confianza": 96.4,
+      "texto_original": "VU63 GTY",
+      "imagen": "dataset-seeding/Cars85.png"
+    },
+    {
+      "placa": "MH14DX9937",
+      "confianza": 92.64,
+      "texto_original": "MH14DX9937",
+      "imagen": "dataset-seeding/Cars86.png"
+    },
+    {
+      "placa": "TSLAS1",
+      "confianza": 96.92,
+      "texto_original": "TSLA S1",
+      "imagen": "dataset-seeding/Cars87.png"
+    },
+    {
+      "placa": "30461C",
+      "confianza": 81.93,
+      "texto_original": "304 61C",
+      "imagen": "dataset-seeding/Cars91.png"
+    },
+    {
+      "placa": "CRUISE",
+      "confianza": 98.42,
+      "texto_original": "cruise",
+      "imagen": "dataset-seeding/Cars93.png"
+    },
+    {
+      "placa": "NBEYOND",
+      "confianza": 98.86,
+      "texto_original": "NBEYOND",
+      "imagen": "dataset-seeding/Cars94.png"
+    },
+    {
+      "placa": "PGMN112",
+      "confianza": 99.92,
+      "texto_original": "PG MN112",
+      "imagen": "dataset-seeding/Cars96.png"
+    },
+    {
+      "placa": "KA05MG1909",
+      "confianza": 89.67,
+      "texto_original": "KA 05MG1909",
+      "imagen": "dataset-seeding/Cars97.png"
+    },
+    {
+      "placa": "NEWYORK",
+      "confianza": 99.42,
+      "texto_original": "NEW YORK",
+      "imagen": "dataset-seeding/Cars98.png"
+    },
+    {
+      "placa": "77ZFK8",
+      "confianza": 99.29,
+      "texto_original": "77-ZFK-8",
+      "imagen": "dataset-seeding/N1.jpeg"
+    },
+    {
+      "placa": "HR26CT4063",
+      "confianza": 99.04,
+      "texto_original": "HR 26CT4063",
+      "imagen": "dataset-seeding/N100.jpeg"
+    },
+    {
+      "placa": "WOBNP300",
+      "confianza": 99.78,
+      "texto_original": "WOB NP 300",
+      "imagen": "dataset-seeding/N101.jpeg"
+    },
+    {
+      "placa": "MH02BM5048",
+      "confianza": 98.56,
+      "texto_original": "MH 02BM5048",
+      "imagen": "dataset-seeding/N102.jpeg"
+    },
+    {
+      "placa": "MH15TC554",
+      "confianza": 96.34,
+      "texto_original": "MH15-TC-554",
+      "imagen": "dataset-seeding/N105.jpeg"
+    },
+    {
+      "placa": "KL454455",
+      "confianza": 99.5,
+      "texto_original": "KL 45 4455",
+      "imagen": "dataset-seeding/N106.jpeg"
+    },
+    {
+      "placa": "AU585",
+      "confianza": 99.56,
+      "texto_original": "AU585",
+      "imagen": "dataset-seeding/N107.jpeg"
+    },
+    {
+      "placa": "KL10AW2111",
+      "confianza": 95.7,
+      "texto_original": "KL 10AW2111",
+      "imagen": "dataset-seeding/N108.jpeg"
+    },
+    {
+      "placa": "SHOES",
+      "confianza": 98.28,
+      "texto_original": "SHOES",
+      "imagen": "dataset-seeding/N109.jpeg"
+    },
+    {
+      "placa": "NP826D",
+      "confianza": 98.79,
+      "texto_original": "NP-826-D",
+      "imagen": "dataset-seeding/N11.jpeg"
+    },
+    {
+      "placa": "MH20CS1938",
+      "confianza": 81.54,
+      "texto_original": "MH20CS1938",
+      "imagen": "dataset-seeding/N110.jpeg"
+    },
+    {
+      "placa": "TN07BV5200",
+      "confianza": 98.7,
+      "texto_original": "TN07BV5200",
+      "imagen": "dataset-seeding/N111.jpeg"
+    },
+    {
+      "placa": "MH207598",
+      "confianza": 92.55,
+      "texto_original": "-MH 20 ЕЕ 7598",
+      "imagen": "dataset-seeding/N112.jpeg"
+    },
+    {
+      "placa": "SRIRANGA",
+      "confianza": 96.19,
+      "texto_original": "Sri Ranga",
+      "imagen": "dataset-seeding/N113.jpeg"
+    },
+    {
+      "placa": "HR26BA8008",
+      "confianza": 98.35,
+      "texto_original": "HR26 BA 8008",
+      "imagen": "dataset-seeding/N114.jpeg"
+    },
+    {
+      "placa": "HR26DA0471",
+      "confianza": 96.74,
+      "texto_original": "HR 26 DA 0471",
+      "imagen": "dataset-seeding/N116.jpeg"
+    },
+    {
+      "placa": "TN59AQ1515",
+      "confianza": 73.9,
+      "texto_original": "TN5.9AQ 1515",
+      "imagen": "dataset-seeding/N117.jpeg"
+    },
+    {
+      "placa": "SKODA",
+      "confianza": 94.98,
+      "texto_original": "SKODA",
+      "imagen": "dataset-seeding/N118.jpeg"
+    },
+    {
+      "placa": "KL7BZ99",
+      "confianza": 95.33,
+      "texto_original": "KL 7 BZ 99",
+      "imagen": "dataset-seeding/N119.jpeg"
+    },
+    {
+      "placa": "7XFT96",
+      "confianza": 99.35,
+      "texto_original": "7-XFT-96",
+      "imagen": "dataset-seeding/N12.jpeg"
+    },
+    {
+      "placa": "HR26DA5443",
+      "confianza": 98.41,
+      "texto_original": "HR 26 DA 5443",
+      "imagen": "dataset-seeding/N120.jpeg"
+    },
+    {
+      "placa": "TS08FM8888",
+      "confianza": 99.03,
+      "texto_original": "TS 08 FM 8888",
+      "imagen": "dataset-seeding/N121.jpeg"
+    },
+    {
+      "placa": "HR26DK0830",
+      "confianza": 99.35,
+      "texto_original": "HR26DK0830",
+      "imagen": "dataset-seeding/N122.jpeg"
+    },
+    {
+      "placa": "GJ07BR1336",
+      "confianza": 79.48,
+      "texto_original": "G J07BR1336",
+      "imagen": "dataset-seeding/N123.jpeg"
+    },
+    {
+      "placa": "BUZUKI",
+      "confianza": 96.84,
+      "texto_original": "BUZUKI",
+      "imagen": "dataset-seeding/N124.jpeg"
+    },
+    {
+      "placa": "HPSX4000",
+      "confianza": 99.72,
+      "texto_original": "HP SX 4000",
+      "imagen": "dataset-seeding/N126.jpeg"
+    },
+    {
+      "placa": "HR26DA2330",
+      "confianza": 99.38,
+      "texto_original": "HR 26 DA 2330",
+      "imagen": "dataset-seeding/N127.jpeg"
+    },
+    {
+      "placa": "DL7CN5617",
+      "confianza": 98.62,
+      "texto_original": "DL7C N 5617",
+      "imagen": "dataset-seeding/N129.jpeg"
+    },
+    {
+      "placa": "MK20TC189",
+      "confianza": 86.71,
+      "texto_original": "MK.20.TC.189 В",
+      "imagen": "dataset-seeding/N130.jpeg"
+    },
+    {
+      "placa": "HONDA",
+      "confianza": 96.68,
+      "texto_original": "HONDA",
+      "imagen": "dataset-seeding/N131.jpeg"
+    },
+    {
+      "placa": "WB07D51",
+      "confianza": 99.29,
+      "texto_original": "WB07D51",
+      "imagen": "dataset-seeding/N132.jpeg"
+    },
+    {
+      "placa": "KA51AA3469",
+      "confianza": 97.92,
+      "texto_original": "KA 51 AA 3469",
+      "imagen": "dataset-seeding/N133.jpeg"
+    },
+    {
+      "placa": "AP02BP2454",
+      "confianza": 92.81,
+      "texto_original": "AP 02 BP 2454",
+      "imagen": "dataset-seeding/N134.jpeg"
+    },
+    {
+      "placa": "MAHINDRA",
+      "confianza": 89.12,
+      "texto_original": "Mahindra",
+      "imagen": "dataset-seeding/N136.jpeg"
+    },
+    {
+      "placa": "MH20BN3525",
+      "confianza": 98.45,
+      "texto_original": "MH 20 BN 3525",
+      "imagen": "dataset-seeding/N137.jpeg"
+    },
+    {
+      "placa": "TS08ER1643",
+      "confianza": 87.49,
+      "texto_original": "TS08ER1643",
+      "imagen": "dataset-seeding/N138.jpeg"
+    },
+    {
+      "placa": "KL54H369",
+      "confianza": 97.95,
+      "texto_original": "KL 54 H 369",
+      "imagen": "dataset-seeding/N139.jpeg"
+    },
+    {
+      "placa": "34TJPK",
+      "confianza": 98.07,
+      "texto_original": "34-TJ-PK",
+      "imagen": "dataset-seeding/N14.jpeg"
+    },
+    {
+      "placa": "LENSKING",
+      "confianza": 87.02,
+      "texto_original": "LensKing",
+      "imagen": "dataset-seeding/N140.jpeg"
+    },
+    {
+      "placa": "AGONR",
+      "confianza": 88.65,
+      "texto_original": "A GONR",
+      "imagen": "dataset-seeding/N141.jpeg"
+    },
+    {
+      "placa": "TN74AH1413",
+      "confianza": 95.99,
+      "texto_original": "TN74AH1413",
+      "imagen": "dataset-seeding/N142.jpeg"
+    },
+    {
+      "placa": "TN42R",
+      "confianza": 99.07,
+      "texto_original": "TN 42 R",
+      "imagen": "dataset-seeding/N143.jpeg"
+    },
+    {
+      "placa": "ANTHONY",
+      "confianza": 99.2,
+      "texto_original": "anthony",
+      "imagen": "dataset-seeding/N144.jpeg"
+    },
+    {
+      "placa": "INNOVA",
+      "confianza": 98.26,
+      "texto_original": "INNOVA",
+      "imagen": "dataset-seeding/N145.jpeg"
+    },
+    {
+      "placa": "WWWORBIZIN",
+      "confianza": 100.0,
+      "texto_original": "www.orbiz.in",
+      "imagen": "dataset-seeding/N147.jpeg"
+    },
+    {
+      "placa": "TCF300",
+      "confianza": 99.79,
+      "texto_original": "TCF 300",
+      "imagen": "dataset-seeding/N148.jpeg"
+    },
+    {
+      "placa": "MH20BY3665",
+      "confianza": 80.14,
+      "texto_original": "MH20BY3665",
+      "imagen": "dataset-seeding/N149.jpeg"
+    },
+    {
+      "placa": "7XFT96",
+      "confianza": 99.23,
+      "texto_original": "7-XFT-96",
+      "imagen": "dataset-seeding/N15.jpeg"
+    },
+    {
+      "placa": "MH14EU3498",
+      "confianza": 98.22,
+      "texto_original": "MH14EU3498",
+      "imagen": "dataset-seeding/N150.jpeg"
+    },
+    {
+      "placa": "INDUS",
+      "confianza": 98.45,
+      "texto_original": "INDUS",
+      "imagen": "dataset-seeding/N151.jpeg"
+    },
+    {
+      "placa": "TEMP6662",
+      "confianza": 99.87,
+      "texto_original": "TEMP 6662",
+      "imagen": "dataset-seeding/N152.jpeg"
+    },
+    {
+      "placa": "PB08CX2959",
+      "confianza": 96.24,
+      "texto_original": "PB08 CX 2959",
+      "imagen": "dataset-seeding/N153.jpeg"
+    },
+    {
+      "placa": "MH20DJ0419",
+      "confianza": 95.11,
+      "texto_original": "MH20DJ0419",
+      "imagen": "dataset-seeding/N154.jpeg"
+    },
+    {
+      "placa": "HR26CT6702",
+      "confianza": 98.74,
+      "texto_original": "HR 26 CT 6702",
+      "imagen": "dataset-seeding/N155.jpeg"
+    },
+    {
+      "placa": "KA51MJ2143",
+      "confianza": 93.89,
+      "texto_original": "KA 51 MJ 2143",
+      "imagen": "dataset-seeding/N158.jpeg"
+    },
+    {
+      "placa": "7XFT96",
+      "confianza": 99.33,
+      "texto_original": "7-XFT-96",
+      "imagen": "dataset-seeding/N16.jpeg"
+    },
+    {
+      "placa": "KA01D1330",
+      "confianza": 91.69,
+      "texto_original": "KA01 D 1330",
+      "imagen": "dataset-seeding/N160.jpeg"
+    },
+    {
+      "placa": "KL09AL9405",
+      "confianza": 86.5,
+      "texto_original": "KL 09 AL 9405",
+      "imagen": "dataset-seeding/N162.jpeg"
+    },
+    {
+      "placa": "WB74X7605",
+      "confianza": 98.93,
+      "texto_original": "WB 74X 7605",
+      "imagen": "dataset-seeding/N163.jpeg"
+    },
+    {
+      "placa": "KLG1CA2555",
+      "confianza": 90.05,
+      "texto_original": "KLG1CA2555",
+      "imagen": "dataset-seeding/N164.jpeg"
+    },
+    {
+      "placa": "MH20CS9817",
+      "confianza": 93.67,
+      "texto_original": "MH20CS9817",
+      "imagen": "dataset-seeding/N165.jpeg"
+    },
+    {
+      "placa": "KL12G7531",
+      "confianza": 90.39,
+      "texto_original": "KL 12G7531",
+      "imagen": "dataset-seeding/N166.jpeg"
+    },
+    {
+      "placa": "KL10AV6342",
+      "confianza": 99.51,
+      "texto_original": "KL 10 AV 6342",
+      "imagen": "dataset-seeding/N167.jpeg"
+    },
+    {
+      "placa": "TEAMBHPCOM",
+      "confianza": 97.42,
+      "texto_original": "Team-BHP.com",
+      "imagen": "dataset-seeding/N168.jpeg"
+    },
+    {
+      "placa": "DOUANE",
+      "confianza": 99.35,
+      "texto_original": "Douane",
+      "imagen": "dataset-seeding/N17.jpeg"
+    },
+    {
+      "placa": "HR26BM8271",
+      "confianza": 88.49,
+      "texto_original": "HR26BM8271",
+      "imagen": "dataset-seeding/N170.jpeg"
+    },
+    {
+      "placa": "KL10AV6633",
+      "confianza": 94.95,
+      "texto_original": "KL10AV6633",
+      "imagen": "dataset-seeding/N172.jpeg"
+    },
+    {
+      "placa": "KL06H5834",
+      "confianza": 97.33,
+      "texto_original": "KL 06 H 5834",
+      "imagen": "dataset-seeding/N173.jpeg"
+    },
+    {
+      "placa": "KL10AV6633",
+      "confianza": 99.6,
+      "texto_original": "KL 10 AV 6633",
+      "imagen": "dataset-seeding/N174.jpeg"
+    },
+    {
+      "placa": "MH20CS1938",
+      "confianza": 81.54,
+      "texto_original": "MH20CS1938",
+      "imagen": "dataset-seeding/N175.jpeg"
+    },
+    {
+      "placa": "MH14TCF460",
+      "confianza": 99.21,
+      "texto_original": "MH 14 TCF 460",
+      "imagen": "dataset-seeding/N176.jpeg"
+    },
+    {
+      "placa": "MH14TCF459",
+      "confianza": 99.58,
+      "texto_original": "MH 14 TCF 459",
+      "imagen": "dataset-seeding/N177.jpeg"
+    },
+    {
+      "placa": "MP099052",
+      "confianza": 87.7,
+      "texto_original": "MP09 СР 9052",
+      "imagen": "dataset-seeding/N178.jpeg"
+    },
+    {
+      "placa": "AP28N3107",
+      "confianza": 98.24,
+      "texto_original": "AP 28 N 3107",
+      "imagen": "dataset-seeding/N179.jpeg"
+    },
+    {
+      "placa": "GS084V",
+      "confianza": 99.19,
+      "texto_original": "GS-084-V",
+      "imagen": "dataset-seeding/N18.jpeg"
+    },
+    {
+      "placa": "TEAMBHPCOM",
+      "confianza": 95.98,
+      "texto_original": "Team-BHP.com",
+      "imagen": "dataset-seeding/N181.jpeg"
+    },
+    {
+      "placa": "UN02BL",
+      "confianza": 87.74,
+      "texto_original": "UN 02 BL",
+      "imagen": "dataset-seeding/N182.jpeg"
+    },
+    {
+      "placa": "MH207601",
+      "confianza": 98.67,
+      "texto_original": "MH 20 ЕЕ 7601",
+      "imagen": "dataset-seeding/N183.jpeg"
+    },
+    {
+      "placa": "TEAMBHPCOM",
+      "confianza": 96.49,
+      "texto_original": "Team-BHP.com",
+      "imagen": "dataset-seeding/N184.jpeg"
+    },
+    {
+      "placa": "GOTBHP",
+      "confianza": 98.83,
+      "texto_original": "got bhp?",
+      "imagen": "dataset-seeding/N185.jpeg"
+    },
+    {
+      "placa": "AF6363",
+      "confianza": 99.75,
+      "texto_original": "AF6363",
+      "imagen": "dataset-seeding/N186.jpeg"
+    },
+    {
+      "placa": "MH15BD8877",
+      "confianza": 97.76,
+      "texto_original": "MH15BD8877",
+      "imagen": "dataset-seeding/N187.jpeg"
+    },
+    {
+      "placa": "PERMIT",
+      "confianza": 99.28,
+      "texto_original": "PERMIT",
+      "imagen": "dataset-seeding/N188.jpeg"
+    },
+    {
+      "placa": "MARIO",
+      "confianza": 98.96,
+      "texto_original": "MARIO",
+      "imagen": "dataset-seeding/N189.jpeg"
+    },
+    {
+      "placa": "SAMWEDEL",
+      "confianza": 99.96,
+      "texto_original": "Sam Wedel",
+      "imagen": "dataset-seeding/N19.jpeg"
+    },
+    {
+      "placa": "KA29Z999",
+      "confianza": 98.52,
+      "texto_original": "KA 29 Z 999",
+      "imagen": "dataset-seeding/N190.jpeg"
+    },
+    {
+      "placa": "OCTANE",
+      "confianza": 97.99,
+      "texto_original": "OCTANE",
+      "imagen": "dataset-seeding/N191.jpeg"
+    },
+    {
+      "placa": "KL53E964",
+      "confianza": 99.34,
+      "texto_original": "KL 53E 964",
+      "imagen": "dataset-seeding/N192.jpeg"
+    },
+    {
+      "placa": "DL12CG6648",
+      "confianza": 99.89,
+      "texto_original": "DL 12 CG 6648",
+      "imagen": "dataset-seeding/N193.jpeg"
+    },
+    {
+      "placa": "HOTEL",
+      "confianza": 81.74,
+      "texto_original": "HOTEL",
+      "imagen": "dataset-seeding/N195.jpeg"
+    },
+    {
+      "placa": "ME9869",
+      "confianza": 99.9,
+      "texto_original": "ME 9869",
+      "imagen": "dataset-seeding/N197.jpeg"
+    },
+    {
+      "placa": "KL07CB8599",
+      "confianza": 93.35,
+      "texto_original": "KL07CB8599",
+      "imagen": "dataset-seeding/N198.jpeg"
+    },
+    {
+      "placa": "HR26CF5868",
+      "confianza": 97.73,
+      "texto_original": "HR26CF5868",
+      "imagen": "dataset-seeding/N199.jpeg"
+    },
+    {
+      "placa": "42UK32",
+      "confianza": 99.56,
+      "texto_original": "42-UK-32",
+      "imagen": "dataset-seeding/N2.jpeg"
+    },
+    {
+      "placa": "JP548J",
+      "confianza": 99.09,
+      "texto_original": "JP-548-J",
+      "imagen": "dataset-seeding/N20.jpeg"
+    },
+    {
+      "placa": "CRYSTA",
+      "confianza": 96.11,
+      "texto_original": "CRYSTA",
+      "imagen": "dataset-seeding/N200.jpeg"
+    },
+    {
+      "placa": "HR26BR9044",
+      "confianza": 97.61,
+      "texto_original": "HR.26.BR.9044",
+      "imagen": "dataset-seeding/N201.jpeg"
+    },
+    {
+      "placa": "UP16TC2805",
+      "confianza": 96.42,
+      "texto_original": "UP16 TC 2805",
+      "imagen": "dataset-seeding/N203.jpeg"
+    },
+    {
+      "placa": "7012717083",
+      "confianza": 99.28,
+      "texto_original": "7012 71 70 83",
+      "imagen": "dataset-seeding/N204.jpeg"
+    },
+    {
+      "placa": "MH207598",
+      "confianza": 98.09,
+      "texto_original": "MH 20 ЕЕ 7598",
+      "imagen": "dataset-seeding/N205.jpeg"
+    },
+    {
+      "placa": "HR26CR3302",
+      "confianza": 99.12,
+      "texto_original": "HR 26 CR 3302",
+      "imagen": "dataset-seeding/N206.jpeg"
+    },
+    {
+      "placa": "MH200943",
+      "confianza": 98.76,
+      "texto_original": "MH 20 ЕЕ 0943",
+      "imagen": "dataset-seeding/N207.jpeg"
+    },
+    {
+      "placa": "MH14TCD204",
+      "confianza": 98.41,
+      "texto_original": "MH-14-TCD-204",
+      "imagen": "dataset-seeding/N208.jpeg"
+    },
+    {
+      "placa": "SUZUKI",
+      "confianza": 98.05,
+      "texto_original": "SUZUKI",
+      "imagen": "dataset-seeding/N209.jpeg"
+    },
+    {
+      "placa": "GESPOT",
+      "confianza": 99.81,
+      "texto_original": "GESPOT",
+      "imagen": "dataset-seeding/N21.jpeg"
+    },
+    {
+      "placa": "SUZUKI",
+      "confianza": 95.12,
+      "texto_original": "SUZUKI",
+      "imagen": "dataset-seeding/N212.jpeg"
+    },
+    {
+      "placa": "MH20BY4465",
+      "confianza": 96.9,
+      "texto_original": "MH20 BY 4465",
+      "imagen": "dataset-seeding/N213.jpeg"
+    },
+    {
+      "placa": "RUSHLANE",
+      "confianza": 98.1,
+      "texto_original": "RUSHLANE",
+      "imagen": "dataset-seeding/N214.jpeg"
+    },
+    {
+      "placa": "MH024545",
+      "confianza": 94.7,
+      "texto_original": "MH 02 св 4545",
+      "imagen": "dataset-seeding/N215.jpeg"
+    },
+    {
+      "placa": "KL10AW2814",
+      "confianza": 99.68,
+      "texto_original": "KL 10 AW 2814",
+      "imagen": "dataset-seeding/N216.jpeg"
+    },
+    {
+      "placa": "MH14EH7958",
+      "confianza": 78.74,
+      "texto_original": "MH 14EH7958-",
+      "imagen": "dataset-seeding/N217.jpeg"
+    },
+    {
+      "placa": "MH12DE1433",
+      "confianza": 98.07,
+      "texto_original": "MH12DE1433",
+      "imagen": "dataset-seeding/N219.jpeg"
+    },
+    {
+      "placa": "24PGR3",
+      "confianza": 96.37,
+      "texto_original": "24-PGR-3",
+      "imagen": "dataset-seeding/N22.jpeg"
+    },
+    {
+      "placa": "MH20BN3525",
+      "confianza": 96.19,
+      "texto_original": "MH 20 BN 3525",
+      "imagen": "dataset-seeding/N220.jpeg"
+    },
+    {
+      "placa": "HR26DA0471",
+      "confianza": 99.09,
+      "texto_original": "HR 26 DA 0471",
+      "imagen": "dataset-seeding/N221.jpeg"
+    },
+    {
+      "placa": "M5519",
+      "confianza": 98.46,
+      "texto_original": "M 5519",
+      "imagen": "dataset-seeding/N222.jpeg"
+    },
+    {
+      "placa": "TN42R2697",
+      "confianza": 99.41,
+      "texto_original": "TN 42 R 2697",
+      "imagen": "dataset-seeding/N223.jpeg"
+    },
+    {
+      "placa": "KYI9VNU",
+      "confianza": 99.36,
+      "texto_original": "KYI9 VNU",
+      "imagen": "dataset-seeding/N225.jpeg"
+    },
+    {
+      "placa": "SUZUKI",
+      "confianza": 96.76,
+      "texto_original": "SUZUKI",
+      "imagen": "dataset-seeding/N226.jpeg"
+    },
+    {
+      "placa": "KL01AL1661",
+      "confianza": 99.07,
+      "texto_original": "KL 01 AL 1661",
+      "imagen": "dataset-seeding/N227.jpeg"
+    },
+    {
+      "placa": "TN02TC0143",
+      "confianza": 98.43,
+      "texto_original": "TN-02-TC-0143",
+      "imagen": "dataset-seeding/N229.jpeg"
+    },
+    {
+      "placa": "84PLFJ",
+      "confianza": 99.18,
+      "texto_original": "84-PL-FJ",
+      "imagen": "dataset-seeding/N23.jpeg"
+    },
+    {
+      "placa": "MH02CT2727",
+      "confianza": 97.78,
+      "texto_original": "MH02CT2727",
+      "imagen": "dataset-seeding/N230.jpeg"
+    },
+    {
+      "placa": "MH15TC554",
+      "confianza": 98.27,
+      "texto_original": "MH15-TC-554",
+      "imagen": "dataset-seeding/N231.jpeg"
+    },
+    {
+      "placa": "DL3CAY2231",
+      "confianza": 98.81,
+      "texto_original": "DL3CAY2231",
+      "imagen": "dataset-seeding/N232.jpeg"
+    },
+    {
+      "placa": "TN99F2378",
+      "confianza": 98.58,
+      "texto_original": "TN 99 F 2378",
+      "imagen": "dataset-seeding/N233.jpeg"
+    },
+    {
+      "placa": "CARWALECOM",
+      "confianza": 98.77,
+      "texto_original": "CarWale com",
+      "imagen": "dataset-seeding/N234.jpeg"
+    },
+    {
+      "placa": "HS4495",
+      "confianza": 99.29,
+      "texto_original": "HS 4495",
+      "imagen": "dataset-seeding/N235.jpeg"
+    },
+    {
+      "placa": "TN59AQ1515",
+      "confianza": 73.9,
+      "texto_original": "TN5.9AQ 1515",
+      "imagen": "dataset-seeding/N237.jpeg"
+    },
+    {
+      "placa": "MH207597",
+      "confianza": 93.2,
+      "texto_original": "MH 20 ЕЕ 7597",
+      "imagen": "dataset-seeding/N238.jpeg"
+    },
+    {
+      "placa": "MH207598",
+      "confianza": 98.26,
+      "texto_original": "MH 20 ЕЕ 7598",
+      "imagen": "dataset-seeding/N239.jpeg"
+    },
+    {
+      "placa": "84KJS7",
+      "confianza": 99.78,
+      "texto_original": "84-KJS-7",
+      "imagen": "dataset-seeding/N24.jpeg"
+    },
+    {
+      "placa": "TN09CH7770",
+      "confianza": 98.36,
+      "texto_original": "TN 09 CH 7770",
+      "imagen": "dataset-seeding/N240.jpeg"
+    },
+    {
+      "placa": "KOMPRESSOR",
+      "confianza": 98.06,
+      "texto_original": "KOMPRESSOR",
+      "imagen": "dataset-seeding/N241.jpeg"
+    },
+    {
+      "placa": "MH20DV2362",
+      "confianza": 98.94,
+      "texto_original": "MH 20 DV 2362",
+      "imagen": "dataset-seeding/N242.jpeg"
+    },
+    {
+      "placa": "ARJUNSNAIR",
+      "confianza": 96.82,
+      "texto_original": "ARJUN S NAIR",
+      "imagen": "dataset-seeding/N244.jpeg"
+    },
+    {
+      "placa": "MH06AW8929",
+      "confianza": 97.96,
+      "texto_original": "MH 06 AW8929",
+      "imagen": "dataset-seeding/N245.jpeg"
+    },
+    {
+      "placa": "MH06AW8929",
+      "confianza": 98.92,
+      "texto_original": "MH 06 AW 8929",
+      "imagen": "dataset-seeding/N246.jpeg"
+    },
+    {
+      "placa": "MOTORBEAM",
+      "confianza": 92.65,
+      "texto_original": "MotorBeam",
+      "imagen": "dataset-seeding/N249.jpeg"
+    },
+    {
+      "placa": "PJ323K",
+      "confianza": 98.86,
+      "texto_original": "PJ-323-K",
+      "imagen": "dataset-seeding/N25.jpeg"
+    },
+    {
+      "placa": "17TXT4",
+      "confianza": 98.26,
+      "texto_original": "17-TXT-4",
+      "imagen": "dataset-seeding/N27.jpeg"
+    },
+    {
+      "placa": "77ZFK8",
+      "confianza": 99.27,
+      "texto_original": "77-ZFK-8",
+      "imagen": "dataset-seeding/N28.jpeg"
+    },
+    {
+      "placa": "FOTOSTOCK",
+      "confianza": 99.43,
+      "texto_original": "FOTOSTOCK",
+      "imagen": "dataset-seeding/N3.jpeg"
+    },
+    {
+      "placa": "RK361S",
+      "confianza": 99.38,
+      "texto_original": "RK-361-S",
+      "imagen": "dataset-seeding/N30.jpeg"
+    },
+    {
+      "placa": "JV628B",
+      "confianza": 99.33,
+      "texto_original": "JV-628-B",
+      "imagen": "dataset-seeding/N31.jpeg"
+    },
+    {
+      "placa": "G241GH",
+      "confianza": 99.6,
+      "texto_original": "G-241-GH",
+      "imagen": "dataset-seeding/N32.jpeg"
+    },
+    {
+      "placa": "TK642F",
+      "confianza": 98.47,
+      "texto_original": "TK-642-F",
+      "imagen": "dataset-seeding/N33.jpeg"
+    },
+    {
+      "placa": "PK015L",
+      "confianza": 98.25,
+      "texto_original": "PK-015-L",
+      "imagen": "dataset-seeding/N34.jpeg"
+    },
+    {
+      "placa": "VBJ87T",
+      "confianza": 99.4,
+      "texto_original": "VBJ-87-T",
+      "imagen": "dataset-seeding/N35.jpeg"
+    },
+    {
+      "placa": "GL395X",
+      "confianza": 99.58,
+      "texto_original": "GL-395-X",
+      "imagen": "dataset-seeding/N36.jpeg"
+    },
+    {
+      "placa": "GESPOT",
+      "confianza": 99.89,
+      "texto_original": "GESPOT",
+      "imagen": "dataset-seeding/N37.jpeg"
+    },
+    {
+      "placa": "V494RT",
+      "confianza": 99.3,
+      "texto_original": "V-494-RT",
+      "imagen": "dataset-seeding/N38.jpeg"
+    },
+    {
+      "placa": "24KZT5",
+      "confianza": 98.26,
+      "texto_original": "24-KZT-5",
+      "imagen": "dataset-seeding/N4.jpeg"
+    },
+    {
+      "placa": "DL6CAB123X",
+      "confianza": 99.0,
+      "texto_original": "DL6CAB123X",
+      "imagen": "dataset-seeding/N40.jpeg"
+    },
+    {
+      "placa": "TN59AQ1515",
+      "confianza": 85.57,
+      "texto_original": "TN5.9AQ 1515",
+      "imagen": "dataset-seeding/N42.jpeg"
+    },
+    {
+      "placa": "03AB3380",
+      "confianza": 86.49,
+      "texto_original": "КА 03 AB 3380",
+      "imagen": "dataset-seeding/N43.jpeg"
+    },
+    {
+      "placa": "KA51MJ8156",
+      "confianza": 98.68,
+      "texto_original": "KA51MJ8156",
+      "imagen": "dataset-seeding/N44.jpeg"
+    },
+    {
+      "placa": "HR26BP3543",
+      "confianza": 99.7,
+      "texto_original": "HR26 BP3543",
+      "imagen": "dataset-seeding/N45.jpeg"
+    },
+    {
+      "placa": "ENFIELD",
+      "confianza": 91.53,
+      "texto_original": "ENFIELD",
+      "imagen": "dataset-seeding/N46.jpeg"
+    },
+    {
+      "placa": "HR26DK6475",
+      "confianza": 99.55,
+      "texto_original": "HR26DK6475",
+      "imagen": "dataset-seeding/N48.jpeg"
+    },
+    {
+      "placa": "HR26CH3604",
+      "confianza": 99.73,
+      "texto_original": "HR 26 CH 3604",
+      "imagen": "dataset-seeding/N49.jpeg"
+    },
+    {
+      "placa": "77ZFK8",
+      "confianza": 99.5,
+      "texto_original": "77-ZFK-8",
+      "imagen": "dataset-seeding/N5.jpeg"
+    },
+    {
+      "placa": "HR26CK8571",
+      "confianza": 96.94,
+      "texto_original": "HR.26.CK..8571",
+      "imagen": "dataset-seeding/N51.jpeg"
+    },
+    {
+      "placa": "HR696969",
+      "confianza": 99.86,
+      "texto_original": "HR 69 6969",
+      "imagen": "dataset-seeding/N52.jpeg"
+    },
+    {
+      "placa": "SUZUKI",
+      "confianza": 98.39,
+      "texto_original": "SUZUKI",
+      "imagen": "dataset-seeding/N53.jpeg"
+    },
+    {
+      "placa": "QUIKRCARS",
+      "confianza": 97.8,
+      "texto_original": "QuikrCars",
+      "imagen": "dataset-seeding/N54.jpeg"
+    },
+    {
+      "placa": "DL3CAY9324",
+      "confianza": 99.29,
+      "texto_original": "DL 3 CAY 9324",
+      "imagen": "dataset-seeding/N56.jpeg"
+    },
+    {
+      "placa": "KL55R2473",
+      "confianza": 98.92,
+      "texto_original": "KL 55 R 2473",
+      "imagen": "dataset-seeding/N57.jpeg"
+    },
+    {
+      "placa": "OCTAVIA",
+      "confianza": 98.31,
+      "texto_original": "OCTAVIA",
+      "imagen": "dataset-seeding/N58.jpeg"
+    },
+    {
+      "placa": "MH207597",
+      "confianza": 97.95,
+      "texto_original": "MH 20 ЕЕ 7597",
+      "imagen": "dataset-seeding/N59.jpeg"
+    },
+    {
+      "placa": "PH792N",
+      "confianza": 98.23,
+      "texto_original": "PH-792-N",
+      "imagen": "dataset-seeding/N6.jpeg"
+    },
+    {
+      "placa": "SUZUKI",
+      "confianza": 97.51,
+      "texto_original": "SUZUKI",
+      "imagen": "dataset-seeding/N61.jpeg"
+    },
+    {
+      "placa": "SKODA",
+      "confianza": 95.02,
+      "texto_original": "SKODA",
+      "imagen": "dataset-seeding/N62.jpeg"
+    },
+    {
+      "placa": "HR26TC7099",
+      "confianza": 97.74,
+      "texto_original": "HR 26 TC 7099",
+      "imagen": "dataset-seeding/N63.jpeg"
+    },
+    {
+      "placa": "14EY5972",
+      "confianza": 97.15,
+      "texto_original": "14EY5972",
+      "imagen": "dataset-seeding/N64.jpeg"
+    },
+    {
+      "placa": "HR26BU0375",
+      "confianza": 98.28,
+      "texto_original": "HR26BU0375",
+      "imagen": "dataset-seeding/N65.jpeg"
+    },
+    {
+      "placa": "KL16J3636",
+      "confianza": 99.14,
+      "texto_original": "KL 16 J 3636",
+      "imagen": "dataset-seeding/N66.jpeg"
+    },
+    {
+      "placa": "KL432344",
+      "confianza": 85.86,
+      "texto_original": "KL 43 В 2344",
+      "imagen": "dataset-seeding/N67.jpeg"
+    },
+    {
+      "placa": "QUIKRCARS",
+      "confianza": 96.12,
+      "texto_original": "QuikrCars",
+      "imagen": "dataset-seeding/N68.jpeg"
+    },
+    {
+      "placa": "MH46Z8892",
+      "confianza": 97.69,
+      "texto_original": "MH 46 Z 8892",
+      "imagen": "dataset-seeding/N69.jpeg"
+    },
+    {
+      "placa": "77ZFK8",
+      "confianza": 99.02,
+      "texto_original": "77-ZFK-8",
+      "imagen": "dataset-seeding/N7.jpeg"
+    },
+    {
+      "placa": "KA03AB3380",
+      "confianza": 95.69,
+      "texto_original": "-KA 03 AB 3380",
+      "imagen": "dataset-seeding/N70.jpeg"
+    },
+    {
+      "placa": "MH12DE1433",
+      "confianza": 97.38,
+      "texto_original": "MH12DE1433",
+      "imagen": "dataset-seeding/N73.jpeg"
+    },
+    {
+      "placa": "MH12JC2813",
+      "confianza": 98.78,
+      "texto_original": "MH12JC2813",
+      "imagen": "dataset-seeding/N74.jpeg"
+    },
+    {
+      "placa": "8281334646",
+      "confianza": 99.53,
+      "texto_original": "8281 33 46 46",
+      "imagen": "dataset-seeding/N75.jpeg"
+    },
+    {
+      "placa": "HR26U7501",
+      "confianza": 99.01,
+      "texto_original": "HR 26 U 7501",
+      "imagen": "dataset-seeding/N77.jpeg"
+    },
+    {
+      "placa": "KL01AX8000",
+      "confianza": 88.26,
+      "texto_original": "KL01AX8000",
+      "imagen": "dataset-seeding/N78.jpeg"
+    },
+    {
+      "placa": "TN37CR4019",
+      "confianza": 98.91,
+      "texto_original": "TN 37 CR 4019",
+      "imagen": "dataset-seeding/N79.jpeg"
+    },
+    {
+      "placa": "42UK32",
+      "confianza": 99.55,
+      "texto_original": "42-UK-32",
+      "imagen": "dataset-seeding/N8.jpeg"
+    },
+    {
+      "placa": "SKODA",
+      "confianza": 94.55,
+      "texto_original": "SKODA",
+      "imagen": "dataset-seeding/N80.jpeg"
+    },
+    {
+      "placa": "GJ17TC214",
+      "confianza": 96.4,
+      "texto_original": "GJ 17 TC 214",
+      "imagen": "dataset-seeding/N81.jpeg"
+    },
+    {
+      "placa": "MH14TCF460",
+      "confianza": 98.93,
+      "texto_original": "MH 14 TCF 460",
+      "imagen": "dataset-seeding/N82.jpeg"
+    },
+    {
+      "placa": "KA031351",
+      "confianza": 95.03,
+      "texto_original": "KA03 1351",
+      "imagen": "dataset-seeding/N84.jpeg"
+    },
+    {
+      "placa": "RN0283",
+      "confianza": 96.29,
+      "texto_original": "RN 0283",
+      "imagen": "dataset-seeding/N85.jpeg"
+    },
+    {
+      "placa": "GJ1KF",
+      "confianza": 94.05,
+      "texto_original": "GJ1KF",
+      "imagen": "dataset-seeding/N86.jpeg"
+    },
+    {
+      "placa": "MH01BU5207",
+      "confianza": 95.3,
+      "texto_original": "MH 01 BU 5207",
+      "imagen": "dataset-seeding/N89.jpeg"
+    },
+    {
+      "placa": "KL60N5344",
+      "confianza": 94.34,
+      "texto_original": "KL 60N 5344",
+      "imagen": "dataset-seeding/N90.jpeg"
+    },
+    {
+      "placa": "MH20CS4946",
+      "confianza": 84.23,
+      "texto_original": "MH20CS4946",
+      "imagen": "dataset-seeding/N91.jpeg"
+    },
+    {
+      "placa": "KL10AW2814",
+      "confianza": 97.23,
+      "texto_original": "KL 10AW2814",
+      "imagen": "dataset-seeding/N92.jpeg"
+    },
+    {
+      "placa": "EUROSE",
+      "confianza": 98.91,
+      "texto_original": "EUROSE",
+      "imagen": "dataset-seeding/N93.jpeg"
+    },
+    {
+      "placa": "TN38BW1139",
+      "confianza": 98.59,
+      "texto_original": "TN 38 BW 1139",
+      "imagen": "dataset-seeding/N96.jpeg"
+    }
+  ],
+  "placas_unicas": [
+    "BYHM136",
+    "LOLOIL",
+    "MH12NE8922",
+    "MH20BQ20",
+    "KA02A6579",
+    "24KZT5",
+    "HR26BP3543",
+    "CRUISE",
+    "GJ17TC214",
+    "SH759",
+    "LENSKING",
+    "KL454455",
+    "889VSM",
+    "7012717083",
+    "LEFTTODIE",
+    "MAHINDRA",
+    "HR26CT6702",
+    "SINGER",
+    "SWIFT",
+    "WOBNP300",
+    "EUROSE",
+    "66887",
+    "SHOES",
+    "IMGROOT",
+    "MH20CS4946",
+    "KL10AW2111",
+    "KL53E964",
+    "3SAM123",
+    "MK3532",
+    "COMSG",
+    "HR26DA0471",
+    "BUZUKI",
+    "POOSILVR",
+    "COOPER",
+    "JERSEY",
+    "HPSX4000",
+    "MH15BD8877",
+    "REAP3R",
+    "DZI7YXR",
+    "VIRGINIA",
+    "MH20BY4465",
+    "MH20DV2362",
+    "DMKT15",
+    "KA01D1330",
+    "TN21AT8349",
+    "STOMP",
+    "LAMBO",
+    "TN07BV5200",
+    "DOUANE",
+    "MH20BY3665",
+    "TEAMBHFCOM",
+    "DUBAI15474",
+    "THANKYOU",
+    "TS08FM8888",
+    "KL06H5834",
+    "PJ323K",
+    "HR26CK8571",
+    "SKODA",
+    "DX103",
+    "AF6363",
+    "KL54H369",
+    "KL07CB8599",
+    "MH207601",
+    "LR33TEE",
+    "SKIPGAS",
+    "MH14TCD204",
+    "VIPER",
+    "ANTHONY",
+    "8281334646",
+    "GL395X",
+    "UN02BL",
+    "MH12DE1433",
+    "PK015L",
+    "HNYCHIL3",
+    "GBI8TCE",
+    "HR26BU0375",
+    "TN21BZ0768",
+    "HR26CU6799",
+    "HONDA",
+    "TN59AQ1515",
+    "KA42N0852",
+    "17TXT4",
+    "MH01DB0001",
+    "TOYOTA",
+    "PTB557K",
+    "R362GEL",
+    "TN19S4523",
+    "WB74X7605",
+    "DL7CN5617",
+    "MH20CS9817",
+    "KA031351",
+    "MH207598",
+    "AP11AM091",
+    "MH14DX9937",
+    "OCTAVIA",
+    "KA29Z999",
+    "ORINNIE",
+    "VHA800",
+    "Y8544",
+    "KYI9VNU",
+    "MH14BN7077",
+    "PY56BXU",
+    "AP29BP",
+    "TS08ER1643",
+    "HR696969",
+    "TEMP6662",
+    "MH02BB2",
+    "FAMU2010",
+    "4GETOIL",
+    "TN21AU1153",
+    "LIVIN",
+    "HR26CF5868",
+    "UP16TC1366",
+    "INDIANA",
+    "1CDAF",
+    "A055585",
+    "PUI8BES",
+    "KL16J3636",
+    "HR26CH3604",
+    "14EY5972",
+    "CARWALECOM",
+    "SHAKNBK",
+    "42UK32",
+    "MH20CS1938",
+    "T8544",
+    "OCEANSTATE",
+    "067RAF",
+    "TS009TC268",
+    "KL10AV6342",
+    "DL12CG6648",
+    "MATATAG",
+    "GOOGLE",
+    "KL65H4383",
+    "EMCLUB7",
+    "ME9869",
+    "KA51MJ8156",
+    "FALLYOU",
+    "PERMIT",
+    "DL6CAB123X",
+    "PRIVATE",
+    "HR26AZ5927",
+    "MH14TCF459",
+    "2228HM",
+    "YAMRAJ",
+    "FOTOSTOCK",
+    "KL7BZ99",
+    "WWWORBIZIN",
+    "NL60LXB",
+    "IRFU3348",
+    "KAISER",
+    "MH01BB550",
+    "GOT2P00",
+    "AP02BP2454",
+    "INDUS",
+    "30461C",
+    "GOTBHP",
+    "MH12MR0613",
+    "695299",
+    "ROUFRAILS",
+    "ADIDAS",
+    "802HN",
+    "77ZFK8",
+    "KL10AW2814",
+    "TN02BL",
+    "VIVEK",
+    "15LK10898",
+    "G526JHD",
+    "123RF",
+    "PZ62FDX",
+    "HR26CT4063",
+    "AGONR",
+    "HEATHROW",
+    "CARANOBIKE",
+    "KL09AL9405",
+    "NBEYOND",
+    "MH207597",
+    "TN74AH1413",
+    "NOTACOP",
+    "BKWL3324",
+    "MH200943",
+    "RANGEROVER",
+    "TN21BY0166",
+    "MH12JC2813",
+    "L19TLC",
+    "MYOTHERCAR",
+    "KOMPRESSOR",
+    "MH02CT2727",
+    "GS084V",
+    "LAWYER",
+    "PB08CX2959",
+    "RN0283",
+    "ENFIELD",
+    "HR26BU0380",
+    "TN37CS",
+    "2089563",
+    "HR26BM8271",
+    "ONTARIO",
+    "TN02TC0143",
+    "THRUSTZONE",
+    "JP548J",
+    "172TMJ",
+    "KL01AX8000",
+    "WOR516K",
+    "MH024545",
+    "M771276",
+    "HAPPIER",
+    "KL12G7531",
+    "MH20DJ0419",
+    "GESPOT",
+    "BATMAN",
+    "TSLAS1",
+    "IMACAR",
+    "MIDLYPH",
+    "KL60N5344",
+    "HR26U7501",
+    "KLG1CA2555",
+    "MH46P1661",
+    "INDIACAR",
+    "MH15TC554",
+    "KL01AL1661",
+    "AK0188",
+    "ALAMY",
+    "TK642F",
+    "PEN15",
+    "MH02BM5048",
+    "P3RVP",
+    "DL3C8D5092",
+    "CU5600",
+    "MH06AW8929",
+    "DWSPL",
+    "CRYSTA",
+    "MH14EU3498",
+    "KL55R2473",
+    "KAOZAC5957",
+    "KL432344",
+    "YNTZDBG",
+    "MH14EH7958",
+    "7VIG263",
+    "S7JDW",
+    "SAMWEDEL",
+    "HR26DK0830",
+    "JA62UAR",
+    "VBJ87T",
+    "H982FKL",
+    "AU585",
+    "HR26TC7099",
+    "OX65AWD",
+    "GJ07BR1336",
+    "AB44887",
+    "VX54FVL",
+    "MP099052",
+    "HR26CE1485",
+    "GJ1KF",
+    "OMGBCKY",
+    "TN37CR4019",
+    "ALR486",
+    "TN42R2697",
+    "MK20TC189",
+    "M666YOB",
+    "E4GLE",
+    "RK977AF",
+    "DA7222",
+    "MF9000",
+    "GIFTS",
+    "MCB025",
+    "RK361S",
+    "BCG986",
+    "80211N",
+    "M906090K",
+    "DRUNK",
+    "CALIFORNIA",
+    "QUIKRCARS",
+    "KA51AA3469",
+    "DAN54P",
+    "MOTORBEAM",
+    "M5519",
+    "KL10AV6633",
+    "SUZUKI",
+    "24PGR3",
+    "HR26DK6475",
+    "DL8CX4850",
+    "MH46Z8892",
+    "SDN7484U",
+    "TN99F2378",
+    "VU63GTY",
+    "03AB3380",
+    "AP28N3107",
+    "KA03AB3380",
+    "CH01AN0001",
+    "DZVG49",
+    "HR26CR3302",
+    "KA51MJ2143",
+    "MH14TCF460",
+    "YSX213",
+    "OCTANE",
+    "KA05MG1909",
+    "MOREPOLICE",
+    "BRIT0001",
+    "MANISA",
+    "WB07D51",
+    "SOV8199",
+    "HR26BA8008",
+    "PGMN112",
+    "CB7R605",
+    "MH01BU5207",
+    "DL49AK49",
+    "CRAIG",
+    "MH12BG7237",
+    "CARMELDAVE",
+    "84KJS7",
+    "MH20BN3525",
+    "HR26BC5514",
+    "HR26DA2330",
+    "V494RT",
+    "DL2CAG0786",
+    "ALLROAD",
+    "WATTUP",
+    "26SPF4",
+    "UP16TC2805",
+    "1CTAH8N",
+    "PH792N",
+    "TN09CH7770",
+    "CHIOOSE",
+    "HOTEL",
+    "ARJUNSNAIR",
+    "DL3CAY2231",
+    "HYUNDAI",
+    "SRIRANGA",
+    "NEWYORK",
+    "BJR216",
+    "CZI7KOD",
+    "INNOVA",
+    "HS4495",
+    "RUSHLANE",
+    "YESBOSS",
+    "HR26BR9044",
+    "TCF300",
+    "7XFT96",
+    "LTM378",
+    "MARIO",
+    "TN38BW1139",
+    "6PIV728",
+    "YASSUZP",
+    "34TJPK",
+    "DUBAI",
+    "HR26DA5443",
+    "TN42R",
+    "ELECTRIC",
+    "TEAMBHPCOM",
+    "RX61GDU",
+    "IM4U555",
+    "NP826D",
+    "ITSTHELAW",
+    "84PLFJ",
+    "DL3CAY9324",
+    "NISSAN",
+    "52292Z",
+    "G241GH",
+    "JETTA",
+    "DL1N4268",
+    "JV628B",
+    "FUSION"
+  ]
+}

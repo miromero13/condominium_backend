@@ -170,3 +170,94 @@ class PaymentFrequency(Enum):
             self.YEARLY: 'Anual',
         }
         return labels.get(self, self.value)
+    
+class TipoEventoAI(Enum):
+    """
+    Enum para los tipos de eventos detectados por AI
+    """
+    PLACA_NO_AUTORIZADA = 'placa_no_autorizada'
+    ROSTRO_NO_RECONOCIDO = 'rostro_no_reconocido'
+    VIOLACION_REGLA = 'violacion_regla'
+    MASCOTA_ZONA_PROHIBIDA = 'mascota_zona_prohibida'
+    ACTIVIDAD_SOSPECHOSA = 'actividad_sospechosa'
+    ACCESO_NO_AUTORIZADO = 'acceso_no_autorizado'
+    AREA_RESTRINGIDA = 'area_restringida'
+
+    @classmethod
+    def choices(cls):
+        return [(evento.value, evento.get_label()) for evento in cls]
+    
+    def get_label(self):
+        labels = {
+            self.PLACA_NO_AUTORIZADA: 'Placa No Autorizada',
+            self.ROSTRO_NO_RECONOCIDO: 'Rostro No Reconocido',
+            self.VIOLACION_REGLA: 'Violación de Regla',
+            self.MASCOTA_ZONA_PROHIBIDA: 'Mascota en Zona Prohibida',
+            self.ACTIVIDAD_SOSPECHOSA: 'Actividad Sospechosa',
+            self.ACCESO_NO_AUTORIZADO: 'Acceso No Autorizado',
+            self.AREA_RESTRINGIDA: 'Acceso a Área Restringida',
+        }
+        return labels.get(self, self.value)
+
+class MetodoAcceso(Enum):
+    """
+    Enum para los métodos de acceso
+    """
+    PLACA = 'placa'
+    FACIAL = 'facial'
+    TARJETA = 'tarjeta'
+    MANUAL = 'manual'
+
+    @classmethod
+    def choices(cls):
+        return [(metodo.value, metodo.get_label()) for metodo in cls]
+    
+    def get_label(self):
+        labels = {
+            self.PLACA: 'Reconocimiento de Placa',
+            self.FACIAL: 'Reconocimiento Facial',
+            self.TARJETA: 'Tarjeta de Acceso',
+            self.MANUAL: 'Autorización Manual',
+        }
+        return labels.get(self, self.value)
+    
+class TipoPuerta(Enum):
+    """
+    Enum para los tipos de puertas del condominio
+    """
+    PRINCIPAL = 'principal'
+    VEHICULAR = 'vehicular'
+    PEATONAL = 'peatonal'
+    ESTACIONAMIENTO = 'estacionamiento'
+
+    @classmethod
+    def choices(cls):
+        return [(puerta.value, puerta.get_label()) for puerta in cls]
+    
+    def get_label(self):
+        labels = {
+            self.PRINCIPAL: 'Puerta Principal',
+            self.VEHICULAR: 'Puerta Vehicular',
+            self.PEATONAL: 'Puerta Peatonal',
+            self.ESTACIONAMIENTO: 'Estacionamiento',
+        }
+        return labels.get(self, self.value)
+    
+class TipoAcceso(Enum):
+    """
+    Enum para los tipos de acceso al condominio
+    """
+    ENTRADA = 'entrada'
+    SALIDA = 'salida'
+
+    @classmethod
+    def choices(cls):
+        return [(tipo.value, tipo.get_label()) for tipo in cls]
+    
+    def get_label(self):
+        labels = {
+            self.ENTRADA: 'Entrada',
+            self.SALIDA: 'Salida',
+        }
+        return labels.get(self, self.value)
+

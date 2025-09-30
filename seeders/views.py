@@ -2,6 +2,8 @@ from rest_framework.decorators import api_view, permission_classes
 from rest_framework.permissions import AllowAny
 from rest_framework.response import Response
 from rest_framework import status
+from drf_spectacular.utils import extend_schema, OpenApiResponse
+from drf_spectacular.openapi import OpenApiTypes
 from user.models import User
 from property.models import Property, Pet, Vehicle, PropertyQuote
 from condominium.models import CommonArea, GeneralRule, CommonAreaRule, Reservation
@@ -20,6 +22,36 @@ from .condominium_seeder import CondominiumSeeder
 from .pet_vehicle_seeder import PetSeeder, VehicleSeeder
 
 
+@extend_schema(
+    operation_id="seed_database",
+    description="""
+    Ejecuta todos los seeders para poblar la base de datos con datos de prueba.
+    
+    **Funcionalidades:**
+    -Crea usuarios con diferentes roles (Admin, Guard, Owner, Resident, Visitor)
+    -Genera propiedades del condominio con datos realistas
+    -Configura áreas comunes, reglas y reservas
+    
+    **Datos creados:**
+    - Usuarios administrativos (admin@gmail.com, guard@gmail.com)
+    - Usuarios aleatorios con roles variados
+    - Propiedades con apartamentos y casas
+    - Áreas comunes (piscina, gimnasio, salón social, etc.)
+    - Reglas generales y específicas por área
+    - Reservas de ejemplo
+    """,
+    tags=["Seeders"],
+    responses={
+        200: OpenApiResponse(
+            response=OpenApiTypes.OBJECT,
+            description="Seeders ejecutados exitosamente"
+        ),
+        500: OpenApiResponse(
+            response=OpenApiTypes.OBJECT,
+            description="Error interno del servidor"
+        )
+    }
+)
 @api_view(['GET'])
 @permission_classes([AllowAny])
 def seed_database(request):
@@ -97,6 +129,36 @@ def seed_database(request):
             error=str(e)
         )
 
+@extend_schema(
+    operation_id="seeder_status",
+    description="""
+    Obtiene estadísticas detalladas del estado actual de la base de datos.
+    
+    **Información proporcionada:**
+    - **Usuarios:** Conteo total y por roles (Admin, Guard, Owner, Resident, Visitor)
+    - **Propiedades:** Total de propiedades y estadísticas de ocupación
+    - **Condominio:** Áreas comunes, reglas y reservas
+    - **Usuarios fijos:** Verificación de existencia de admin y guard
+    
+    **Utilidad:**
+    - Verificar el estado después de ejecutar seeders
+    - Monitorear el crecimiento de datos en la aplicación
+    - Debugging y análisis de la base de datos
+    
+    **Contraseña por defecto:** Todos los usuarios creados por seeders usan `12345678`
+    """,
+    tags=["Seeders"],
+    responses={
+        200: OpenApiResponse(
+            response=OpenApiTypes.OBJECT,
+            description="Estado de la base de datos obtenido exitosamente"
+        ),
+        500: OpenApiResponse(
+            response=OpenApiTypes.OBJECT,
+            description="Error interno del servidor"
+        )
+    }
+)
 @api_view(['GET'])
 @permission_classes([AllowAny])
 def seeder_status(request):

@@ -1,0 +1,2174 @@
+[
+  {
+    "id": 1,
+    "placa": "BYHM136",
+    "activo": true,
+    "fecha_registro": "2025-09-30T09:31:09.460146"
+  },
+  {
+    "id": 2,
+    "placa": "LOLOIL",
+    "activo": true,
+    "fecha_registro": "2025-09-30T09:31:09.460159"
+  },
+  {
+    "id": 3,
+    "placa": "MH12NE8922",
+    "activo": true,
+    "fecha_registro": "2025-09-30T09:31:09.460164"
+  },
+  {
+    "id": 4,
+    "placa": "MH20BQ20",
+    "activo": true,
+    "fecha_registro": "2025-09-30T09:31:09.460167"
+  },
+  {
+    "id": 5,
+    "placa": "KA02A6579",
+    "activo": true,
+    "fecha_registro": "2025-09-30T09:31:09.460171"
+  },
+  {
+    "id": 6,
+    "placa": "24KZT5",
+    "activo": true,
+    "fecha_registro": "2025-09-30T09:31:09.460175"
+  },
+  {
+    "id": 7,
+    "placa": "HR26BP3543",
+    "activo": true,
+    "fecha_registro": "2025-09-30T09:31:09.460179"
+  },
+  {
+    "id": 8,
+    "placa": "CRUISE",
+    "activo": true,
+    "fecha_registro": "2025-09-30T09:31:09.460182"
+  },
+  {
+    "id": 9,
+    "placa": "GJ17TC214",
+    "activo": true,
+    "fecha_registro": "2025-09-30T09:31:09.460185"
+  },
+  {
+    "id": 10,
+    "placa": "SH759",
+    "activo": true,
+    "fecha_registro": "2025-09-30T09:31:09.460189"
+  },
+  {
+    "id": 11,
+    "placa": "LENSKING",
+    "activo": true,
+    "fecha_registro": "2025-09-30T09:31:09.460192"
+  },
+  {
+    "id": 12,
+    "placa": "KL454455",
+    "activo": true,
+    "fecha_registro": "2025-09-30T09:31:09.460196"
+  },
+  {
+    "id": 13,
+    "placa": "889VSM",
+    "activo": true,
+    "fecha_registro": "2025-09-30T09:31:09.460199"
+  },
+  {
+    "id": 14,
+    "placa": "7012717083",
+    "activo": true,
+    "fecha_registro": "2025-09-30T09:31:09.460203"
+  },
+  {
+    "id": 15,
+    "placa": "LEFTTODIE",
+    "activo": true,
+    "fecha_registro": "2025-09-30T09:31:09.460206"
+  },
+  {
+    "id": 16,
+    "placa": "MAHINDRA",
+    "activo": true,
+    "fecha_registro": "2025-09-30T09:31:09.460210"
+  },
+  {
+    "id": 17,
+    "placa": "HR26CT6702",
+    "activo": true,
+    "fecha_registro": "2025-09-30T09:31:09.460213"
+  },
+  {
+    "id": 18,
+    "placa": "SINGER",
+    "activo": true,
+    "fecha_registro": "2025-09-30T09:31:09.460217"
+  },
+  {
+    "id": 19,
+    "placa": "SWIFT",
+    "activo": true,
+    "fecha_registro": "2025-09-30T09:31:09.460220"
+  },
+  {
+    "id": 20,
+    "placa": "WOBNP300",
+    "activo": true,
+    "fecha_registro": "2025-09-30T09:31:09.460223"
+  },
+  {
+    "id": 21,
+    "placa": "EUROSE",
+    "activo": true,
+    "fecha_registro": "2025-09-30T09:31:09.460227"
+  },
+  {
+    "id": 22,
+    "placa": "66887",
+    "activo": true,
+    "fecha_registro": "2025-09-30T09:31:09.460230"
+  },
+  {
+    "id": 23,
+    "placa": "SHOES",
+    "activo": true,
+    "fecha_registro": "2025-09-30T09:31:09.460234"
+  },
+  {
+    "id": 24,
+    "placa": "IMGROOT",
+    "activo": true,
+    "fecha_registro": "2025-09-30T09:31:09.460237"
+  },
+  {
+    "id": 25,
+    "placa": "MH20CS4946",
+    "activo": true,
+    "fecha_registro": "2025-09-30T09:31:09.460241"
+  },
+  {
+    "id": 26,
+    "placa": "KL10AW2111",
+    "activo": true,
+    "fecha_registro": "2025-09-30T09:31:09.460244"
+  },
+  {
+    "id": 27,
+    "placa": "KL53E964",
+    "activo": true,
+    "fecha_registro": "2025-09-30T09:31:09.460248"
+  },
+  {
+    "id": 28,
+    "placa": "3SAM123",
+    "activo": true,
+    "fecha_registro": "2025-09-30T09:31:09.460251"
+  },
+  {
+    "id": 29,
+    "placa": "MK3532",
+    "activo": true,
+    "fecha_registro": "2025-09-30T09:31:09.460255"
+  },
+  {
+    "id": 30,
+    "placa": "COMSG",
+    "activo": true,
+    "fecha_registro": "2025-09-30T09:31:09.460258"
+  },
+  {
+    "id": 31,
+    "placa": "HR26DA0471",
+    "activo": true,
+    "fecha_registro": "2025-09-30T09:31:09.460261"
+  },
+  {
+    "id": 32,
+    "placa": "BUZUKI",
+    "activo": true,
+    "fecha_registro": "2025-09-30T09:31:09.460265"
+  },
+  {
+    "id": 33,
+    "placa": "POOSILVR",
+    "activo": true,
+    "fecha_registro": "2025-09-30T09:31:09.460268"
+  },
+  {
+    "id": 34,
+    "placa": "COOPER",
+    "activo": true,
+    "fecha_registro": "2025-09-30T09:31:09.460272"
+  },
+  {
+    "id": 35,
+    "placa": "JERSEY",
+    "activo": true,
+    "fecha_registro": "2025-09-30T09:31:09.460275"
+  },
+  {
+    "id": 36,
+    "placa": "HPSX4000",
+    "activo": true,
+    "fecha_registro": "2025-09-30T09:31:09.460278"
+  },
+  {
+    "id": 37,
+    "placa": "MH15BD8877",
+    "activo": true,
+    "fecha_registro": "2025-09-30T09:31:09.460282"
+  },
+  {
+    "id": 38,
+    "placa": "REAP3R",
+    "activo": true,
+    "fecha_registro": "2025-09-30T09:31:09.460285"
+  },
+  {
+    "id": 39,
+    "placa": "DZI7YXR",
+    "activo": true,
+    "fecha_registro": "2025-09-30T09:31:09.460289"
+  },
+  {
+    "id": 40,
+    "placa": "VIRGINIA",
+    "activo": true,
+    "fecha_registro": "2025-09-30T09:31:09.460292"
+  },
+  {
+    "id": 41,
+    "placa": "MH20BY4465",
+    "activo": true,
+    "fecha_registro": "2025-09-30T09:31:09.460295"
+  },
+  {
+    "id": 42,
+    "placa": "MH20DV2362",
+    "activo": true,
+    "fecha_registro": "2025-09-30T09:31:09.460299"
+  },
+  {
+    "id": 43,
+    "placa": "DMKT15",
+    "activo": true,
+    "fecha_registro": "2025-09-30T09:31:09.460303"
+  },
+  {
+    "id": 44,
+    "placa": "KA01D1330",
+    "activo": true,
+    "fecha_registro": "2025-09-30T09:31:09.460306"
+  },
+  {
+    "id": 45,
+    "placa": "TN21AT8349",
+    "activo": true,
+    "fecha_registro": "2025-09-30T09:31:09.460310"
+  },
+  {
+    "id": 46,
+    "placa": "STOMP",
+    "activo": true,
+    "fecha_registro": "2025-09-30T09:31:09.460313"
+  },
+  {
+    "id": 47,
+    "placa": "LAMBO",
+    "activo": true,
+    "fecha_registro": "2025-09-30T09:31:09.460317"
+  },
+  {
+    "id": 48,
+    "placa": "TN07BV5200",
+    "activo": true,
+    "fecha_registro": "2025-09-30T09:31:09.460320"
+  },
+  {
+    "id": 49,
+    "placa": "DOUANE",
+    "activo": true,
+    "fecha_registro": "2025-09-30T09:31:09.460323"
+  },
+  {
+    "id": 50,
+    "placa": "MH20BY3665",
+    "activo": true,
+    "fecha_registro": "2025-09-30T09:31:09.460327"
+  },
+  {
+    "id": 51,
+    "placa": "TEAMBHFCOM",
+    "activo": true,
+    "fecha_registro": "2025-09-30T09:31:09.460330"
+  },
+  {
+    "id": 52,
+    "placa": "DUBAI15474",
+    "activo": true,
+    "fecha_registro": "2025-09-30T09:31:09.460334"
+  },
+  {
+    "id": 53,
+    "placa": "THANKYOU",
+    "activo": true,
+    "fecha_registro": "2025-09-30T09:31:09.460337"
+  },
+  {
+    "id": 54,
+    "placa": "TS08FM8888",
+    "activo": true,
+    "fecha_registro": "2025-09-30T09:31:09.460341"
+  },
+  {
+    "id": 55,
+    "placa": "KL06H5834",
+    "activo": true,
+    "fecha_registro": "2025-09-30T09:31:09.460344"
+  },
+  {
+    "id": 56,
+    "placa": "PJ323K",
+    "activo": true,
+    "fecha_registro": "2025-09-30T09:31:09.460347"
+  },
+  {
+    "id": 57,
+    "placa": "HR26CK8571",
+    "activo": true,
+    "fecha_registro": "2025-09-30T09:31:09.460351"
+  },
+  {
+    "id": 58,
+    "placa": "SKODA",
+    "activo": true,
+    "fecha_registro": "2025-09-30T09:31:09.460354"
+  },
+  {
+    "id": 59,
+    "placa": "DX103",
+    "activo": true,
+    "fecha_registro": "2025-09-30T09:31:09.460358"
+  },
+  {
+    "id": 60,
+    "placa": "AF6363",
+    "activo": true,
+    "fecha_registro": "2025-09-30T09:31:09.460361"
+  },
+  {
+    "id": 61,
+    "placa": "KL54H369",
+    "activo": true,
+    "fecha_registro": "2025-09-30T09:31:09.460365"
+  },
+  {
+    "id": 62,
+    "placa": "KL07CB8599",
+    "activo": true,
+    "fecha_registro": "2025-09-30T09:31:09.460368"
+  },
+  {
+    "id": 63,
+    "placa": "MH207601",
+    "activo": true,
+    "fecha_registro": "2025-09-30T09:31:09.460371"
+  },
+  {
+    "id": 64,
+    "placa": "LR33TEE",
+    "activo": true,
+    "fecha_registro": "2025-09-30T09:31:09.460375"
+  },
+  {
+    "id": 65,
+    "placa": "SKIPGAS",
+    "activo": true,
+    "fecha_registro": "2025-09-30T09:31:09.460378"
+  },
+  {
+    "id": 66,
+    "placa": "MH14TCD204",
+    "activo": true,
+    "fecha_registro": "2025-09-30T09:31:09.460382"
+  },
+  {
+    "id": 67,
+    "placa": "VIPER",
+    "activo": true,
+    "fecha_registro": "2025-09-30T09:31:09.460386"
+  },
+  {
+    "id": 68,
+    "placa": "ANTHONY",
+    "activo": true,
+    "fecha_registro": "2025-09-30T09:31:09.460395"
+  },
+  {
+    "id": 69,
+    "placa": "8281334646",
+    "activo": true,
+    "fecha_registro": "2025-09-30T09:31:09.460398"
+  },
+  {
+    "id": 70,
+    "placa": "GL395X",
+    "activo": true,
+    "fecha_registro": "2025-09-30T09:31:09.460402"
+  },
+  {
+    "id": 71,
+    "placa": "UN02BL",
+    "activo": true,
+    "fecha_registro": "2025-09-30T09:31:09.460405"
+  },
+  {
+    "id": 72,
+    "placa": "MH12DE1433",
+    "activo": true,
+    "fecha_registro": "2025-09-30T09:31:09.460409"
+  },
+  {
+    "id": 73,
+    "placa": "PK015L",
+    "activo": true,
+    "fecha_registro": "2025-09-30T09:31:09.460412"
+  },
+  {
+    "id": 74,
+    "placa": "HNYCHIL3",
+    "activo": true,
+    "fecha_registro": "2025-09-30T09:31:09.460415"
+  },
+  {
+    "id": 75,
+    "placa": "GBI8TCE",
+    "activo": true,
+    "fecha_registro": "2025-09-30T09:31:09.460419"
+  },
+  {
+    "id": 76,
+    "placa": "HR26BU0375",
+    "activo": true,
+    "fecha_registro": "2025-09-30T09:31:09.460422"
+  },
+  {
+    "id": 77,
+    "placa": "TN21BZ0768",
+    "activo": true,
+    "fecha_registro": "2025-09-30T09:31:09.460426"
+  },
+  {
+    "id": 78,
+    "placa": "HR26CU6799",
+    "activo": true,
+    "fecha_registro": "2025-09-30T09:31:09.460431"
+  },
+  {
+    "id": 79,
+    "placa": "HONDA",
+    "activo": true,
+    "fecha_registro": "2025-09-30T09:31:09.460434"
+  },
+  {
+    "id": 80,
+    "placa": "TN59AQ1515",
+    "activo": true,
+    "fecha_registro": "2025-09-30T09:31:09.460438"
+  },
+  {
+    "id": 81,
+    "placa": "KA42N0852",
+    "activo": true,
+    "fecha_registro": "2025-09-30T09:31:09.460441"
+  },
+  {
+    "id": 82,
+    "placa": "17TXT4",
+    "activo": true,
+    "fecha_registro": "2025-09-30T09:31:09.460444"
+  },
+  {
+    "id": 83,
+    "placa": "MH01DB0001",
+    "activo": true,
+    "fecha_registro": "2025-09-30T09:31:09.460448"
+  },
+  {
+    "id": 84,
+    "placa": "TOYOTA",
+    "activo": true,
+    "fecha_registro": "2025-09-30T09:31:09.460451"
+  },
+  {
+    "id": 85,
+    "placa": "PTB557K",
+    "activo": true,
+    "fecha_registro": "2025-09-30T09:31:09.460455"
+  },
+  {
+    "id": 86,
+    "placa": "R362GEL",
+    "activo": true,
+    "fecha_registro": "2025-09-30T09:31:09.460458"
+  },
+  {
+    "id": 87,
+    "placa": "TN19S4523",
+    "activo": true,
+    "fecha_registro": "2025-09-30T09:31:09.460461"
+  },
+  {
+    "id": 88,
+    "placa": "WB74X7605",
+    "activo": true,
+    "fecha_registro": "2025-09-30T09:31:09.460465"
+  },
+  {
+    "id": 89,
+    "placa": "DL7CN5617",
+    "activo": true,
+    "fecha_registro": "2025-09-30T09:31:09.460468"
+  },
+  {
+    "id": 90,
+    "placa": "MH20CS9817",
+    "activo": true,
+    "fecha_registro": "2025-09-30T09:31:09.460471"
+  },
+  {
+    "id": 91,
+    "placa": "KA031351",
+    "activo": true,
+    "fecha_registro": "2025-09-30T09:31:09.460475"
+  },
+  {
+    "id": 92,
+    "placa": "MH207598",
+    "activo": true,
+    "fecha_registro": "2025-09-30T09:31:09.460478"
+  },
+  {
+    "id": 93,
+    "placa": "AP11AM091",
+    "activo": true,
+    "fecha_registro": "2025-09-30T09:31:09.460481"
+  },
+  {
+    "id": 94,
+    "placa": "MH14DX9937",
+    "activo": true,
+    "fecha_registro": "2025-09-30T09:31:09.460486"
+  },
+  {
+    "id": 95,
+    "placa": "OCTAVIA",
+    "activo": true,
+    "fecha_registro": "2025-09-30T09:31:09.460489"
+  },
+  {
+    "id": 96,
+    "placa": "KA29Z999",
+    "activo": true,
+    "fecha_registro": "2025-09-30T09:31:09.460493"
+  },
+  {
+    "id": 97,
+    "placa": "ORINNIE",
+    "activo": true,
+    "fecha_registro": "2025-09-30T09:31:09.460496"
+  },
+  {
+    "id": 98,
+    "placa": "VHA800",
+    "activo": true,
+    "fecha_registro": "2025-09-30T09:31:09.460499"
+  },
+  {
+    "id": 99,
+    "placa": "Y8544",
+    "activo": true,
+    "fecha_registro": "2025-09-30T09:31:09.460503"
+  },
+  {
+    "id": 100,
+    "placa": "KYI9VNU",
+    "activo": true,
+    "fecha_registro": "2025-09-30T09:31:09.460506"
+  },
+  {
+    "id": 101,
+    "placa": "MH14BN7077",
+    "activo": true,
+    "fecha_registro": "2025-09-30T09:31:09.460509"
+  },
+  {
+    "id": 102,
+    "placa": "PY56BXU",
+    "activo": true,
+    "fecha_registro": "2025-09-30T09:31:09.460513"
+  },
+  {
+    "id": 103,
+    "placa": "AP29BP",
+    "activo": true,
+    "fecha_registro": "2025-09-30T09:31:09.460516"
+  },
+  {
+    "id": 104,
+    "placa": "TS08ER1643",
+    "activo": true,
+    "fecha_registro": "2025-09-30T09:31:09.460520"
+  },
+  {
+    "id": 105,
+    "placa": "HR696969",
+    "activo": true,
+    "fecha_registro": "2025-09-30T09:31:09.460523"
+  },
+  {
+    "id": 106,
+    "placa": "TEMP6662",
+    "activo": true,
+    "fecha_registro": "2025-09-30T09:31:09.460526"
+  },
+  {
+    "id": 107,
+    "placa": "MH02BB2",
+    "activo": true,
+    "fecha_registro": "2025-09-30T09:31:09.460530"
+  },
+  {
+    "id": 108,
+    "placa": "FAMU2010",
+    "activo": true,
+    "fecha_registro": "2025-09-30T09:31:09.460533"
+  },
+  {
+    "id": 109,
+    "placa": "4GETOIL",
+    "activo": true,
+    "fecha_registro": "2025-09-30T09:31:09.460537"
+  },
+  {
+    "id": 110,
+    "placa": "TN21AU1153",
+    "activo": true,
+    "fecha_registro": "2025-09-30T09:31:09.460540"
+  },
+  {
+    "id": 111,
+    "placa": "LIVIN",
+    "activo": true,
+    "fecha_registro": "2025-09-30T09:31:09.460544"
+  },
+  {
+    "id": 112,
+    "placa": "HR26CF5868",
+    "activo": true,
+    "fecha_registro": "2025-09-30T09:31:09.460547"
+  },
+  {
+    "id": 113,
+    "placa": "UP16TC1366",
+    "activo": true,
+    "fecha_registro": "2025-09-30T09:31:09.460551"
+  },
+  {
+    "id": 114,
+    "placa": "INDIANA",
+    "activo": true,
+    "fecha_registro": "2025-09-30T09:31:09.460554"
+  },
+  {
+    "id": 115,
+    "placa": "1CDAF",
+    "activo": true,
+    "fecha_registro": "2025-09-30T09:31:09.460557"
+  },
+  {
+    "id": 116,
+    "placa": "A055585",
+    "activo": true,
+    "fecha_registro": "2025-09-30T09:31:09.460561"
+  },
+  {
+    "id": 117,
+    "placa": "PUI8BES",
+    "activo": true,
+    "fecha_registro": "2025-09-30T09:31:09.460564"
+  },
+  {
+    "id": 118,
+    "placa": "KL16J3636",
+    "activo": true,
+    "fecha_registro": "2025-09-30T09:31:09.460567"
+  },
+  {
+    "id": 119,
+    "placa": "HR26CH3604",
+    "activo": true,
+    "fecha_registro": "2025-09-30T09:31:09.460571"
+  },
+  {
+    "id": 120,
+    "placa": "14EY5972",
+    "activo": true,
+    "fecha_registro": "2025-09-30T09:31:09.460574"
+  },
+  {
+    "id": 121,
+    "placa": "CARWALECOM",
+    "activo": true,
+    "fecha_registro": "2025-09-30T09:31:09.460578"
+  },
+  {
+    "id": 122,
+    "placa": "SHAKNBK",
+    "activo": true,
+    "fecha_registro": "2025-09-30T09:31:09.460581"
+  },
+  {
+    "id": 123,
+    "placa": "42UK32",
+    "activo": true,
+    "fecha_registro": "2025-09-30T09:31:09.460584"
+  },
+  {
+    "id": 124,
+    "placa": "MH20CS1938",
+    "activo": true,
+    "fecha_registro": "2025-09-30T09:31:09.460588"
+  },
+  {
+    "id": 125,
+    "placa": "T8544",
+    "activo": true,
+    "fecha_registro": "2025-09-30T09:31:09.460591"
+  },
+  {
+    "id": 126,
+    "placa": "OCEANSTATE",
+    "activo": true,
+    "fecha_registro": "2025-09-30T09:31:09.460595"
+  },
+  {
+    "id": 127,
+    "placa": "067RAF",
+    "activo": true,
+    "fecha_registro": "2025-09-30T09:31:09.460598"
+  },
+  {
+    "id": 128,
+    "placa": "TS009TC268",
+    "activo": true,
+    "fecha_registro": "2025-09-30T09:31:09.460601"
+  },
+  {
+    "id": 129,
+    "placa": "KL10AV6342",
+    "activo": true,
+    "fecha_registro": "2025-09-30T09:31:09.460604"
+  },
+  {
+    "id": 130,
+    "placa": "DL12CG6648",
+    "activo": true,
+    "fecha_registro": "2025-09-30T09:31:09.460608"
+  },
+  {
+    "id": 131,
+    "placa": "MATATAG",
+    "activo": true,
+    "fecha_registro": "2025-09-30T09:31:09.460612"
+  },
+  {
+    "id": 132,
+    "placa": "GOOGLE",
+    "activo": true,
+    "fecha_registro": "2025-09-30T09:31:09.460615"
+  },
+  {
+    "id": 133,
+    "placa": "KL65H4383",
+    "activo": true,
+    "fecha_registro": "2025-09-30T09:31:09.460619"
+  },
+  {
+    "id": 134,
+    "placa": "EMCLUB7",
+    "activo": true,
+    "fecha_registro": "2025-09-30T09:31:09.460622"
+  },
+  {
+    "id": 135,
+    "placa": "ME9869",
+    "activo": true,
+    "fecha_registro": "2025-09-30T09:31:09.460625"
+  },
+  {
+    "id": 136,
+    "placa": "KA51MJ8156",
+    "activo": true,
+    "fecha_registro": "2025-09-30T09:31:09.460628"
+  },
+  {
+    "id": 137,
+    "placa": "FALLYOU",
+    "activo": true,
+    "fecha_registro": "2025-09-30T09:31:09.460632"
+  },
+  {
+    "id": 138,
+    "placa": "PERMIT",
+    "activo": true,
+    "fecha_registro": "2025-09-30T09:31:09.460635"
+  },
+  {
+    "id": 139,
+    "placa": "DL6CAB123X",
+    "activo": true,
+    "fecha_registro": "2025-09-30T09:31:09.460638"
+  },
+  {
+    "id": 140,
+    "placa": "PRIVATE",
+    "activo": true,
+    "fecha_registro": "2025-09-30T09:31:09.460642"
+  },
+  {
+    "id": 141,
+    "placa": "HR26AZ5927",
+    "activo": true,
+    "fecha_registro": "2025-09-30T09:31:09.460645"
+  },
+  {
+    "id": 142,
+    "placa": "MH14TCF459",
+    "activo": true,
+    "fecha_registro": "2025-09-30T09:31:09.460648"
+  },
+  {
+    "id": 143,
+    "placa": "2228HM",
+    "activo": true,
+    "fecha_registro": "2025-09-30T09:31:09.460652"
+  },
+  {
+    "id": 144,
+    "placa": "YAMRAJ",
+    "activo": true,
+    "fecha_registro": "2025-09-30T09:31:09.460655"
+  },
+  {
+    "id": 145,
+    "placa": "FOTOSTOCK",
+    "activo": true,
+    "fecha_registro": "2025-09-30T09:31:09.460658"
+  },
+  {
+    "id": 146,
+    "placa": "KL7BZ99",
+    "activo": true,
+    "fecha_registro": "2025-09-30T09:31:09.460662"
+  },
+  {
+    "id": 147,
+    "placa": "WWWORBIZIN",
+    "activo": true,
+    "fecha_registro": "2025-09-30T09:31:09.460665"
+  },
+  {
+    "id": 148,
+    "placa": "NL60LXB",
+    "activo": true,
+    "fecha_registro": "2025-09-30T09:31:09.460668"
+  },
+  {
+    "id": 149,
+    "placa": "IRFU3348",
+    "activo": true,
+    "fecha_registro": "2025-09-30T09:31:09.460672"
+  },
+  {
+    "id": 150,
+    "placa": "KAISER",
+    "activo": true,
+    "fecha_registro": "2025-09-30T09:31:09.460676"
+  },
+  {
+    "id": 151,
+    "placa": "MH01BB550",
+    "activo": true,
+    "fecha_registro": "2025-09-30T09:31:09.460679"
+  },
+  {
+    "id": 152,
+    "placa": "GOT2P00",
+    "activo": true,
+    "fecha_registro": "2025-09-30T09:31:09.460682"
+  },
+  {
+    "id": 153,
+    "placa": "AP02BP2454",
+    "activo": true,
+    "fecha_registro": "2025-09-30T09:31:09.460686"
+  },
+  {
+    "id": 154,
+    "placa": "INDUS",
+    "activo": true,
+    "fecha_registro": "2025-09-30T09:31:09.460689"
+  },
+  {
+    "id": 155,
+    "placa": "30461C",
+    "activo": true,
+    "fecha_registro": "2025-09-30T09:31:09.460692"
+  },
+  {
+    "id": 156,
+    "placa": "GOTBHP",
+    "activo": true,
+    "fecha_registro": "2025-09-30T09:31:09.460696"
+  },
+  {
+    "id": 157,
+    "placa": "MH12MR0613",
+    "activo": true,
+    "fecha_registro": "2025-09-30T09:31:09.460699"
+  },
+  {
+    "id": 158,
+    "placa": "695299",
+    "activo": true,
+    "fecha_registro": "2025-09-30T09:31:09.460703"
+  },
+  {
+    "id": 159,
+    "placa": "ROUFRAILS",
+    "activo": true,
+    "fecha_registro": "2025-09-30T09:31:09.460706"
+  },
+  {
+    "id": 160,
+    "placa": "ADIDAS",
+    "activo": true,
+    "fecha_registro": "2025-09-30T09:31:09.460710"
+  },
+  {
+    "id": 161,
+    "placa": "802HN",
+    "activo": true,
+    "fecha_registro": "2025-09-30T09:31:09.460713"
+  },
+  {
+    "id": 162,
+    "placa": "77ZFK8",
+    "activo": true,
+    "fecha_registro": "2025-09-30T09:31:09.460716"
+  },
+  {
+    "id": 163,
+    "placa": "KL10AW2814",
+    "activo": true,
+    "fecha_registro": "2025-09-30T09:31:09.460720"
+  },
+  {
+    "id": 164,
+    "placa": "TN02BL",
+    "activo": true,
+    "fecha_registro": "2025-09-30T09:31:09.460723"
+  },
+  {
+    "id": 165,
+    "placa": "VIVEK",
+    "activo": true,
+    "fecha_registro": "2025-09-30T09:31:09.460726"
+  },
+  {
+    "id": 166,
+    "placa": "15LK10898",
+    "activo": true,
+    "fecha_registro": "2025-09-30T09:31:09.460730"
+  },
+  {
+    "id": 167,
+    "placa": "G526JHD",
+    "activo": true,
+    "fecha_registro": "2025-09-30T09:31:09.460733"
+  },
+  {
+    "id": 168,
+    "placa": "123RF",
+    "activo": true,
+    "fecha_registro": "2025-09-30T09:31:09.460736"
+  },
+  {
+    "id": 169,
+    "placa": "PZ62FDX",
+    "activo": true,
+    "fecha_registro": "2025-09-30T09:31:09.460740"
+  },
+  {
+    "id": 170,
+    "placa": "HR26CT4063",
+    "activo": true,
+    "fecha_registro": "2025-09-30T09:31:09.460743"
+  },
+  {
+    "id": 171,
+    "placa": "AGONR",
+    "activo": true,
+    "fecha_registro": "2025-09-30T09:31:09.460747"
+  },
+  {
+    "id": 172,
+    "placa": "HEATHROW",
+    "activo": true,
+    "fecha_registro": "2025-09-30T09:31:09.460750"
+  },
+  {
+    "id": 173,
+    "placa": "CARANOBIKE",
+    "activo": true,
+    "fecha_registro": "2025-09-30T09:31:09.460754"
+  },
+  {
+    "id": 174,
+    "placa": "KL09AL9405",
+    "activo": true,
+    "fecha_registro": "2025-09-30T09:31:09.460758"
+  },
+  {
+    "id": 175,
+    "placa": "NBEYOND",
+    "activo": true,
+    "fecha_registro": "2025-09-30T09:31:09.460761"
+  },
+  {
+    "id": 176,
+    "placa": "MH207597",
+    "activo": true,
+    "fecha_registro": "2025-09-30T09:31:09.460764"
+  },
+  {
+    "id": 177,
+    "placa": "TN74AH1413",
+    "activo": true,
+    "fecha_registro": "2025-09-30T09:31:09.460768"
+  },
+  {
+    "id": 178,
+    "placa": "NOTACOP",
+    "activo": true,
+    "fecha_registro": "2025-09-30T09:31:09.460771"
+  },
+  {
+    "id": 179,
+    "placa": "BKWL3324",
+    "activo": true,
+    "fecha_registro": "2025-09-30T09:31:09.460775"
+  },
+  {
+    "id": 180,
+    "placa": "MH200943",
+    "activo": true,
+    "fecha_registro": "2025-09-30T09:31:09.460778"
+  },
+  {
+    "id": 181,
+    "placa": "RANGEROVER",
+    "activo": true,
+    "fecha_registro": "2025-09-30T09:31:09.460782"
+  },
+  {
+    "id": 182,
+    "placa": "TN21BY0166",
+    "activo": true,
+    "fecha_registro": "2025-09-30T09:31:09.460785"
+  },
+  {
+    "id": 183,
+    "placa": "MH12JC2813",
+    "activo": true,
+    "fecha_registro": "2025-09-30T09:31:09.460788"
+  },
+  {
+    "id": 184,
+    "placa": "L19TLC",
+    "activo": true,
+    "fecha_registro": "2025-09-30T09:31:09.460792"
+  },
+  {
+    "id": 185,
+    "placa": "MYOTHERCAR",
+    "activo": true,
+    "fecha_registro": "2025-09-30T09:31:09.460795"
+  },
+  {
+    "id": 186,
+    "placa": "KOMPRESSOR",
+    "activo": true,
+    "fecha_registro": "2025-09-30T09:31:09.460798"
+  },
+  {
+    "id": 187,
+    "placa": "MH02CT2727",
+    "activo": true,
+    "fecha_registro": "2025-09-30T09:31:09.460802"
+  },
+  {
+    "id": 188,
+    "placa": "GS084V",
+    "activo": true,
+    "fecha_registro": "2025-09-30T09:31:09.460805"
+  },
+  {
+    "id": 189,
+    "placa": "LAWYER",
+    "activo": true,
+    "fecha_registro": "2025-09-30T09:31:09.460808"
+  },
+  {
+    "id": 190,
+    "placa": "PB08CX2959",
+    "activo": true,
+    "fecha_registro": "2025-09-30T09:31:09.460812"
+  },
+  {
+    "id": 191,
+    "placa": "RN0283",
+    "activo": true,
+    "fecha_registro": "2025-09-30T09:31:09.460815"
+  },
+  {
+    "id": 192,
+    "placa": "ENFIELD",
+    "activo": true,
+    "fecha_registro": "2025-09-30T09:31:09.460818"
+  },
+  {
+    "id": 193,
+    "placa": "HR26BU0380",
+    "activo": true,
+    "fecha_registro": "2025-09-30T09:31:09.460822"
+  },
+  {
+    "id": 194,
+    "placa": "TN37CS",
+    "activo": true,
+    "fecha_registro": "2025-09-30T09:31:09.460825"
+  },
+  {
+    "id": 195,
+    "placa": "2089563",
+    "activo": true,
+    "fecha_registro": "2025-09-30T09:31:09.460828"
+  },
+  {
+    "id": 196,
+    "placa": "HR26BM8271",
+    "activo": true,
+    "fecha_registro": "2025-09-30T09:31:09.460832"
+  },
+  {
+    "id": 197,
+    "placa": "ONTARIO",
+    "activo": true,
+    "fecha_registro": "2025-09-30T09:31:09.460835"
+  },
+  {
+    "id": 198,
+    "placa": "TN02TC0143",
+    "activo": true,
+    "fecha_registro": "2025-09-30T09:31:09.460838"
+  },
+  {
+    "id": 199,
+    "placa": "THRUSTZONE",
+    "activo": true,
+    "fecha_registro": "2025-09-30T09:31:09.460842"
+  },
+  {
+    "id": 200,
+    "placa": "JP548J",
+    "activo": true,
+    "fecha_registro": "2025-09-30T09:31:09.460845"
+  },
+  {
+    "id": 201,
+    "placa": "172TMJ",
+    "activo": true,
+    "fecha_registro": "2025-09-30T09:31:09.460848"
+  },
+  {
+    "id": 202,
+    "placa": "KL01AX8000",
+    "activo": true,
+    "fecha_registro": "2025-09-30T09:31:09.460852"
+  },
+  {
+    "id": 203,
+    "placa": "WOR516K",
+    "activo": true,
+    "fecha_registro": "2025-09-30T09:31:09.460856"
+  },
+  {
+    "id": 204,
+    "placa": "MH024545",
+    "activo": true,
+    "fecha_registro": "2025-09-30T09:31:09.460859"
+  },
+  {
+    "id": 205,
+    "placa": "M771276",
+    "activo": true,
+    "fecha_registro": "2025-09-30T09:31:09.460863"
+  },
+  {
+    "id": 206,
+    "placa": "HAPPIER",
+    "activo": true,
+    "fecha_registro": "2025-09-30T09:31:09.460866"
+  },
+  {
+    "id": 207,
+    "placa": "KL12G7531",
+    "activo": true,
+    "fecha_registro": "2025-09-30T09:31:09.460870"
+  },
+  {
+    "id": 208,
+    "placa": "MH20DJ0419",
+    "activo": true,
+    "fecha_registro": "2025-09-30T09:31:09.460873"
+  },
+  {
+    "id": 209,
+    "placa": "GESPOT",
+    "activo": true,
+    "fecha_registro": "2025-09-30T09:31:09.460877"
+  },
+  {
+    "id": 210,
+    "placa": "BATMAN",
+    "activo": true,
+    "fecha_registro": "2025-09-30T09:31:09.460880"
+  },
+  {
+    "id": 211,
+    "placa": "TSLAS1",
+    "activo": true,
+    "fecha_registro": "2025-09-30T09:31:09.460883"
+  },
+  {
+    "id": 212,
+    "placa": "IMACAR",
+    "activo": true,
+    "fecha_registro": "2025-09-30T09:31:09.460887"
+  },
+  {
+    "id": 213,
+    "placa": "MIDLYPH",
+    "activo": true,
+    "fecha_registro": "2025-09-30T09:31:09.460890"
+  },
+  {
+    "id": 214,
+    "placa": "KL60N5344",
+    "activo": true,
+    "fecha_registro": "2025-09-30T09:31:09.460894"
+  },
+  {
+    "id": 215,
+    "placa": "HR26U7501",
+    "activo": true,
+    "fecha_registro": "2025-09-30T09:31:09.460897"
+  },
+  {
+    "id": 216,
+    "placa": "KLG1CA2555",
+    "activo": true,
+    "fecha_registro": "2025-09-30T09:31:09.460900"
+  },
+  {
+    "id": 217,
+    "placa": "MH46P1661",
+    "activo": true,
+    "fecha_registro": "2025-09-30T09:31:09.460904"
+  },
+  {
+    "id": 218,
+    "placa": "INDIACAR",
+    "activo": true,
+    "fecha_registro": "2025-09-30T09:31:09.460907"
+  },
+  {
+    "id": 219,
+    "placa": "MH15TC554",
+    "activo": true,
+    "fecha_registro": "2025-09-30T09:31:09.460911"
+  },
+  {
+    "id": 220,
+    "placa": "KL01AL1661",
+    "activo": true,
+    "fecha_registro": "2025-09-30T09:31:09.460914"
+  },
+  {
+    "id": 221,
+    "placa": "AK0188",
+    "activo": true,
+    "fecha_registro": "2025-09-30T09:31:09.460917"
+  },
+  {
+    "id": 222,
+    "placa": "ALAMY",
+    "activo": true,
+    "fecha_registro": "2025-09-30T09:31:09.460921"
+  },
+  {
+    "id": 223,
+    "placa": "TK642F",
+    "activo": true,
+    "fecha_registro": "2025-09-30T09:31:09.460924"
+  },
+  {
+    "id": 224,
+    "placa": "PEN15",
+    "activo": true,
+    "fecha_registro": "2025-09-30T09:31:09.460928"
+  },
+  {
+    "id": 225,
+    "placa": "MH02BM5048",
+    "activo": true,
+    "fecha_registro": "2025-09-30T09:31:09.460931"
+  },
+  {
+    "id": 226,
+    "placa": "P3RVP",
+    "activo": true,
+    "fecha_registro": "2025-09-30T09:31:09.460935"
+  },
+  {
+    "id": 227,
+    "placa": "DL3C8D5092",
+    "activo": true,
+    "fecha_registro": "2025-09-30T09:31:09.460938"
+  },
+  {
+    "id": 228,
+    "placa": "CU5600",
+    "activo": true,
+    "fecha_registro": "2025-09-30T09:31:09.460941"
+  },
+  {
+    "id": 229,
+    "placa": "MH06AW8929",
+    "activo": true,
+    "fecha_registro": "2025-09-30T09:31:09.460945"
+  },
+  {
+    "id": 230,
+    "placa": "DWSPL",
+    "activo": true,
+    "fecha_registro": "2025-09-30T09:31:09.460948"
+  },
+  {
+    "id": 231,
+    "placa": "CRYSTA",
+    "activo": true,
+    "fecha_registro": "2025-09-30T09:31:09.460952"
+  },
+  {
+    "id": 232,
+    "placa": "MH14EU3498",
+    "activo": true,
+    "fecha_registro": "2025-09-30T09:31:09.460955"
+  },
+  {
+    "id": 233,
+    "placa": "KL55R2473",
+    "activo": true,
+    "fecha_registro": "2025-09-30T09:31:09.460959"
+  },
+  {
+    "id": 234,
+    "placa": "KAOZAC5957",
+    "activo": true,
+    "fecha_registro": "2025-09-30T09:31:09.460962"
+  },
+  {
+    "id": 235,
+    "placa": "KL432344",
+    "activo": true,
+    "fecha_registro": "2025-09-30T09:31:09.460966"
+  },
+  {
+    "id": 236,
+    "placa": "YNTZDBG",
+    "activo": true,
+    "fecha_registro": "2025-09-30T09:31:09.460969"
+  },
+  {
+    "id": 237,
+    "placa": "MH14EH7958",
+    "activo": true,
+    "fecha_registro": "2025-09-30T09:31:09.460973"
+  },
+  {
+    "id": 238,
+    "placa": "7VIG263",
+    "activo": true,
+    "fecha_registro": "2025-09-30T09:31:09.460976"
+  },
+  {
+    "id": 239,
+    "placa": "S7JDW",
+    "activo": true,
+    "fecha_registro": "2025-09-30T09:31:09.460980"
+  },
+  {
+    "id": 240,
+    "placa": "SAMWEDEL",
+    "activo": true,
+    "fecha_registro": "2025-09-30T09:31:09.460983"
+  },
+  {
+    "id": 241,
+    "placa": "HR26DK0830",
+    "activo": true,
+    "fecha_registro": "2025-09-30T09:31:09.460986"
+  },
+  {
+    "id": 242,
+    "placa": "JA62UAR",
+    "activo": true,
+    "fecha_registro": "2025-09-30T09:31:09.460990"
+  },
+  {
+    "id": 243,
+    "placa": "VBJ87T",
+    "activo": true,
+    "fecha_registro": "2025-09-30T09:31:09.460993"
+  },
+  {
+    "id": 244,
+    "placa": "H982FKL",
+    "activo": true,
+    "fecha_registro": "2025-09-30T09:31:09.460997"
+  },
+  {
+    "id": 245,
+    "placa": "AU585",
+    "activo": true,
+    "fecha_registro": "2025-09-30T09:31:09.461000"
+  },
+  {
+    "id": 246,
+    "placa": "HR26TC7099",
+    "activo": true,
+    "fecha_registro": "2025-09-30T09:31:09.461004"
+  },
+  {
+    "id": 247,
+    "placa": "OX65AWD",
+    "activo": true,
+    "fecha_registro": "2025-09-30T09:31:09.461007"
+  },
+  {
+    "id": 248,
+    "placa": "GJ07BR1336",
+    "activo": true,
+    "fecha_registro": "2025-09-30T09:31:09.461011"
+  },
+  {
+    "id": 249,
+    "placa": "AB44887",
+    "activo": true,
+    "fecha_registro": "2025-09-30T09:31:09.461014"
+  },
+  {
+    "id": 250,
+    "placa": "VX54FVL",
+    "activo": true,
+    "fecha_registro": "2025-09-30T09:31:09.461018"
+  },
+  {
+    "id": 251,
+    "placa": "MP099052",
+    "activo": true,
+    "fecha_registro": "2025-09-30T09:31:09.461021"
+  },
+  {
+    "id": 252,
+    "placa": "HR26CE1485",
+    "activo": true,
+    "fecha_registro": "2025-09-30T09:31:09.461024"
+  },
+  {
+    "id": 253,
+    "placa": "GJ1KF",
+    "activo": true,
+    "fecha_registro": "2025-09-30T09:31:09.461028"
+  },
+  {
+    "id": 254,
+    "placa": "OMGBCKY",
+    "activo": true,
+    "fecha_registro": "2025-09-30T09:31:09.461031"
+  },
+  {
+    "id": 255,
+    "placa": "TN37CR4019",
+    "activo": true,
+    "fecha_registro": "2025-09-30T09:31:09.461034"
+  },
+  {
+    "id": 256,
+    "placa": "ALR486",
+    "activo": true,
+    "fecha_registro": "2025-09-30T09:31:09.461038"
+  },
+  {
+    "id": 257,
+    "placa": "TN42R2697",
+    "activo": true,
+    "fecha_registro": "2025-09-30T09:31:09.461041"
+  },
+  {
+    "id": 258,
+    "placa": "MK20TC189",
+    "activo": true,
+    "fecha_registro": "2025-09-30T09:31:09.461045"
+  },
+  {
+    "id": 259,
+    "placa": "M666YOB",
+    "activo": true,
+    "fecha_registro": "2025-09-30T09:31:09.461048"
+  },
+  {
+    "id": 260,
+    "placa": "E4GLE",
+    "activo": true,
+    "fecha_registro": "2025-09-30T09:31:09.461052"
+  },
+  {
+    "id": 261,
+    "placa": "RK977AF",
+    "activo": true,
+    "fecha_registro": "2025-09-30T09:31:09.461055"
+  },
+  {
+    "id": 262,
+    "placa": "DA7222",
+    "activo": true,
+    "fecha_registro": "2025-09-30T09:31:09.461059"
+  },
+  {
+    "id": 263,
+    "placa": "MF9000",
+    "activo": true,
+    "fecha_registro": "2025-09-30T09:31:09.461062"
+  },
+  {
+    "id": 264,
+    "placa": "GIFTS",
+    "activo": true,
+    "fecha_registro": "2025-09-30T09:31:09.461065"
+  },
+  {
+    "id": 265,
+    "placa": "MCB025",
+    "activo": true,
+    "fecha_registro": "2025-09-30T09:31:09.461069"
+  },
+  {
+    "id": 266,
+    "placa": "RK361S",
+    "activo": true,
+    "fecha_registro": "2025-09-30T09:31:09.461072"
+  },
+  {
+    "id": 267,
+    "placa": "BCG986",
+    "activo": true,
+    "fecha_registro": "2025-09-30T09:31:09.461076"
+  },
+  {
+    "id": 268,
+    "placa": "80211N",
+    "activo": true,
+    "fecha_registro": "2025-09-30T09:31:09.461079"
+  },
+  {
+    "id": 269,
+    "placa": "M906090K",
+    "activo": true,
+    "fecha_registro": "2025-09-30T09:31:09.461083"
+  },
+  {
+    "id": 270,
+    "placa": "DRUNK",
+    "activo": true,
+    "fecha_registro": "2025-09-30T09:31:09.461087"
+  },
+  {
+    "id": 271,
+    "placa": "CALIFORNIA",
+    "activo": true,
+    "fecha_registro": "2025-09-30T09:31:09.461090"
+  },
+  {
+    "id": 272,
+    "placa": "QUIKRCARS",
+    "activo": true,
+    "fecha_registro": "2025-09-30T09:31:09.461094"
+  },
+  {
+    "id": 273,
+    "placa": "KA51AA3469",
+    "activo": true,
+    "fecha_registro": "2025-09-30T09:31:09.461097"
+  },
+  {
+    "id": 274,
+    "placa": "DAN54P",
+    "activo": true,
+    "fecha_registro": "2025-09-30T09:31:09.461101"
+  },
+  {
+    "id": 275,
+    "placa": "MOTORBEAM",
+    "activo": true,
+    "fecha_registro": "2025-09-30T09:31:09.461104"
+  },
+  {
+    "id": 276,
+    "placa": "M5519",
+    "activo": true,
+    "fecha_registro": "2025-09-30T09:31:09.461107"
+  },
+  {
+    "id": 277,
+    "placa": "KL10AV6633",
+    "activo": true,
+    "fecha_registro": "2025-09-30T09:31:09.461111"
+  },
+  {
+    "id": 278,
+    "placa": "SUZUKI",
+    "activo": true,
+    "fecha_registro": "2025-09-30T09:31:09.461114"
+  },
+  {
+    "id": 279,
+    "placa": "24PGR3",
+    "activo": true,
+    "fecha_registro": "2025-09-30T09:31:09.461118"
+  },
+  {
+    "id": 280,
+    "placa": "HR26DK6475",
+    "activo": true,
+    "fecha_registro": "2025-09-30T09:31:09.461121"
+  },
+  {
+    "id": 281,
+    "placa": "DL8CX4850",
+    "activo": true,
+    "fecha_registro": "2025-09-30T09:31:09.461124"
+  },
+  {
+    "id": 282,
+    "placa": "MH46Z8892",
+    "activo": true,
+    "fecha_registro": "2025-09-30T09:31:09.461128"
+  },
+  {
+    "id": 283,
+    "placa": "SDN7484U",
+    "activo": true,
+    "fecha_registro": "2025-09-30T09:31:09.461131"
+  },
+  {
+    "id": 284,
+    "placa": "TN99F2378",
+    "activo": true,
+    "fecha_registro": "2025-09-30T09:31:09.461135"
+  },
+  {
+    "id": 285,
+    "placa": "VU63GTY",
+    "activo": true,
+    "fecha_registro": "2025-09-30T09:31:09.461138"
+  },
+  {
+    "id": 286,
+    "placa": "03AB3380",
+    "activo": true,
+    "fecha_registro": "2025-09-30T09:31:09.461142"
+  },
+  {
+    "id": 287,
+    "placa": "AP28N3107",
+    "activo": true,
+    "fecha_registro": "2025-09-30T09:31:09.461145"
+  },
+  {
+    "id": 288,
+    "placa": "KA03AB3380",
+    "activo": true,
+    "fecha_registro": "2025-09-30T09:31:09.461148"
+  },
+  {
+    "id": 289,
+    "placa": "CH01AN0001",
+    "activo": true,
+    "fecha_registro": "2025-09-30T09:31:09.461152"
+  },
+  {
+    "id": 290,
+    "placa": "DZVG49",
+    "activo": true,
+    "fecha_registro": "2025-09-30T09:31:09.461155"
+  },
+  {
+    "id": 291,
+    "placa": "HR26CR3302",
+    "activo": true,
+    "fecha_registro": "2025-09-30T09:31:09.461158"
+  },
+  {
+    "id": 292,
+    "placa": "KA51MJ2143",
+    "activo": true,
+    "fecha_registro": "2025-09-30T09:31:09.461162"
+  },
+  {
+    "id": 293,
+    "placa": "MH14TCF460",
+    "activo": true,
+    "fecha_registro": "2025-09-30T09:31:09.461165"
+  },
+  {
+    "id": 294,
+    "placa": "YSX213",
+    "activo": true,
+    "fecha_registro": "2025-09-30T09:31:09.461169"
+  },
+  {
+    "id": 295,
+    "placa": "OCTANE",
+    "activo": true,
+    "fecha_registro": "2025-09-30T09:31:09.461172"
+  },
+  {
+    "id": 296,
+    "placa": "KA05MG1909",
+    "activo": true,
+    "fecha_registro": "2025-09-30T09:31:09.461176"
+  },
+  {
+    "id": 297,
+    "placa": "MOREPOLICE",
+    "activo": true,
+    "fecha_registro": "2025-09-30T09:31:09.461179"
+  },
+  {
+    "id": 298,
+    "placa": "BRIT0001",
+    "activo": true,
+    "fecha_registro": "2025-09-30T09:31:09.461183"
+  },
+  {
+    "id": 299,
+    "placa": "MANISA",
+    "activo": true,
+    "fecha_registro": "2025-09-30T09:31:09.461186"
+  },
+  {
+    "id": 300,
+    "placa": "WB07D51",
+    "activo": true,
+    "fecha_registro": "2025-09-30T09:31:09.461189"
+  },
+  {
+    "id": 301,
+    "placa": "SOV8199",
+    "activo": true,
+    "fecha_registro": "2025-09-30T09:31:09.461193"
+  },
+  {
+    "id": 302,
+    "placa": "HR26BA8008",
+    "activo": true,
+    "fecha_registro": "2025-09-30T09:31:09.461196"
+  },
+  {
+    "id": 303,
+    "placa": "PGMN112",
+    "activo": true,
+    "fecha_registro": "2025-09-30T09:31:09.461200"
+  },
+  {
+    "id": 304,
+    "placa": "CB7R605",
+    "activo": true,
+    "fecha_registro": "2025-09-30T09:31:09.461203"
+  },
+  {
+    "id": 305,
+    "placa": "MH01BU5207",
+    "activo": true,
+    "fecha_registro": "2025-09-30T09:31:09.461206"
+  },
+  {
+    "id": 306,
+    "placa": "DL49AK49",
+    "activo": true,
+    "fecha_registro": "2025-09-30T09:31:09.461210"
+  },
+  {
+    "id": 307,
+    "placa": "CRAIG",
+    "activo": true,
+    "fecha_registro": "2025-09-30T09:31:09.461213"
+  },
+  {
+    "id": 308,
+    "placa": "MH12BG7237",
+    "activo": true,
+    "fecha_registro": "2025-09-30T09:31:09.461217"
+  },
+  {
+    "id": 309,
+    "placa": "CARMELDAVE",
+    "activo": true,
+    "fecha_registro": "2025-09-30T09:31:09.461220"
+  },
+  {
+    "id": 310,
+    "placa": "84KJS7",
+    "activo": true,
+    "fecha_registro": "2025-09-30T09:31:09.461224"
+  },
+  {
+    "id": 311,
+    "placa": "MH20BN3525",
+    "activo": true,
+    "fecha_registro": "2025-09-30T09:31:09.461227"
+  },
+  {
+    "id": 312,
+    "placa": "HR26BC5514",
+    "activo": true,
+    "fecha_registro": "2025-09-30T09:31:09.461231"
+  },
+  {
+    "id": 313,
+    "placa": "HR26DA2330",
+    "activo": true,
+    "fecha_registro": "2025-09-30T09:31:09.461234"
+  },
+  {
+    "id": 314,
+    "placa": "V494RT",
+    "activo": true,
+    "fecha_registro": "2025-09-30T09:31:09.461238"
+  },
+  {
+    "id": 315,
+    "placa": "DL2CAG0786",
+    "activo": true,
+    "fecha_registro": "2025-09-30T09:31:09.461241"
+  },
+  {
+    "id": 316,
+    "placa": "ALLROAD",
+    "activo": true,
+    "fecha_registro": "2025-09-30T09:31:09.461245"
+  },
+  {
+    "id": 317,
+    "placa": "WATTUP",
+    "activo": true,
+    "fecha_registro": "2025-09-30T09:31:09.461248"
+  },
+  {
+    "id": 318,
+    "placa": "26SPF4",
+    "activo": true,
+    "fecha_registro": "2025-09-30T09:31:09.461252"
+  },
+  {
+    "id": 319,
+    "placa": "UP16TC2805",
+    "activo": true,
+    "fecha_registro": "2025-09-30T09:31:09.461255"
+  },
+  {
+    "id": 320,
+    "placa": "1CTAH8N",
+    "activo": true,
+    "fecha_registro": "2025-09-30T09:31:09.461259"
+  },
+  {
+    "id": 321,
+    "placa": "PH792N",
+    "activo": true,
+    "fecha_registro": "2025-09-30T09:31:09.461262"
+  },
+  {
+    "id": 322,
+    "placa": "TN09CH7770",
+    "activo": true,
+    "fecha_registro": "2025-09-30T09:31:09.461266"
+  },
+  {
+    "id": 323,
+    "placa": "CHIOOSE",
+    "activo": true,
+    "fecha_registro": "2025-09-30T09:31:09.461269"
+  },
+  {
+    "id": 324,
+    "placa": "HOTEL",
+    "activo": true,
+    "fecha_registro": "2025-09-30T09:31:09.461272"
+  },
+  {
+    "id": 325,
+    "placa": "ARJUNSNAIR",
+    "activo": true,
+    "fecha_registro": "2025-09-30T09:31:09.461276"
+  },
+  {
+    "id": 326,
+    "placa": "DL3CAY2231",
+    "activo": true,
+    "fecha_registro": "2025-09-30T09:31:09.461279"
+  },
+  {
+    "id": 327,
+    "placa": "HYUNDAI",
+    "activo": true,
+    "fecha_registro": "2025-09-30T09:31:09.461283"
+  },
+  {
+    "id": 328,
+    "placa": "SRIRANGA",
+    "activo": true,
+    "fecha_registro": "2025-09-30T09:31:09.461286"
+  },
+  {
+    "id": 329,
+    "placa": "NEWYORK",
+    "activo": true,
+    "fecha_registro": "2025-09-30T09:31:09.461290"
+  },
+  {
+    "id": 330,
+    "placa": "BJR216",
+    "activo": true,
+    "fecha_registro": "2025-09-30T09:31:09.461293"
+  },
+  {
+    "id": 331,
+    "placa": "CZI7KOD",
+    "activo": true,
+    "fecha_registro": "2025-09-30T09:31:09.461296"
+  },
+  {
+    "id": 332,
+    "placa": "INNOVA",
+    "activo": true,
+    "fecha_registro": "2025-09-30T09:31:09.461300"
+  },
+  {
+    "id": 333,
+    "placa": "HS4495",
+    "activo": true,
+    "fecha_registro": "2025-09-30T09:31:09.461303"
+  },
+  {
+    "id": 334,
+    "placa": "RUSHLANE",
+    "activo": true,
+    "fecha_registro": "2025-09-30T09:31:09.461307"
+  },
+  {
+    "id": 335,
+    "placa": "YESBOSS",
+    "activo": true,
+    "fecha_registro": "2025-09-30T09:31:09.461310"
+  },
+  {
+    "id": 336,
+    "placa": "HR26BR9044",
+    "activo": true,
+    "fecha_registro": "2025-09-30T09:31:09.461313"
+  },
+  {
+    "id": 337,
+    "placa": "TCF300",
+    "activo": true,
+    "fecha_registro": "2025-09-30T09:31:09.461317"
+  },
+  {
+    "id": 338,
+    "placa": "7XFT96",
+    "activo": true,
+    "fecha_registro": "2025-09-30T09:31:09.461320"
+  },
+  {
+    "id": 339,
+    "placa": "LTM378",
+    "activo": true,
+    "fecha_registro": "2025-09-30T09:31:09.461324"
+  },
+  {
+    "id": 340,
+    "placa": "MARIO",
+    "activo": true,
+    "fecha_registro": "2025-09-30T09:31:09.461327"
+  },
+  {
+    "id": 341,
+    "placa": "TN38BW1139",
+    "activo": true,
+    "fecha_registro": "2025-09-30T09:31:09.461331"
+  },
+  {
+    "id": 342,
+    "placa": "6PIV728",
+    "activo": true,
+    "fecha_registro": "2025-09-30T09:31:09.461334"
+  },
+  {
+    "id": 343,
+    "placa": "YASSUZP",
+    "activo": true,
+    "fecha_registro": "2025-09-30T09:31:09.461337"
+  },
+  {
+    "id": 344,
+    "placa": "34TJPK",
+    "activo": true,
+    "fecha_registro": "2025-09-30T09:31:09.461341"
+  },
+  {
+    "id": 345,
+    "placa": "DUBAI",
+    "activo": true,
+    "fecha_registro": "2025-09-30T09:31:09.461344"
+  },
+  {
+    "id": 346,
+    "placa": "HR26DA5443",
+    "activo": true,
+    "fecha_registro": "2025-09-30T09:31:09.461348"
+  },
+  {
+    "id": 347,
+    "placa": "TN42R",
+    "activo": true,
+    "fecha_registro": "2025-09-30T09:31:09.461351"
+  },
+  {
+    "id": 348,
+    "placa": "ELECTRIC",
+    "activo": true,
+    "fecha_registro": "2025-09-30T09:31:09.461354"
+  },
+  {
+    "id": 349,
+    "placa": "TEAMBHPCOM",
+    "activo": true,
+    "fecha_registro": "2025-09-30T09:31:09.461358"
+  },
+  {
+    "id": 350,
+    "placa": "RX61GDU",
+    "activo": true,
+    "fecha_registro": "2025-09-30T09:31:09.461361"
+  },
+  {
+    "id": 351,
+    "placa": "IM4U555",
+    "activo": true,
+    "fecha_registro": "2025-09-30T09:31:09.461364"
+  },
+  {
+    "id": 352,
+    "placa": "NP826D",
+    "activo": true,
+    "fecha_registro": "2025-09-30T09:31:09.461368"
+  },
+  {
+    "id": 353,
+    "placa": "ITSTHELAW",
+    "activo": true,
+    "fecha_registro": "2025-09-30T09:31:09.461371"
+  },
+  {
+    "id": 354,
+    "placa": "84PLFJ",
+    "activo": true,
+    "fecha_registro": "2025-09-30T09:31:09.461375"
+  },
+  {
+    "id": 355,
+    "placa": "DL3CAY9324",
+    "activo": true,
+    "fecha_registro": "2025-09-30T09:31:09.461379"
+  },
+  {
+    "id": 356,
+    "placa": "NISSAN",
+    "activo": true,
+    "fecha_registro": "2025-09-30T09:31:09.461382"
+  },
+  {
+    "id": 357,
+    "placa": "52292Z",
+    "activo": true,
+    "fecha_registro": "2025-09-30T09:31:09.461385"
+  },
+  {
+    "id": 358,
+    "placa": "G241GH",
+    "activo": true,
+    "fecha_registro": "2025-09-30T09:31:09.461392"
+  },
+  {
+    "id": 359,
+    "placa": "JETTA",
+    "activo": true,
+    "fecha_registro": "2025-09-30T09:31:09.461395"
+  },
+  {
+    "id": 360,
+    "placa": "DL1N4268",
+    "activo": true,
+    "fecha_registro": "2025-09-30T09:31:09.461399"
+  },
+  {
+    "id": 361,
+    "placa": "JV628B",
+    "activo": true,
+    "fecha_registro": "2025-09-30T09:31:09.461402"
+  },
+  {
+    "id": 362,
+    "placa": "FUSION",
+    "activo": true,
+    "fecha_registro": "2025-09-30T09:31:09.461405"
+  }
+]

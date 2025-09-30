@@ -3,3 +3,7 @@ pycache/
 __pycache__/
 .env
 venv/
+vane/
+*.pyc
+.DS_Store
+lambda_function.zip
