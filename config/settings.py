@@ -174,3 +174,20 @@ STRIPE_PUBLISHABLE_KEY = 'pk_test_51PwuiM08hp2qIPTJ9P4c108993LSovebHw9lQQeABXF3z
 STRIPE_SECRET_KEY = 'sk_test_51PwuiM08hp2qIPTJDoIkgHkDvPWLqYPGk245gQ3edAyzeRGCfJ46HnGGvYRkkWyhO0lswVk2KPnVxoeRxOniHCet00YFL5UAzW'
 STRIPE_WEBHOOK_SECRET = ''  # Vacío para desarrollo local - se configura al crear webhook en producción
 STRIPE_TEST_MODE = True
+
+# Email Configuration with Mailtrap
+EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+EMAIL_HOST = 'live.smtp.mailtrap.io'
+EMAIL_PORT = 587
+EMAIL_USE_TLS = True
+EMAIL_HOST_USER = 'api'  # Cambia esto por tu usuario de Mailtrap
+EMAIL_HOST_PASSWORD = ''  # Cambia esto por tu contraseña de Mailtrap
+DEFAULT_FROM_EMAIL = 'condominium@tudominio.com'
+EMAIL_USE_SSL = False
+
+# Para desarrollo local, puedes usar la configuración de testing de Mailtrap:
+# EMAIL_HOST = '2525'  # Sandbox SMTP port
+# EMAIL_PORT = 2525
+# EMAIL_USE_TLS = True
+# EMAIL_HOST_USER = 'tu_username_sandbox'  # Tu username del sandbox
+# EMAIL_HOST_PASSWORD = 'tu_password_sandbox'  # Tu password del sandbox

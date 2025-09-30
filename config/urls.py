@@ -18,7 +18,7 @@ from django.contrib import admin
 from django.urls import path, include
 from django.shortcuts import redirect
 from drf_spectacular.views import SpectacularAPIView, SpectacularSwaggerView
-from user.views import UserViewSet, LoginAdminView, LoginCustomerView, LoginVisitorView, RegisterVisitorView, VerifyEmailView, CheckTokenView, ResidentViewSet
+from user.views import UserViewSet, LoginAdminView, LoginCustomerView, LoginVisitorView, RegisterVisitorView, VerifyEmailView, CheckTokenView, ResidentViewSet, ChangePasswordView
 from property.views import PropertyViewSet, PetViewSet, VehicleViewSet, PropertyQuoteViewSet
 from condominium.views import (
     # ViewSets para modelos
@@ -64,6 +64,7 @@ urlpatterns = [
     path('api/auth/register-visitor/', RegisterVisitorView.as_view(), name='register_visitor'),
     path('api/auth/verify-email/', VerifyEmailView.as_view(), name='verify_email'),
     path('api/auth/check-token/', CheckTokenView.as_view(), name='check_token'),
+    path('api/auth/change-password/', ChangePasswordView.as_view(), name='change_password'),
     
     # Información básica del condominium (JSON)
     path('api/condominium/info/', CondominiumInfoView.as_view(), name='condominium_info'),
