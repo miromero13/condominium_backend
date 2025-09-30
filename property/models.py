@@ -15,6 +15,73 @@ class Property(BaseModel):
 	name = models.CharField(max_length=100)
 	address = models.CharField(max_length=255)
 	description = models.TextField(blank=True, null=True)
+	
+	# Identificación específica de la propiedad
+	building_or_block = models.CharField(
+		max_length=50,
+		blank=True,
+		null=True,
+		help_text="Número de edificio, torre, manzana o bloque"
+	)
+	property_number = models.CharField(
+		max_length=20,
+		default="S/N",
+		help_text="Número específico de la propiedad (apartamento, casa, local, etc.)"
+	)
+	
+	# Características físicas de la propiedad
+	bedrooms = models.PositiveIntegerField(
+		default=0,
+		help_text="Número de dormitorios"
+	)
+	bathrooms = models.PositiveIntegerField(
+		default=0,
+		help_text="Número de baños"
+	)
+	square_meters = models.DecimalField(
+		max_digits=8,
+		decimal_places=2,
+		blank=True,
+		null=True,
+		help_text="Metros cuadrados de la propiedad"
+	)
+	has_garage = models.BooleanField(
+		default=False,
+		help_text="¿Tiene garage?"
+	)
+	garage_spaces = models.PositiveIntegerField(
+		default=0,
+		help_text="Número de espacios de estacionamiento"
+	)
+	has_yard = models.BooleanField(
+		default=False,
+		help_text="¿Tiene patio/jardín?"
+	)
+	has_balcony = models.BooleanField(
+		default=False,
+		help_text="¿Tiene balcón?"
+	)
+	has_terrace = models.BooleanField(
+		default=False,
+		help_text="¿Tiene terraza?"
+	)
+	floor_number = models.PositiveIntegerField(
+		blank=True,
+		null=True,
+		help_text="Número de piso (para apartamentos)"
+	)
+	has_elevator = models.BooleanField(
+		default=False,
+		help_text="¿Tiene acceso a ascensor?"
+	)
+	furnished = models.BooleanField(
+		default=False,
+		help_text="¿Está amueblada?"
+	)
+	pets_allowed = models.BooleanField(
+		default=True,
+		help_text="¿Se permiten mascotas?"
+	)
     
 	# Campos para el sistema de pagos
 	status = models.CharField(
@@ -68,6 +135,14 @@ class Property(BaseModel):
 	)
 
 	def __str__(self):
+		# Construir identificación más descriptiva
+		identification = []
+		if self.building_or_block:
+			identification.append(f"Bloque {self.building_or_block}")
+		identification.append(f"#{self.property_number}")
+		
+		if identification:
+			return f"{self.name} ({' '.join(identification)}) - {self.get_status_display()}"
 		return f"{self.name} - {self.get_status_display()}"
 
 	def clean(self):

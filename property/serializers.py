@@ -11,9 +11,18 @@ class PropertySerializer(serializers.ModelSerializer):
     class Meta:
         model = Property
         fields = [
-            'id', 'name', 'address', 'description', 'status', 'status_label',
-            'monthly_payment', 'payment_frequency', 'payment_frequency_label',
-            'payment_due_day', 'is_payment_enabled', 'next_payment_due_date',
+            'id', 'name', 'address', 'description', 
+            # Identificación específica
+            'building_or_block', 'property_number',
+            # Características físicas
+            'bedrooms', 'bathrooms', 'square_meters', 'has_garage', 'garage_spaces',
+            'has_yard', 'has_balcony', 'has_terrace', 'floor_number', 'has_elevator',
+            'furnished', 'pets_allowed',
+            # Sistema de pagos
+            'status', 'status_label', 'monthly_payment', 'payment_frequency', 
+            'payment_frequency_label', 'payment_due_day', 'is_payment_enabled', 
+            'next_payment_due_date',
+            # Relaciones con usuarios
             'owners', 'residents', 'visitors', 
             'payment_responsible_users', 'app_enabled_users',
             'created_at', 'updated_at'
