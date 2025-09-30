@@ -1,5 +1,7 @@
 from itsdangerous import URLSafeTimedSerializer
 from django.conf import settings
+from django.core.mail import send_mail
+from django.template.loader import render_to_string
 import requests
 
 def generate_token(email):
@@ -45,3 +47,33 @@ def send_verification_email(user):
         print("✅ Correo de verificación enviado a", user.email)
     except requests.exceptions.RequestException as e:
         print("❌ Error al enviar correo:", e)
+
+
+def send_password_change_notification(user):
+    """
+    Envía notificación por email cuando se cambia la contraseña
+    """
+    subject = 'Contraseña cambiada - SmartCondo'
+    message = f"""
+    Hola {user.name},
+
+    Tu contraseña ha sido cambiada exitosamente el día de hoy.
+    
+    Si no fuiste tú quien realizó este cambio, por favor contacta inmediatamente 
+    al administrador del condominio.
+
+    Saludos,
+    Equipo SmartCondo
+    """
+    
+    try:
+        send_mail(
+            subject=subject,
+            message=message,
+            from_email=settings.DEFAULT_FROM_EMAIL,
+            recipient_list=[user.email],
+            fail_silently=False,
+        )
+        print(f"✅ Notificación de cambio de contraseña enviada a {user.email}")
+    except Exception as e:
+        print(f"❌ Error al enviar notificación de cambio de contraseña: {e}")
