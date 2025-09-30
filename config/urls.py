@@ -46,6 +46,9 @@ router.register(r'common-areas', CommonAreaViewSet, basename='CommonArea')
 router.register(r'general-rules', GeneralRuleViewSet, basename='GeneralRule')
 router.register(r'common-area-rules', CommonAreaRuleViewSet, basename='CommonAreaRule')
 router.register(r'reservations', ReservationViewSet, basename='Reservation')
+router.register(r'accesos', AccesoViewSet)
+router.register(r'registros-camara',RegistroCamaraViewSet)
+router.register(r'eventos-ai', EventoAIViewSet)
 
 # Service ViewSets
 router.register(r'payments', PaymentViewSet, basename='Payment')
