@@ -129,7 +129,7 @@ class Reservation(BaseModel):
 
     def save(self, *args, **kwargs):
         """Calcular horas y costo total automáticamente"""
-        if self.start_time and self.end_time and self.common_area:
+        if self.start_time and self.end_time and self.common_area and self.reservation_date:
             # Calcular horas
             from datetime import datetime, timedelta
             start_datetime = datetime.combine(self.reservation_date, self.start_time)
@@ -140,13 +140,14 @@ class Reservation(BaseModel):
                 end_datetime += timedelta(days=1)
             
             duration = end_datetime - start_datetime
-            self.total_hours = duration.total_seconds() / 3600
-            self.total_cost = self.total_hours * self.common_area.cost_per_hour
+            self.total_hours = float(duration.total_seconds() / 3600)
+            self.total_cost = float(self.total_hours) * float(self.common_area.cost_per_hour)
             
         super().save(*args, **kwargs)
 
     def __str__(self):
-        return f"{self.common_area.name} - {self.user.name} - {self.reservation_date}"
+        user_name = f"{self.user.first_name} {self.user.last_name}".strip() or self.user.email
+        return f"{self.common_area.name} - {user_name} - {self.reservation_date}"
 
     class Meta:
         verbose_name = 'Reserva'

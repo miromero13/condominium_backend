@@ -239,13 +239,179 @@ class GeneralRuleViewSet(viewsets.ModelViewSet):
     def perform_create(self, serializer):
         serializer.save(created_by=self.request.user)
 
+    @extend_schema(
+        parameters=[
+            OpenApiParameter(name='limit', description='Cantidad de resultados', required=False, type=int),
+            OpenApiParameter(name='offset', description='Inicio del listado', required=False, type=int),
+            OpenApiParameter(name='order', description='Campo de ordenamiento (ej: +title, -created_at)', required=False, type=str),
+            OpenApiParameter(name='attr', description='Campo para filtrar (ej: title, description)', required=False, type=str),
+            OpenApiParameter(name='value', description='Valor del campo a filtrar', required=False, type=str),
+        ], 
+        responses={
+            200: StandardResponseSerializerSuccessList,
+            400: StandardResponseSerializerError,
+            500: StandardResponseSerializerError
+        }
+    )
     def list(self, request):
         try:
             queryset = GeneralRule.objects.filter(is_active=True)
+            
+            # Filtro genérico por atributo y valor
+            attr = request.query_params.get('attr')
+            value = request.query_params.get('value')
+            if attr and value and hasattr(GeneralRule, attr):
+                starts_with_filter = {f"{attr}__istartswith": value}
+                contains_filter = {f"{attr}__icontains": value}
+                queryset = queryset.filter(Q(**contains_filter))                
+                queryset = queryset.annotate(
+                    relevance=Case(
+                        When(**starts_with_filter, then=V(0)),
+                        default=V(1),
+                        output_field=IntegerField()
+                    )
+                ).order_by('relevance')                
+            elif attr and not hasattr(GeneralRule, attr):
+                return response(
+                    400,
+                    f"El campo '{attr}' no es válido para filtrado"
+                )
+            
+            # Ordenamiento
+            order = request.query_params.get('order')
+            if order:
+                try:
+                    queryset = queryset.order_by(order)
+                except Exception:
+                    return response(
+                        400,
+                        f"No se pudo ordenar por '{order}'"
+                    )
+            
+            # Obtener el total ANTES de la paginación
+            total_count = queryset.count()
+            
+            # Paginación
+            limit = request.query_params.get('limit')
+            offset = request.query_params.get('offset', 0)
+            
+            if limit is not None:
+                try:
+                    limit = int(limit)
+                    offset = int(offset)
+                    queryset = queryset[offset:offset+limit]
+                except ValueError:
+                    return response(
+                        400,
+                        "Los valores de limit y offset deben ser enteros"
+                    )
+            
             serializer = GeneralRuleSerializer(queryset, many=True)
-            return response(200, "Reglas generales encontradas", data=serializer.data, count_data=queryset.count())
+            return response(
+                200,
+                "Reglas generales encontradas correctamente",
+                data=serializer.data,
+                count_data=total_count
+            )
         except Exception as e:
-            return response(500, f"Error interno del servidor: {str(e)}")
+            return response(
+                500,
+                f"Error interno del servidor: {str(e)}"
+            )
+
+    def create(self, request):
+        try:
+            serializer = GeneralRuleSerializer(data=request.data)
+            if serializer.is_valid():
+                rule = serializer.save(created_by=request.user)
+                return response(
+                    201,
+                    "Regla general creada correctamente",
+                    data=GeneralRuleSerializer(rule).data
+                )
+            return response(
+                400,
+                "Errores de validación",
+                error=serializer.errors
+            )
+        except Exception as e:
+            return response(
+                500,
+                f"Error interno del servidor: {str(e)}"
+            )
+
+    def retrieve(self, request, *args, **kwargs):
+        try:
+            instance = self.get_object()
+            serializer = GeneralRuleSerializer(instance)
+            return response(
+                200,
+                "Regla general encontrada",
+                data=serializer.data
+            )
+        except Exception as e:
+            return response(
+                500,
+                f"Error interno del servidor: {str(e)}"
+            )
+
+    def update(self, request, *args, **kwargs):
+        try:
+            instance = self.get_object()
+            serializer = GeneralRuleSerializer(instance, data=request.data)
+            if serializer.is_valid():
+                rule = serializer.save()
+                return response(
+                    200,
+                    "Regla general actualizada correctamente",
+                    data=GeneralRuleSerializer(rule).data
+                )
+            return response(
+                400,
+                "Errores de validación",
+                error=serializer.errors
+            )
+        except Exception as e:
+            return response(
+                500,
+                f"Error interno del servidor: {str(e)}"
+            )
+
+    def partial_update(self, request, *args, **kwargs):
+        try:
+            instance = self.get_object()
+            serializer = GeneralRuleSerializer(instance, data=request.data, partial=True)
+            if serializer.is_valid():
+                rule = serializer.save()
+                return response(
+                    200,
+                    "Regla general actualizada correctamente",
+                    data=GeneralRuleSerializer(rule).data
+                )
+            return response(
+                400,
+                "Errores de validación",
+                error=serializer.errors
+            )
+        except Exception as e:
+            return response(
+                500,
+                f"Error interno del servidor: {str(e)}"
+            )
+
+    def destroy(self, request, *args, **kwargs):
+        try:
+            instance = self.get_object()
+            instance.delete()
+            return response(
+                200,
+                "Regla general eliminada correctamente"
+            )
+        except Exception as e:
+            return response(
+                500,
+                f"Error interno del servidor: {str(e)}"
+            )
 
 
 @extend_schema(tags=['Reglas de Áreas Comunes'])
@@ -455,6 +621,17 @@ class ReservationViewSet(viewsets.ModelViewSet):
     authentication_classes = [JWTAuthentication]
     permission_classes = [require_roles([UserRole.ADMINISTRATOR, UserRole.GUARD, UserRole.OWNER, UserRole.RESIDENT])]
 
+    def get_permissions(self):
+        """Permisos diferentes según la acción"""
+        if self.action in ['approve', 'reject']:
+            permission_classes = [require_roles([UserRole.ADMINISTRATOR, UserRole.GUARD])]
+        elif self.action in ['update', 'partial_update', 'destroy']:
+            permission_classes = [require_roles([UserRole.ADMINISTRATOR, UserRole.GUARD, UserRole.OWNER, UserRole.RESIDENT])]
+        else:
+            permission_classes = [require_roles([UserRole.ADMINISTRATOR, UserRole.GUARD, UserRole.OWNER, UserRole.RESIDENT])]
+        
+        return [permission() for permission in permission_classes]
+
     def perform_create(self, serializer):
         serializer.save(user=self.request.user)
 
@@ -463,7 +640,17 @@ class ReservationViewSet(viewsets.ModelViewSet):
             OpenApiParameter(name='status', description='Estado de la reserva', required=False, type=str),
             OpenApiParameter(name='common_area_id', description='ID del área común', required=False, type=str),
             OpenApiParameter(name='my_reservations', description='Mis reservas únicamente', required=False, type=bool),
-        ]
+            OpenApiParameter(name='limit', description='Cantidad de resultados', required=False, type=int),
+            OpenApiParameter(name='offset', description='Inicio del listado', required=False, type=int),
+            OpenApiParameter(name='order', description='Campo de ordenamiento (ej: +reservation_date, -created_at)', required=False, type=str),
+            OpenApiParameter(name='attr', description='Campo para filtrar (ej: purpose, status)', required=False, type=str),
+            OpenApiParameter(name='value', description='Valor del campo a filtrar', required=False, type=str),
+        ], 
+        responses={
+            200: StandardResponseSerializerSuccessList,
+            400: StandardResponseSerializerError,
+            500: StandardResponseSerializerError
+        }
     )
     def list(self, request):
         try:
@@ -473,7 +660,7 @@ class ReservationViewSet(viewsets.ModelViewSet):
             if request.user.role not in [UserRole.ADMINISTRATOR.value, UserRole.GUARD.value]:
                 queryset = queryset.filter(user=request.user)
             
-            # Filtros adicionales
+            # Filtros específicos
             status = request.query_params.get('status')
             if status:
                 queryset = queryset.filter(status=status)
@@ -485,10 +672,228 @@ class ReservationViewSet(viewsets.ModelViewSet):
             if request.query_params.get('my_reservations', '').lower() == 'true':
                 queryset = queryset.filter(user=request.user)
             
+            # Filtro genérico por atributo y valor
+            attr = request.query_params.get('attr')
+            value = request.query_params.get('value')
+            if attr and value and hasattr(Reservation, attr):
+                starts_with_filter = {f"{attr}__istartswith": value}
+                contains_filter = {f"{attr}__icontains": value}
+                queryset = queryset.filter(Q(**contains_filter))                
+                queryset = queryset.annotate(
+                    relevance=Case(
+                        When(**starts_with_filter, then=V(0)),
+                        default=V(1),
+                        output_field=IntegerField()
+                    )
+                ).order_by('relevance')                
+            elif attr and not hasattr(Reservation, attr):
+                return response(
+                    400,
+                    f"El campo '{attr}' no es válido para filtrado"
+                )
+            
+            # Ordenamiento
+            order = request.query_params.get('order')
+            if order:
+                try:
+                    queryset = queryset.order_by(order)
+                except Exception:
+                    return response(
+                        400,
+                        f"No se pudo ordenar por '{order}'"
+                    )
+            
+            # Obtener el total ANTES de la paginación
+            total_count = queryset.count()
+            
+            # Paginación
+            limit = request.query_params.get('limit')
+            offset = request.query_params.get('offset', 0)
+            
+            if limit is not None:
+                try:
+                    limit = int(limit)
+                    offset = int(offset)
+                    queryset = queryset[offset:offset+limit]
+                except ValueError:
+                    return response(
+                        400,
+                        "Los valores de limit y offset deben ser enteros"
+                    )
+            
             serializer = ReservationSerializer(queryset, many=True)
-            return response(200, "Reservas encontradas", data=serializer.data, count_data=queryset.count())
+            return response(
+                200, 
+                "Reservas encontradas correctamente", 
+                data=serializer.data, 
+                count_data=total_count
+            )
         except Exception as e:
-            return response(500, f"Error interno del servidor: {str(e)}")
+            return response(
+                500, 
+                f"Error interno del servidor: {str(e)}"
+            )
+
+    def create(self, request):
+        try:
+            print(f"🔍 Creating reservation with data: {request.data}")
+            serializer = ReservationSerializer(data=request.data)
+            if serializer.is_valid():
+                print(f"✅ Serializer is valid, saving with user: {request.user}")
+                
+                # Si se proporciona user_id, usarlo; sino usar el usuario autenticado
+                user_id = serializer.validated_data.get('user_id')
+                if user_id:
+                    from user.models import User
+                    try:
+                        target_user = User.objects.get(id=user_id)
+                        reservation = serializer.save(user=target_user)
+                        print(f"✅ Reservation created for user {target_user.email}: {reservation.id}")
+                    except User.DoesNotExist:
+                        return response(
+                            400,
+                            "El usuario especificado no existe"
+                        )
+                else:
+                    reservation = serializer.save(user=request.user)
+                    print(f"✅ Reservation created for current user: {reservation.id}")
+                
+                return response(
+                    201,
+                    "Reserva creada correctamente",
+                    data=ReservationSerializer(reservation).data
+                )
+            print(f"❌ Serializer errors: {serializer.errors}")
+            return response(
+                400,
+                "Errores de validación",
+                error=serializer.errors
+            )
+        except Exception as e:
+            print(f"💥 Exception in create: {str(e)}")
+            import traceback
+            traceback.print_exc()
+            return response(
+                500,
+                f"Error interno del servidor: {str(e)}"
+            )
+
+    def retrieve(self, request, *args, **kwargs):
+        try:
+            instance = self.get_object()
+            
+            # Solo el propietario, admin o guard pueden ver la reserva
+            if (request.user.role not in [UserRole.ADMINISTRATOR.value, UserRole.GUARD.value] 
+                and instance.user != request.user):
+                return response(
+                    403,
+                    "No tienes permisos para ver esta reserva"
+                )
+            
+            serializer = ReservationSerializer(instance)
+            return response(
+                200,
+                "Reserva encontrada",
+                data=serializer.data
+            )
+        except Exception as e:
+            return response(
+                500,
+                f"Error interno del servidor: {str(e)}"
+            )
+
+    def update(self, request, *args, **kwargs):
+        try:
+            instance = self.get_object()
+            
+            # Solo el propietario, admin o guard pueden editar la reserva
+            if (request.user.role not in [UserRole.ADMINISTRATOR.value, UserRole.GUARD.value] 
+                and instance.user != request.user):
+                return response(
+                    403,
+                    "No tienes permisos para editar esta reserva"
+                )
+            
+            # No se puede editar una reserva aprobada (solo admin/guard)
+            if (instance.status == 'approved' 
+                and request.user.role not in [UserRole.ADMINISTRATOR.value, UserRole.GUARD.value]):
+                return response(
+                    400,
+                    "No se puede editar una reserva ya aprobada"
+                )
+            
+            serializer = ReservationSerializer(instance, data=request.data)
+            if serializer.is_valid():
+                reservation = serializer.save()
+                return response(
+                    200,
+                    "Reserva actualizada correctamente",
+                    data=ReservationSerializer(reservation).data
+                )
+            return response(
+                400,
+                "Errores de validación",
+                error=serializer.errors
+            )
+        except Exception as e:
+            return response(
+                500,
+                f"Error interno del servidor: {str(e)}"
+            )
+
+    def partial_update(self, request, *args, **kwargs):
+        try:
+            instance = self.get_object()
+            
+            # Solo el propietario, admin o guard pueden editar la reserva
+            if (request.user.role not in [UserRole.ADMINISTRATOR.value, UserRole.GUARD.value] 
+                and instance.user != request.user):
+                return response(
+                    403,
+                    "No tienes permisos para editar esta reserva"
+                )
+            
+            serializer = ReservationSerializer(instance, data=request.data, partial=True)
+            if serializer.is_valid():
+                reservation = serializer.save()
+                return response(
+                    200,
+                    "Reserva actualizada correctamente",
+                    data=ReservationSerializer(reservation).data
+                )
+            return response(
+                400,
+                "Errores de validación",
+                error=serializer.errors
+            )
+        except Exception as e:
+            return response(
+                500,
+                f"Error interno del servidor: {str(e)}"
+            )
+
+    def destroy(self, request, *args, **kwargs):
+        try:
+            instance = self.get_object()
+            
+            # Solo el propietario, admin o guard pueden eliminar la reserva
+            if (request.user.role not in [UserRole.ADMINISTRATOR.value, UserRole.GUARD.value] 
+                and instance.user != request.user):
+                return response(
+                    403,
+                    "No tienes permisos para eliminar esta reserva"
+                )
+            
+            instance.delete()
+            return response(
+                200,
+                "Reserva eliminada correctamente"
+            )
+        except Exception as e:
+            return response(
+                500,
+                f"Error interno del servidor: {str(e)}"
+            )
 
     @action(detail=True, methods=['post'])
     def approve(self, request, pk=None):
@@ -498,14 +903,28 @@ class ReservationViewSet(viewsets.ModelViewSet):
         
         try:
             reservation = self.get_object()
+            
+            if reservation.status != 'pending':
+                return response(
+                    400,
+                    "Solo se pueden aprobar reservas pendientes"
+                )
+            
             reservation.status = 'approved'
             reservation.approved_by = request.user
             reservation.admin_notes = request.data.get('admin_notes', '')
             reservation.save()
             
-            return response(200, "Reserva aprobada", data=ReservationSerializer(reservation).data)
+            return response(
+                200, 
+                "Reserva aprobada exitosamente", 
+                data=ReservationSerializer(reservation).data
+            )
         except Exception as e:
-            return response(500, f"Error interno del servidor: {str(e)}")
+            return response(
+                500, 
+                f"Error interno del servidor: {str(e)}"
+            )
 
     @action(detail=True, methods=['post'])
     def reject(self, request, pk=None):
@@ -515,14 +934,65 @@ class ReservationViewSet(viewsets.ModelViewSet):
         
         try:
             reservation = self.get_object()
+            
+            if reservation.status != 'pending':
+                return response(
+                    400,
+                    "Solo se pueden rechazar reservas pendientes"
+                )
+            
             reservation.status = 'rejected'
             reservation.approved_by = request.user
             reservation.admin_notes = request.data.get('admin_notes', '')
             reservation.save()
             
-            return response(200, "Reserva rechazada", data=ReservationSerializer(reservation).data)
+            return response(
+                200, 
+                "Reserva rechazada", 
+                data=ReservationSerializer(reservation).data
+            )
         except Exception as e:
-            return response(500, f"Error interno del servidor: {str(e)}")
+            return response(
+                500, 
+                f"Error interno del servidor: {str(e)}"
+            )
+
+    @action(detail=True, methods=['post'])
+    def cancel(self, request, pk=None):
+        """Cancelar una reserva (usuario propietario o admin/guard)"""
+        try:
+            reservation = self.get_object()
+            
+            # Solo el propietario, admin o guard pueden cancelar
+            if (request.user.role not in [UserRole.ADMINISTRATOR.value, UserRole.GUARD.value] 
+                and reservation.user != request.user):
+                return response(
+                    403,
+                    "No tienes permisos para cancelar esta reserva"
+                )
+            
+            if reservation.status in ['cancelled', 'completed']:
+                return response(
+                    400,
+                    f"No se puede cancelar una reserva {reservation.get_status_display().lower()}"
+                )
+            
+            reservation.status = 'cancelled'
+            if request.user.role in [UserRole.ADMINISTRATOR.value, UserRole.GUARD.value]:
+                reservation.approved_by = request.user
+                reservation.admin_notes = request.data.get('admin_notes', '')
+            reservation.save()
+            
+            return response(
+                200, 
+                "Reserva cancelada exitosamente", 
+                data=ReservationSerializer(reservation).data
+            )
+        except Exception as e:
+            return response(
+                500, 
+                f"Error interno del servidor: {str(e)}"
+            )
 
 
 # Views para información básica del condominio (JSON)
