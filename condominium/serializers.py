@@ -113,6 +113,7 @@ class UpdateCondominiumInfoSerializer(serializers.Serializer):
     email = serializers.EmailField(required=False)
     website = serializers.URLField(required=False)
     nit = serializers.CharField(required=False)
+    registration_date = serializers.DateField(required=False)
     description = serializers.CharField(required=False)
 
 

@@ -40,33 +40,184 @@ class CommonAreaViewSet(viewsets.ModelViewSet):
         parameters=[
             OpenApiParameter(name='active_only', description='Solo áreas activas', required=False, type=bool),
             OpenApiParameter(name='reservable_only', description='Solo áreas reservables', required=False, type=bool),
-        ]
+            OpenApiParameter(name='limit', description='Cantidad de resultados', required=False, type=int),
+            OpenApiParameter(name='offset', description='Inicio del listado', required=False, type=int),
+            OpenApiParameter(name='order', description='Campo de ordenamiento (ej: +name, -created_at)', required=False, type=str),
+            OpenApiParameter(name='attr', description='Campo para filtrar (ej: name, description)', required=False, type=str),
+            OpenApiParameter(name='value', description='Valor del campo a filtrar', required=False, type=str),
+        ], 
+        responses={
+            200: StandardResponseSerializerSuccessList,
+            400: StandardResponseSerializerError,
+            500: StandardResponseSerializerError
+        }
     )
-    def list(self, request):
+    def list(self, request, *args, **kwargs):
         try:
             queryset = CommonArea.objects.all()
             
-            # Filtros
+            # Filtros específicos
             if request.query_params.get('active_only', '').lower() == 'true':
                 queryset = queryset.filter(is_active=True)
             
             if request.query_params.get('reservable_only', '').lower() == 'true':
                 queryset = queryset.filter(is_reservable=True)
             
+            # Filtro genérico por atributo y valor
+            attr = request.query_params.get('attr')
+            value = request.query_params.get('value')
+            if attr and value and hasattr(CommonArea, attr):
+                starts_with_filter = {f"{attr}__istartswith": value}
+                contains_filter = {f"{attr}__icontains": value}
+                queryset = queryset.filter(Q(**contains_filter))                
+                queryset = queryset.annotate(
+                    relevance=Case(
+                        When(**starts_with_filter, then=V(0)),
+                        default=V(1),
+                        output_field=IntegerField()
+                    )
+                ).order_by('relevance')                
+            elif attr and not hasattr(CommonArea, attr):
+                return response(
+                    400,
+                    f"El campo '{attr}' no es válido para filtrado"
+                )
+            
+            # Ordenamiento
+            order = request.query_params.get('order')
+            if order:
+                try:
+                    queryset = queryset.order_by(order)
+                except Exception:
+                    return response(
+                        400,
+                        f"No se pudo ordenar por '{order}'"
+                    )
+            
+            # Obtener el total ANTES de la paginación
+            total_count = queryset.count()
+            
+            # Paginación
+            limit = request.query_params.get('limit')
+            offset = request.query_params.get('offset', 0)
+            
+            if limit is not None:
+                try:
+                    limit = int(limit)
+                    offset = int(offset)
+                    queryset = queryset[offset:offset+limit]
+                except ValueError:
+                    return response(
+                        400,
+                        "Los valores de limit y offset deben ser enteros"
+                    )
+            
             serializer = CommonAreaSerializer(queryset, many=True)
-            return response(200, "Áreas comunes encontradas", data=serializer.data, count_data=queryset.count())
+            return response(
+                200,
+                "Áreas comunes encontradas correctamente",
+                data=serializer.data,
+                count_data=total_count
+            )
         except Exception as e:
-            return response(500, f"Error interno del servidor: {str(e)}")
+            return response(
+                500,
+                f"Error interno del servidor: {str(e)}"
+            )
 
     def create(self, request):
         try:
             serializer = CommonAreaSerializer(data=request.data)
             if serializer.is_valid():
                 area = serializer.save()
-                return response(201, "Área común creada correctamente", data=CommonAreaSerializer(area).data)
-            return response(400, "Errores de validación", error=serializer.errors)
+                return response(
+                    201,
+                    "Área común creada correctamente",
+                    data=CommonAreaSerializer(area).data
+                )
+            return response(
+                400,
+                "Errores de validación",
+                error=serializer.errors
+            )
         except Exception as e:
-            return response(500, f"Error interno del servidor: {str(e)}")
+            return response(
+                500,
+                f"Error interno del servidor: {str(e)}"
+            )
+
+    def retrieve(self, request, *args, **kwargs):
+        try:
+            instance = self.get_object()
+            serializer = CommonAreaSerializer(instance)
+            return response(
+                200,
+                "Área común encontrada",
+                data=serializer.data
+            )
+        except Exception as e:
+            return response(
+                500,
+                f"Error interno del servidor: {str(e)}"
+            )
+
+    def update(self, request, *args, **kwargs):
+        try:
+            instance = self.get_object()
+            serializer = CommonAreaSerializer(instance, data=request.data)
+            if serializer.is_valid():
+                area = serializer.save()
+                return response(
+                    200,
+                    "Área común actualizada correctamente",
+                    data=CommonAreaSerializer(area).data
+                )
+            return response(
+                400,
+                "Errores de validación",
+                error=serializer.errors
+            )
+        except Exception as e:
+            return response(
+                500,
+                f"Error interno del servidor: {str(e)}"
+            )
+
+    def partial_update(self, request, *args, **kwargs):
+        try:
+            instance = self.get_object()
+            serializer = CommonAreaSerializer(instance, data=request.data, partial=True)
+            if serializer.is_valid():
+                area = serializer.save()
+                return response(
+                    200,
+                    "Área común actualizada correctamente",
+                    data=CommonAreaSerializer(area).data
+                )
+            return response(
+                400,
+                "Errores de validación",
+                error=serializer.errors
+            )
+        except Exception as e:
+            return response(
+                500,
+                f"Error interno del servidor: {str(e)}"
+            )
+
+    def destroy(self, request, *args, **kwargs):
+        try:
+            instance = self.get_object()
+            instance.delete()
+            return response(
+                200,
+                "Área común eliminada correctamente"
+            )
+        except Exception as e:
+            return response(
+                500,
+                f"Error interno del servidor: {str(e)}"
+            )
 
 
 @extend_schema(tags=['Reglas Generales'])
@@ -119,20 +270,182 @@ class CommonAreaRuleViewSet(viewsets.ModelViewSet):
     @extend_schema(
         parameters=[
             OpenApiParameter(name='common_area_id', description='ID del área común', required=False, type=str),
-        ]
+            OpenApiParameter(name='limit', description='Cantidad de resultados', required=False, type=int),
+            OpenApiParameter(name='offset', description='Inicio del listado', required=False, type=int),
+            OpenApiParameter(name='order', description='Campo de ordenamiento (ej: +title, -created_at)', required=False, type=str),
+            OpenApiParameter(name='attr', description='Campo para filtrar (ej: title, description)', required=False, type=str),
+            OpenApiParameter(name='value', description='Valor del campo a filtrar', required=False, type=str),
+        ], 
+        responses={
+            200: StandardResponseSerializerSuccessList,
+            400: StandardResponseSerializerError,
+            500: StandardResponseSerializerError
+        }
     )
-    def list(self, request):
+    def list(self, request, *args, **kwargs):
         try:
             queryset = CommonAreaRule.objects.filter(is_active=True)
             
+            # Filtro específico por área común
             common_area_id = request.query_params.get('common_area_id')
             if common_area_id:
                 queryset = queryset.filter(common_area_id=common_area_id)
             
+            # Filtro genérico por atributo y valor
+            attr = request.query_params.get('attr')
+            value = request.query_params.get('value')
+            if attr and value and hasattr(CommonAreaRule, attr):
+                starts_with_filter = {f"{attr}__istartswith": value}
+                contains_filter = {f"{attr}__icontains": value}
+                queryset = queryset.filter(Q(**contains_filter))                
+                queryset = queryset.annotate(
+                    relevance=Case(
+                        When(**starts_with_filter, then=V(0)),
+                        default=V(1),
+                        output_field=IntegerField()
+                    )
+                ).order_by('relevance')                
+            elif attr and not hasattr(CommonAreaRule, attr):
+                return response(
+                    400,
+                    f"El campo '{attr}' no es válido para filtrado"
+                )
+            
+            # Ordenamiento
+            order = request.query_params.get('order')
+            if order:
+                try:
+                    queryset = queryset.order_by(order)
+                except Exception:
+                    return response(
+                        400,
+                        f"No se pudo ordenar por '{order}'"
+                    )
+            
+            # Obtener el total ANTES de la paginación
+            total_count = queryset.count()
+            
+            # Paginación
+            limit = request.query_params.get('limit')
+            offset = request.query_params.get('offset', 0)
+            
+            if limit is not None:
+                try:
+                    limit = int(limit)
+                    offset = int(offset)
+                    queryset = queryset[offset:offset+limit]
+                except ValueError:
+                    return response(
+                        400,
+                        "Los valores de limit y offset deben ser enteros"
+                    )
+            
             serializer = CommonAreaRuleSerializer(queryset, many=True)
-            return response(200, "Reglas de áreas comunes encontradas", data=serializer.data, count_data=queryset.count())
+            return response(
+                200,
+                "Reglas de áreas comunes encontradas correctamente",
+                data=serializer.data,
+                count_data=total_count
+            )
         except Exception as e:
-            return response(500, f"Error interno del servidor: {str(e)}")
+            return response(
+                500,
+                f"Error interno del servidor: {str(e)}"
+            )
+
+    def create(self, request):
+        try:
+            serializer = CommonAreaRuleSerializer(data=request.data)
+            if serializer.is_valid():
+                rule = serializer.save(created_by=request.user)
+                return response(
+                    201,
+                    "Regla de área común creada correctamente",
+                    data=CommonAreaRuleSerializer(rule).data
+                )
+            return response(
+                400,
+                "Errores de validación",
+                error=serializer.errors
+            )
+        except Exception as e:
+            return response(
+                500,
+                f"Error interno del servidor: {str(e)}"
+            )
+
+    def retrieve(self, request, *args, **kwargs):
+        try:
+            instance = self.get_object()
+            serializer = CommonAreaRuleSerializer(instance)
+            return response(
+                200,
+                "Regla de área común encontrada",
+                data=serializer.data
+            )
+        except Exception as e:
+            return response(
+                500,
+                f"Error interno del servidor: {str(e)}"
+            )
+
+    def update(self, request, *args, **kwargs):
+        try:
+            instance = self.get_object()
+            serializer = CommonAreaRuleSerializer(instance, data=request.data)
+            if serializer.is_valid():
+                rule = serializer.save()
+                return response(
+                    200,
+                    "Regla de área común actualizada correctamente",
+                    data=CommonAreaRuleSerializer(rule).data
+                )
+            return response(
+                400,
+                "Errores de validación",
+                error=serializer.errors
+            )
+        except Exception as e:
+            return response(
+                500,
+                f"Error interno del servidor: {str(e)}"
+            )
+
+    def partial_update(self, request, *args, **kwargs):
+        try:
+            instance = self.get_object()
+            serializer = CommonAreaRuleSerializer(instance, data=request.data, partial=True)
+            if serializer.is_valid():
+                rule = serializer.save()
+                return response(
+                    200,
+                    "Regla de área común actualizada correctamente",
+                    data=CommonAreaRuleSerializer(rule).data
+                )
+            return response(
+                400,
+                "Errores de validación",
+                error=serializer.errors
+            )
+        except Exception as e:
+            return response(
+                500,
+                f"Error interno del servidor: {str(e)}"
+            )
+
+    def destroy(self, request, *args, **kwargs):
+        try:
+            instance = self.get_object()
+            instance.delete()
+            return response(
+                200,
+                "Regla de área común eliminada correctamente"
+            )
+        except Exception as e:
+            return response(
+                500,
+                f"Error interno del servidor: {str(e)}"
+            )
 
 
 @extend_schema(tags=['Reservas'])
