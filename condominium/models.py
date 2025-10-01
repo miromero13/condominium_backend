@@ -144,9 +144,42 @@ class Reservation(BaseModel):
             self.total_cost = float(self.total_hours) * float(self.common_area.cost_per_hour)
             
         super().save(*args, **kwargs)
+        
+        # Crear pago automáticamente si tiene costo mayor a 0
+        if self.total_cost and self.total_cost > 0:
+            self.create_payment_if_needed()
+
+    def create_payment_if_needed(self):
+        """Crea un pago para esta reserva si es necesario"""
+        try:
+            from property.models import PropertyQuote
+            payment = PropertyQuote.create_reservation_payment(self)
+            if payment:
+                print(f"✅ Pago creado para reserva {self.id}: ${payment.amount}")
+            return payment
+        except Exception as e:
+            print(f"❌ Error creando pago para reserva {self.id}: {str(e)}")
+            return None
+
+    @property
+    def has_payment(self):
+        """Verifica si esta reserva tiene un pago asociado"""
+        return hasattr(self, 'payment_quotes') and self.payment_quotes.exists()
+
+    @property
+    def payment_status(self):
+        """Retorna el estado del pago de la reserva"""
+        if not self.total_cost or self.total_cost <= 0:
+            return 'no_payment_required'
+        
+        payment = self.payment_quotes.first()
+        if not payment:
+            return 'no_payment_created'
+        
+        return payment.status
 
     def __str__(self):
-        user_name = f"{self.user.first_name} {self.user.last_name}".strip() or self.user.email
+        user_name = self.user.name or self.user.email
         return f"{self.common_area.name} - {user_name} - {self.reservation_date}"
 
     class Meta:

@@ -86,21 +86,59 @@ class VehicleSerializer(serializers.ModelSerializer):
 
 
 class PropertyQuoteSerializer(serializers.ModelSerializer):
-    property_name = serializers.CharField(source='related_property.name', read_only=True)
-    responsible_user_name = serializers.CharField(source='responsible_user.name', read_only=True)
     status_label = serializers.CharField(source='get_status_display', read_only=True)
+    payment_type_label = serializers.CharField(source='get_payment_type_display', read_only=True)
+    property_name = serializers.CharField(source='related_property.name', read_only=True)
+    reservation_info = serializers.SerializerMethodField()
+    responsible_users_info = serializers.SerializerMethodField()
+    paid_by_info = serializers.SerializerMethodField()
     is_overdue = serializers.ReadOnlyField()
     
     class Meta:
         model = PropertyQuote
         fields = [
-            'id', 'related_property', 'property_name', 'responsible_user', 'responsible_user_name',
+            'id', 'payment_type', 'payment_type_label',
+            # Relaciones
+            'related_property', 'property_name', 'related_reservation', 'reservation_info',
+            'responsible_users_info', 'paid_by', 'paid_by_info',
+            # Información del pago
             'amount', 'description', 'due_date', 'paid_date', 'payment_reference', 
-            'payment_data', 'status', 'status_label', 'period_month', 'period_year', 
+            'payment_data', 'status', 'status_label', 
+            # Período (solo para propiedades)
+            'period_month', 'period_year', 
             'is_automatic', 'is_overdue', 'created_at', 'updated_at'
         ]
         read_only_fields = ['id', 'created_at', 'updated_at', 'property_name', 
-                          'responsible_user_name', 'status_label', 'is_overdue']
+                          'reservation_info', 'responsible_users_info', 'paid_by_info',
+                          'status_label', 'payment_type_label', 'is_overdue']
+
+    def get_reservation_info(self, obj):
+        """Información de la reserva si es un pago de reserva"""
+        if obj.payment_type == 'reservation' and obj.related_reservation:
+            reservation = obj.related_reservation
+            return {
+                'id': reservation.id,
+                'common_area_name': reservation.common_area.name,
+                'reservation_date': reservation.reservation_date,
+                'start_time': reservation.start_time,
+                'end_time': reservation.end_time,
+                'total_hours': reservation.total_hours,
+                'status': reservation.status
+            }
+        return None
+
+    def get_responsible_users_info(self, obj):
+        """Información de usuarios responsables"""
+        from user.serializers import UserSerializer
+        users = obj.responsible_users.all()
+        return UserSerializer(users, many=True).data
+
+    def get_paid_by_info(self, obj):
+        """Información del usuario que pagó"""
+        if obj.paid_by:
+            from user.serializers import UserSerializer
+            return UserSerializer(obj.paid_by).data
+        return None
 
     def validate_amount(self, value):
         if value <= 0:
@@ -108,11 +146,38 @@ class PropertyQuoteSerializer(serializers.ModelSerializer):
         return value
 
     def validate_period_month(self, value):
-        if value < 1 or value > 12:
+        if value is not None and (value < 1 or value > 12):
             raise serializers.ValidationError("El mes debe estar entre 1 y 12.")
         return value
 
     def validate_period_year(self, value):
-        if value < 2000 or value > 2100:
+        if value is not None and (value < 2000 or value > 2100):
             raise serializers.ValidationError("El año debe estar en un rango válido.")
         return value
+
+    def validate(self, data):
+        """Validaciones a nivel de objeto"""
+        payment_type = data.get('payment_type', 'property')
+        
+        # Validar coherencia entre tipo de pago y relaciones
+        if payment_type == 'property':
+            if not data.get('related_property'):
+                raise serializers.ValidationError({
+                    'related_property': 'Los pagos de tipo "property" requieren una propiedad relacionada.'
+                })
+            if data.get('related_reservation'):
+                raise serializers.ValidationError({
+                    'related_reservation': 'Los pagos de tipo "property" no pueden tener una reserva relacionada.'
+                })
+        
+        elif payment_type == 'reservation':
+            if not data.get('related_reservation'):
+                raise serializers.ValidationError({
+                    'related_reservation': 'Los pagos de tipo "reservation" requieren una reserva relacionada.'
+                })
+            if data.get('related_property'):
+                raise serializers.ValidationError({
+                    'related_property': 'Los pagos de tipo "reservation" no pueden tener una propiedad relacionada.'
+                })
+        
+        return data

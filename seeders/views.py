@@ -71,9 +71,9 @@ def seed_database(request):
         user_seeder = UserSeeder()
         user_results = user_seeder.run()
         
-        # Ejecutar seeder de propiedades
+        # Ejecutar seeder de propiedades (con cuotas de ejemplo)
         property_seeder = PropertySeeder()
-        property_results = property_seeder.run()
+        property_results = property_seeder.run(create_quotes=True)
         
         # Ejecutar seeder del condominio
         condominium_seeder = CondominiumSeeder()

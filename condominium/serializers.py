@@ -50,6 +50,8 @@ class ReservationSerializer(serializers.ModelSerializer):
     user_id = serializers.UUIDField(write_only=True, required=False)
     approved_by = UserSerializer(read_only=True)
     status_display = serializers.CharField(source='get_status_display', read_only=True)
+    payment_status = serializers.ReadOnlyField()
+    has_payment = serializers.ReadOnlyField()
     
     class Meta:
         model = Reservation
@@ -57,11 +59,11 @@ class ReservationSerializer(serializers.ModelSerializer):
             'id', 'common_area', 'common_area_id', 'user', 'user_id', 'reservation_date',
             'start_time', 'end_time', 'purpose', 'estimated_attendees',
             'status', 'status_display', 'approved_by', 'total_hours', 'total_cost', 
-            'admin_notes', 'created_at', 'updated_at'
+            'payment_status', 'has_payment', 'admin_notes', 'created_at', 'updated_at'
         ]
         read_only_fields = [
             'id', 'user', 'approved_by', 'total_hours', 'total_cost', 
-            'status_display', 'created_at', 'updated_at'
+            'status_display', 'payment_status', 'has_payment', 'created_at', 'updated_at'
         ]
 
     def validate(self, data):

@@ -957,6 +957,47 @@ class ReservationViewSet(viewsets.ModelViewSet):
                 f"Error interno del servidor: {str(e)}"
             )
 
+    @action(detail=True, methods=['get'])
+    def payment_info(self, request, pk=None):
+        """Obtener información del pago asociado a la reserva"""
+        try:
+            reservation = self.get_object()
+            
+            # Solo el propietario, admin o guard pueden ver el pago
+            if (request.user.role not in [UserRole.ADMINISTRATOR.value, UserRole.GUARD.value] 
+                and reservation.user != request.user):
+                return response(
+                    403,
+                    "No tienes permisos para ver el pago de esta reserva"
+                )
+            
+            payment = reservation.payment_quotes.first()
+            if not payment:
+                return response(
+                    200,
+                    "Esta reserva no tiene pago asociado",
+                    data={
+                        'has_payment': False,
+                        'payment_required': reservation.total_cost > 0,
+                        'total_cost': float(reservation.total_cost)
+                    }
+                )
+            
+            from property.serializers import PropertyQuoteSerializer
+            return response(
+                200,
+                "Información del pago obtenida",
+                data={
+                    'has_payment': True,
+                    'payment': PropertyQuoteSerializer(payment).data
+                }
+            )
+        except Exception as e:
+            return response(
+                500,
+                f"Error interno del servidor: {str(e)}"
+            )
+
     @action(detail=True, methods=['post'])
     def cancel(self, request, pk=None):
         """Cancelar una reserva (usuario propietario o admin/guard)"""

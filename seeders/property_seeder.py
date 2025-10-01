@@ -1,8 +1,9 @@
 import pandas as pd
 import random
-from property.models import Property
+from datetime import date, timedelta
+from property.models import Property, PropertyQuote
 from user.models import User
-from config.enums import UserRole
+from config.enums import UserRole, PropertyStatus
 
 
 class PropertySeeder:
@@ -133,7 +134,67 @@ class PropertySeeder:
 
         return assignments
 
-    def run(self):
+    def enable_payments_and_create_quotes(self, properties):
+        """Habilita pagos en algunas propiedades y crea cuotas de ejemplo"""
+        quotes_created = 0
+        properties_with_payments = 0
+        
+        # Filtrar solo propiedades que tienen usuarios responsables
+        eligible_properties = []
+        for prop in properties:
+            # Cambiar algunas propiedades a estado SOLD o RENTED para que tengan responsables de pago
+            if random.choice([True, False]):  # 50% de probabilidad
+                if prop.owners.exists():
+                    prop.status = PropertyStatus.SOLD.value
+                elif prop.residents.exists():
+                    prop.status = PropertyStatus.RENTED.value
+                else:
+                    continue
+                
+                # Habilitar pagos
+                prop.is_payment_enabled = True
+                prop.monthly_payment = random.choice([150.00, 200.00, 250.00, 300.00, 350.00])
+                prop.payment_due_day = random.randint(1, 28)
+                prop.save()
+                eligible_properties.append(prop)
+                properties_with_payments += 1
+
+        self.add_message(f"💰 {properties_with_payments} propiedades configuradas para pagos")
+
+        # Crear cuotas para los últimos 3 meses
+        current_date = date.today()
+        months_to_create = [
+            (current_date.month - 2, current_date.year),
+            (current_date.month - 1, current_date.year), 
+            (current_date.month, current_date.year)
+        ]
+
+        # Ajustar años si los meses son negativos
+        for i, (month, year) in enumerate(months_to_create):
+            if month <= 0:
+                months_to_create[i] = (month + 12, year - 1)
+
+        for prop in eligible_properties:
+            for month, year in months_to_create:
+                # Crear cuota usando el nuevo método
+                quote = prop.create_period_quotes(month, year)
+                if quote:
+                    quotes_created += 1
+                    
+                    # Marcar algunas cuotas como pagadas (70% de probabilidad)
+                    if random.random() < 0.7:
+                        responsible_users = list(quote.responsible_users.all())
+                        if responsible_users:
+                            payer = random.choice(responsible_users)
+                            quote.mark_as_paid(
+                                reference=f"PAY{random.randint(1000, 9999)}",
+                                paid_by_user=payer
+                            )
+
+        self.add_message(f"📄 {quotes_created} cuotas creadas")
+        return quotes_created
+
+    def run(self, create_quotes=True):
         """Ejecutar seeder completo"""
         self.add_message("🚀 Iniciando seeder de propiedades...")
 
@@ -147,14 +208,21 @@ class PropertySeeder:
             self.add_message("⚠️ No se crearon propiedades, saltando asignaciones")
             assignments = {'owners': 0, 'residents': 0, 'visitors': 0}
 
+        # Crear cuotas de pago si se solicita
+        quotes_created = 0
+        if create_quotes and properties:
+            quotes_created = self.enable_payments_and_create_quotes(properties)
+
         # Estadísticas finales
         total_properties = Property.objects.count()
+        total_quotes = PropertyQuote.objects.count()
         total_owners = User.objects.filter(role=UserRole.OWNER.value).count()
         total_residents = User.objects.filter(role=UserRole.RESIDENT.value).count()
         total_visitors = User.objects.filter(role=UserRole.VISITOR.value).count()
 
         self.add_message("📈 Estadísticas finales:")
         self.add_message(f"   • Total propiedades: {total_properties}")
+        self.add_message(f"   • Total cuotas: {total_quotes}")
         self.add_message(f"   • Total propietarios: {total_owners}")
         self.add_message(f"   • Total residentes: {total_residents}")
         self.add_message(f"   • Total visitantes: {total_visitors}")
@@ -162,7 +230,9 @@ class PropertySeeder:
         return {
             'messages': self.messages,
             'properties_created': len(properties),
+            'quotes_created': quotes_created,
             'total_properties': total_properties,
+            'total_quotes': total_quotes,
             'assignments': assignments,
             'user_counts': {
                 'owners': total_owners,

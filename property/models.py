@@ -166,14 +166,14 @@ class Property(BaseModel):
 		"""
 		Retorna los usuarios responsables del pago según el estado de la propiedad
 		"""
-		if self.status in [PropertyStatus.SOLD.value, PropertyStatus.OWNED_AND_RENTED.value]:
-			# Si tiene propietarios, ellos pagan
+		if self.status == PropertyStatus.SOLD.value:
+			# Si está vendida, los propietarios pagan
 			return self.owners.all()
 		elif self.status == PropertyStatus.RENTED.value:
 			# Si está alquilada, los residentes pagan
 			return self.residents.all()
 		else:
-			# Estados como FOR_SALE, FOR_RENT, etc. no tienen responsables de pago
+			# Estados como FOR_SALE, FOR_RENT, OWNED_AND_RENTED, etc. no tienen responsables de pago
 			return User.objects.none()
 
 	@property
@@ -244,6 +244,49 @@ class Property(BaseModel):
 		
 		return today + timedelta(days=30)  # Default: 30 días
 
+	def create_period_quotes(self, period_month, period_year, due_date=None):
+		"""
+		Crea una cuota para un período específico asignada a todos los usuarios responsables
+		Solo se crea UNA cuota con múltiples usuarios responsables
+		"""
+		if not self.is_payment_enabled or self.monthly_payment <= 0:
+			return None
+
+		responsible_users = self.payment_responsible_users
+		if not responsible_users.exists():
+			return None
+
+		# Verificar si ya existe una cuota para este período
+		existing_quote = PropertyQuote.objects.filter(
+			related_property=self,
+			period_month=period_month,
+			period_year=period_year
+		).first()
+
+		if existing_quote:
+			# Si ya existe, actualizar los usuarios responsables
+			existing_quote.responsible_users.set(responsible_users)
+			return existing_quote
+
+		# Usar la fecha de vencimiento proporcionada o calcular la siguiente
+		payment_due_date = due_date or self.get_next_payment_due_date()
+
+		# Crear una sola cuota
+		quote = PropertyQuote.objects.create(
+			related_property=self,
+			amount=self.monthly_payment,
+			description=f"Cuota {period_month}/{period_year} - {self.name}",
+			due_date=payment_due_date,
+			period_month=period_month,
+			period_year=period_year,
+			is_automatic=True
+		)
+
+		# Asignar todos los usuarios responsables a la cuota
+		quote.responsible_users.set(responsible_users)
+
+		return quote
+
 	class Meta:
 		verbose_name = "Propiedad"
 		verbose_name_plural = "Propiedades"
@@ -288,19 +331,44 @@ class Vehicle(BaseModel):
 
 class PropertyQuote(BaseModel):
     """
-    Cuotas de pago para propiedades
+    Cuotas de pago para propiedades y reservas de áreas comunes
     """
+    # Relación con propiedad (para cuotas de propiedades)
     related_property = models.ForeignKey(
         Property,
         on_delete=models.PROTECT,
         related_name="quotes",
-        help_text="Propiedad asociada a la cuota"
+        null=True,
+        blank=True,
+        help_text="Propiedad asociada a la cuota (solo para pagos de propiedades)"
     )
-    responsible_user = models.ForeignKey(
-        User,
+    
+    # Relación con reserva (para pagos de reservas)
+    related_reservation = models.ForeignKey(
+        'condominium.Reservation',
         on_delete=models.PROTECT,
+        related_name="payment_quotes",
+        null=True,
+        blank=True,
+        help_text="Reserva asociada al pago (solo para pagos de reservas)"
+    )
+    
+    # Tipo de pago
+    PAYMENT_TYPE_CHOICES = [
+        ('property', 'Cuota de Propiedad'),
+        ('reservation', 'Pago de Reserva'),
+    ]
+    payment_type = models.CharField(
+        max_length=20,
+        choices=PAYMENT_TYPE_CHOICES,
+        default='property',
+        help_text="Tipo de pago"
+    )
+    
+    responsible_users = models.ManyToManyField(
+        User,
         related_name="property_quotes",
-        help_text="Usuario responsable del pago"
+        help_text="Usuarios responsables del pago (cualquiera puede pagar por todos)"
     )
     
     # Información de la cuota
@@ -341,26 +409,80 @@ class PropertyQuote(BaseModel):
         help_text="Estado actual de la cuota"
     )
     
-    # Metadatos del período
+    # Metadatos del período (solo para pagos de propiedades)
     period_month = models.PositiveIntegerField(
         choices=[(i, i) for i in range(1, 13)],
-        help_text="Mes del período (1-12)"
+        null=True,
+        blank=True,
+        help_text="Mes del período (1-12) - Solo para pagos de propiedades"
     )
     period_year = models.PositiveIntegerField(
-        help_text="Año del período"
+        null=True,
+        blank=True,
+        help_text="Año del período - Solo para pagos de propiedades"
     )
     is_automatic = models.BooleanField(
         default=True,
         help_text="Si fue generada automáticamente por el sistema"
     )
+    
+    # Usuario que realizó el pago
+    paid_by = models.ForeignKey(
+        User,
+        on_delete=models.SET_NULL,
+        null=True,
+        blank=True,
+        related_name="paid_property_quotes",
+        help_text="Usuario que realizó el pago (debe ser uno de los responsables)"
+    )
 
     def __str__(self):
-        period_str = f"{self.period_month}/{self.period_year}"
-        return f"Cuota {period_str} - {self.related_property.name} - {self.responsible_user.name}"
+        if self.payment_type == 'property' and self.related_property:
+            period_str = f"{self.period_month}/{self.period_year}"
+            users_count = self.responsible_users.count()
+            if users_count > 1:
+                return f"Cuota {period_str} - {self.related_property.name} - {users_count} responsables"
+            elif users_count == 1:
+                user = self.responsible_users.first()
+                user_name = getattr(user, 'name', None) or f"{user.first_name} {user.last_name}".strip() or user.email
+                return f"Cuota {period_str} - {self.related_property.name} - {user_name}"
+            return f"Cuota {period_str} - {self.related_property.name} - Sin responsables"
+        elif self.payment_type == 'reservation' and self.related_reservation:
+            users_count = self.responsible_users.count()
+            area_name = self.related_reservation.common_area.name
+            date_str = self.related_reservation.reservation_date.strftime('%d/%m/%Y')
+            if users_count == 1:
+                user = self.responsible_users.first()
+                user_name = getattr(user, 'name', None) or f"{user.first_name} {user.last_name}".strip() or user.email
+                return f"Pago Reserva - {area_name} ({date_str}) - {user_name}"
+            return f"Pago Reserva - {area_name} ({date_str}) - {users_count} responsables"
+        return f"Pago #{self.id} - {self.get_payment_type_display()}"
 
     def clean(self):
         """Validaciones de negocio"""
         super().clean()
+        
+        # Validar que solo tenga una relación (propiedad O reserva)
+        if self.related_property and self.related_reservation:
+            raise ValidationError({
+                '__all__': 'Una cuota no puede estar relacionada tanto con una propiedad como con una reserva.'
+            })
+        
+        if not self.related_property and not self.related_reservation:
+            raise ValidationError({
+                '__all__': 'Una cuota debe estar relacionada con una propiedad o con una reserva.'
+            })
+        
+        # Validar coherencia del tipo de pago
+        if self.payment_type == 'property' and not self.related_property:
+            raise ValidationError({
+                'payment_type': 'El tipo "property" requiere una propiedad relacionada.'
+            })
+        
+        if self.payment_type == 'reservation' and not self.related_reservation:
+            raise ValidationError({
+                'payment_type': 'El tipo "reservation" requiere una reserva relacionada.'
+            })
         
         # El monto debe ser positivo
         if self.amount is not None and self.amount <= 0:
@@ -380,16 +502,17 @@ class PropertyQuote(BaseModel):
                     'paid_date': 'Una cuota no pagada no puede tener fecha de pago.'
                 })
         
-        # Validar período válido
-        if self.period_month < 1 or self.period_month > 12:
-            raise ValidationError({
-                'period_month': 'El mes debe estar entre 1 y 12.'
-            })
-        
-        if self.period_year < 2000 or self.period_year > 2100:
-            raise ValidationError({
-                'period_year': 'El año debe estar en un rango válido.'
-            })
+        # Validar período válido solo para pagos de propiedades
+        if self.payment_type == 'property':
+            if self.period_month and (self.period_month < 1 or self.period_month > 12):
+                raise ValidationError({
+                    'period_month': 'El mes debe estar entre 1 y 12.'
+                })
+            
+            if self.period_year and (self.period_year < 2000 or self.period_year > 2100):
+                raise ValidationError({
+                    'period_year': 'El año debe estar en un rango válido.'
+                })
 
     def save(self, *args, **kwargs):
         self.clean()
@@ -403,27 +526,92 @@ class PropertyQuote(BaseModel):
             self.status == QuoteStatus.PENDING.value and 
             self.due_date < date.today()
         )
+    
+    @property
+    def responsible_users_list(self):
+        """Retorna lista de nombres de usuarios responsables"""
+        users = self.responsible_users.all()
+        names = []
+        for user in users:
+            name = getattr(user, 'name', None) or user.email
+            names.append(name)
+        return names
+    
+    def can_be_paid_by(self, user):
+        """Verifica si un usuario puede pagar esta cuota"""
+        return self.responsible_users.filter(id=user.id).exists()
 
-    def mark_as_paid(self, reference="", paid_date=None):
+    @classmethod
+    def create_reservation_payment(cls, reservation):
+        """
+        Crea un pago para una reserva si tiene costo mayor a 0
+        """
+        if not reservation.total_cost or reservation.total_cost <= 0:
+            return None
+
+        # Verificar si ya existe un pago para esta reserva
+        existing_payment = cls.objects.filter(
+            related_reservation=reservation,
+            payment_type='reservation'
+        ).first()
+
+        if existing_payment:
+            return existing_payment
+
+        # Crear el pago
+        from datetime import date, timedelta
+        
+        payment = cls.objects.create(
+            related_reservation=reservation,
+            payment_type='reservation',
+            amount=reservation.total_cost,
+            description=f"Pago por reserva de {reservation.common_area.name} - {reservation.reservation_date}",
+            due_date=reservation.reservation_date - timedelta(days=1),  # Vence 1 día antes de la reserva
+            is_automatic=True
+        )
+
+        # Asignar el usuario de la reserva como responsable del pago
+        payment.responsible_users.set([reservation.user])
+
+        return payment
+
+    def mark_as_paid(self, reference="", paid_date=None, paid_by_user=None):
         """Marca la cuota como pagada"""
         if self.status == QuoteStatus.PAID.value:
             raise ValidationError("Esta cuota ya está pagada.")
         
+        # Verificar que paid_by_user sea uno de los responsables (si se especifica)
+        if paid_by_user and not self.responsible_users.filter(id=paid_by_user.id).exists():
+            raise ValidationError("El usuario que paga debe ser uno de los responsables de la cuota.")
+        
         self.status = QuoteStatus.PAID.value
         self.payment_reference = reference
         self.paid_date = paid_date or timezone.now()
+        self.paid_by = paid_by_user
         self.save()
 
     class Meta:
-        verbose_name = "Cuota de Propiedad"
-        verbose_name_plural = "Cuotas de Propiedades"
-        ordering = ['-period_year', '-period_month', 'due_date']
-        unique_together = [
-            ['related_property', 'responsible_user', 'period_month', 'period_year']
+        verbose_name = "Cuota de Pago"
+        verbose_name_plural = "Cuotas de Pago"
+        ordering = ['-created_at']
+        constraints = [
+            # Una propiedad solo puede tener una cuota por período
+            models.UniqueConstraint(
+                fields=['related_property', 'period_month', 'period_year'],
+                condition=models.Q(payment_type='property'),
+                name='unique_property_period'
+            ),
+            # Una reserva solo puede tener un pago
+            models.UniqueConstraint(
+                fields=['related_reservation'],
+                condition=models.Q(payment_type='reservation'),
+                name='unique_reservation_payment'
+            ),
         ]
         indexes = [
             models.Index(fields=['related_property', 'status']),
-            models.Index(fields=['responsible_user', 'status']),
+            models.Index(fields=['related_reservation', 'status']),
             models.Index(fields=['due_date', 'status']),
             models.Index(fields=['period_year', 'period_month']),
+            models.Index(fields=['payment_type']),
         ]
