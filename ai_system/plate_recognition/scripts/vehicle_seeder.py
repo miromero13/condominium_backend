@@ -198,7 +198,7 @@ class VehicleSeeder:
         print("=" * 50)
         
         # Estadísticas por bloque
-        print(f"\n📈 ESTADÍSTICAS POR BLOQUE:")
+        print(f"\n📊 ESTADÍSTICAS POR BLOQUE:")
         for block in CONDOMINIO_DATA["blocks"]:
             block_properties = Property.objects.filter(building_or_block=block)
             block_vehicles = Vehicle.objects.filter(property__building_or_block=block)

@@ -40,14 +40,11 @@ def detect_plate_frontend(request):
             # Subir a S3
             try:
                 print(f"🔍 [DEBUG] Uploading to S3...")
-                import boto3
                 s3_client = boto3.client('s3')
                 bucket_name = 'smartcondominio-ai-nataly-2025'
-                
                 s3_client.upload_fileobj(image_file, bucket_name, filename)
                 s3_url = f"https://{bucket_name}.s3.amazonaws.com/{filename}"
                 print(f"🔍 [DEBUG] S3 upload successful: {s3_url}")
-                
             except Exception as e:
                 print(f"❌ [ERROR] S3 upload failed: {str(e)}")
                 return response(
@@ -60,19 +57,22 @@ def detect_plate_frontend(request):
             # Base64 de cámara
             image_base64 = request.data['image_base64']
             source = request.data.get('source', 'camera')
-            
+            print(f"🔍 [DEBUG] image_base64 (first 100): {image_base64[:100]}")
             # Decodificar base64
             try:
-                header, data = image_base64.split(',', 1)
+                if ',' in image_base64:
+                    header, data = image_base64.split(',', 1)
+                    print(f"🔍 [DEBUG] base64 header: {header}")
+                else:
+                    data = image_base64
+                    print(f"🔍 [DEBUG] base64 header: (none, pure base64)")
                 image_data = base64.b64decode(data)
-                
+                print(f"🔍 [DEBUG] Decoded image_data length: {len(image_data)} bytes")
                 # Generar nombre único
                 filename = f"plate_detection/{uuid.uuid4()}.jpg"
-                
                 # Subir a S3
                 s3_client = boto3.client('s3')
                 bucket_name = 'smartcondominio-ai-nataly-2025'
-                
                 s3_client.put_object(
                     Bucket=bucket_name,
                     Key=filename,
@@ -80,8 +80,10 @@ def detect_plate_frontend(request):
                     ContentType='image/jpeg'
                 )
                 s3_url = f"https://{bucket_name}.s3.amazonaws.com/{filename}"
-                
             except Exception as e:
+                import traceback
+                print(f"❌ [ERROR] image_base64 exception: {str(e)}")
+                print(f"❌ [ERROR] Traceback: {traceback.format_exc()}")
                 return response(
                     status_code=status.HTTP_500_INTERNAL_SERVER_ERROR,
                     message="Error procesando imagen base64",
@@ -165,7 +167,7 @@ def detect_plate_frontend(request):
             tiempo_procesamiento = round(time.time() - start_time, 2)
             
             # Crear registro en EventoAI para historial
-            from .models import EventoAI
+            from ai_system.models import EventoAI
             if mejor_placa and confianza_maxima > 0:
                 EventoAI.objects.create(
                     tipo='deteccion_placa_frontend',

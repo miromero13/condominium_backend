@@ -1,3 +1,9 @@
+from ai_system.face_recognition.views import verify_face
+from ai_system.face_recognition.frontend_views import detect_face_frontend
+from django.urls import path
+
+# Asegura que urlpatterns esté definido antes de agregar rutas
+from ai_system.face_recognition.views import verify_face
 """
 URL configuration for config project.
 
@@ -28,8 +34,8 @@ from condominium.views import (
     CondominiumInfoView, ContactInfoView
 )
 from service.views import PaymentViewSet, ServiceTypeViewSet, StripeWebhookView, StripeConfigView
-from ai_system.views import EventoAIViewSet
-from ai_system.frontend_views import detect_plate_frontend  
+from ai_system.plate_recognition.views import EventoAIViewSet
+from ai_system.plate_recognition.frontend_views import detect_plate_frontend  
 
 from rest_framework.routers import DefaultRouter
 
@@ -91,5 +97,7 @@ urlpatterns = [
     
     # Frontend endpoints
     path('api/ai-system/detect-plate/', detect_plate_frontend, name='detect_plate_frontend'),
+    path('api/ai-system/detect-face/', detect_face_frontend, name='detect_face_frontend'),
+    path('api/face/verify/', verify_face, name='verify_face'),
 
 ]

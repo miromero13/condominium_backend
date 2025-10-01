@@ -38,6 +38,13 @@ class User(BaseModel, AbstractBaseUser, PermissionsMixin):
         default=False,
         help_text="¿Está habilitado para usar la aplicación móvil?"
     )
+    s3_face_folder_url = models.CharField(
+        max_length=300,
+        blank=True,
+        null=True,
+        verbose_name="Carpeta S3 de rostros",
+        help_text="URL/carpeta S3 donde están almacenadas las imágenes faciales del usuario"
+    )
 
     USERNAME_FIELD = 'email'
     REQUIRED_FIELDS = ['ci', 'name', 'phone', 'role']

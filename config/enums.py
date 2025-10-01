@@ -1,5 +1,20 @@
 from enum import Enum
 
+class TipoAcceso(Enum):
+    VEHICULO = 'vehiculo'
+    PERSONA = 'persona'
+
+    @classmethod
+    def choices(cls):
+        return [(tipo.value, tipo.get_label()) for tipo in cls]
+
+    def get_label(self):
+        labels = {
+            self.VEHICULO: 'Vehículo',
+            self.PERSONA: 'Persona',
+        }
+        return labels.get(self, self.value)
+
 
 class UserRole(Enum):
     """
